@@ -333,10 +333,24 @@
               <!-- <span class="label label-theme pull-right mail-info">3</span> -->
               </a>
           </li>
-          <li class="sub-menu">
+          <li>
+            <a class="<?php echo activate_menu('Asset_group'); ?>" href="<?php echo site_url('Asset_group');?>">
+              <i class="fa fa-tasks"></i>
+              <span>Privantive Maintenance </span>
+              <!-- <span class="label label-theme pull-right mail-info">3</span> -->
+              </a>
+          </li>
+          <li>
+            <a class="<?php echo activate_menu('Asset_group'); ?>" href="<?php echo site_url('Asset_group');?>">
+              <i class="fa fa-tasks"></i>
+              <span>Cetak Laporan </span>
+              <!-- <span class="label label-theme pull-right mail-info">3</span> -->
+              </a>
+          </li>
+          <!-- <li class="sub-menu">
             <a href="javascript:;">
               <i class=" fa fa-bar-chart-o"></i>
-              <span>Charts</span>
+              <span>Pssd</span>
               </a>
             <ul class="sub">
               <li><a href="morris.html">Morris</a></li>
@@ -360,7 +374,7 @@
               <i class="fa fa-map-marker"></i>
               <span>Google Maps </span>
               </a>
-          </li>
+          </li> -->
         </ul>
         <!-- sidebar menu end-->
       </div>
