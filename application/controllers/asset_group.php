@@ -9,8 +9,12 @@ class Asset_group extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('templates/header');
-		$this->load->view('asset/index');
-		$this->load->view('templates/footer');
+		if($this->session->userdata('username')!=""){
+      		$this->load->view('templates/header');
+			$this->load->view('asset/index');
+			$this->load->view('templates/footer');
+    	} else {
+      		show_404();
+    	}
 	}
 }

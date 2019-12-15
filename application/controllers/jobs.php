@@ -8,9 +8,13 @@ class Jobs extends CI_Controller{
   }
 
   public function index(){
-    $this->load->view('templates/header');
-    $this->load->view('jobs/index');
-    $this->load->view('templates/footer');
+    if($this->session->userdata('username')!=""){
+        $this->load->view('templates/header');
+        $this->load->view('jobs/index');
+        $this->load->view('templates/footer');
+    } else {
+        show_404();
+    }
   }
 
   public function tampil_job(){

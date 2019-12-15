@@ -7,10 +7,13 @@ class Dashboard extends CI_Controller {
 	    $this->load->helper('menu');
 	  }
 	
-	public function index()
-	{
-		$this->load->view('templates/header');
-		$this->load->view('dashboard/index');
-		$this->load->view('templates/footer');
+	public function index(){
+		if($this->session->userdata('username')!=""){
+      		$this->load->view('templates/header');
+			$this->load->view('dashboard/index');
+			$this->load->view('templates/footer');
+    	} else {
+      		show_404();
+    	}
 	}
 }
