@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller {
 			$this->load->view('dashboard/index');
 			$this->load->view('templates/footer');
     	} else {
-      		show_404();
+      		$this->load->view('pesan_error');
     	}
 	}
 }

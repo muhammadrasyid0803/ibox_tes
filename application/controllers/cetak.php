@@ -14,7 +14,7 @@ class Cetak extends CI_Controller {
 			$this->load->view('cetak/index');
 			$this->load->view('templates/footer');
     	} else {
-      		show_404();
+      		$this->load->view('pesan_error');
     	}
 	}
 }
