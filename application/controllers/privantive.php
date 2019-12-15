@@ -11,7 +11,7 @@ class Privantive extends CI_Controller {
 	{
 		if($this->session->userdata('username')!=""){
       		$this->load->view('templates/header');
-			$this->load->view('assetgroup/index');
+			$this->load->view('privantive/index');
 			$this->load->view('templates/footer');
     	} else {
       		show_404();
