@@ -3,7 +3,7 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    <?php echo $pop; ?>
+                    <?php echo $name; ?>
                   </h4>
               </header>
               <div class="panel-body minimal">
