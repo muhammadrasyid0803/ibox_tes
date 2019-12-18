@@ -12,52 +12,30 @@
                 </div>
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="#" data-toggle="modal" data-target="modal_building">Building and Infrastructure</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">AC Electricity</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">DC Electricity</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">Power Supply Back Up System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">Cooling System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">External Alarm And Monitoring System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">Network Device</a>
                   </h5>
                   <h5 class="gen-case">
-                     <input type="checkbox" value="">
                      <a href="">Passive Device (ODF)</a>
                   </h5>
                 </div>
-
-                <!-- <div class="col-xs-6">
-                  <select class="form-control" name="pilih_pop">
-                    <option value="">-- Pilih --</option>
-                    <option value="POP PLH">POP PLH</option>
-                    <option value="POP BJB">POP BJB</option>
-                    <option value="POP ULIN">POP ULIN</option>
-                    <option value="POP CEMPAKA">POP CEMPAKA</option>
-                  </select>
-                </div> -->
-              
-                <!-- <div class="col-xs-2">
-                  <button type="submit" class="btn btn-theme03">Pilih</button>
-                </div> -->
                 </form>
               </div>
           </div>
