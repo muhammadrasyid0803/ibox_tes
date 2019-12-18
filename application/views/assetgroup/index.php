@@ -16,13 +16,19 @@
                   </h4>
                 </div>
                 <div class="col-xs-6">
-                  <select class="form-control" name="pilih_pop">
+                  <select class="form-control" name="pilih_pop" id="pilih_pop">
+                     <option value="pilih">-- Pilih --</option>
+                        <?php foreach ($pop as $p ): ?>
+                            <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+                        <?php endforeach;?>
+                  </select>
+                  <!-- <select class="form-control" name="pilih_pop">
                      <option value="">-- Pilih --</option>
                     <option value="POP PLH">POP PLH</option>
                     <option value="POP BJB">POP BJB</option>
                     <option value="POP ULIN">POP ULIN</option>
                     <option value="POP CEMPAKA">POP CEMPAKA</option>
-                  </select>
+                  </select> -->
                 </div>
                 <div class="col-xs-2">
                   <button type="submit" class="btn btn-theme03">Pilih</button>
