@@ -27,32 +27,8 @@ class Jobs extends CI_Controller{
       echo json_encode($result);
   }
 
-  // public function tampil_detail($id_job){
-  //   $data = $this->documents_model->get_file_by_id_history($id_job);
-  //   die();
-  //   echo json_encode($data);
-  // }
-
-  // function get_jobs(){
-  //         $list = $this->jobs_m->get_datatables();
-  //         $data = array();
-  //         $no = $_POST['start'];
-  //         foreach ($list as $field) {
-  //             $no++;
-  //             $row = array();
-  //             $row[] = $field->description;
-  //             // $row[] = "<a href='javascript:void(0);' class='btn btn-warning btn-xs' onclick='ubah_agama(".$field->kd_agama.")' title='Ubah Agama' data-toggle='tooltip' data-placement='bottom'><i class='glyphicon glyphicon-pencil'></i></a>  <a href='javascript:void(0);' class='btn btn-danger btn-xs' onclick='hapus_modal(".$field->kd_agama.")' title='Hapus Agama' data-toggle='tooltip' data-placement='bottom'><i class='glyphicon glyphicon-trash'></i></a>";
-  //             $data[] = $row;
-  //         }
-   
-  //         $output = array(
-  //             "draw" => $_POST['draw'],
-  //             "recordsTotal" => $this->jobs_m->count_all(),
-  //             "recordsFiltered" => $this->jobs_m->count_filtered(),
-  //             "data" => $data,
-  //         );
-  //         //output dalam format JSON
-  //         echo json_encode($output);
-  // }
-
+  public function ambil_job($id){
+    $this->jobs_m->update_status($id);
+    echo json_encode(array("status" => true));
+  }
 }

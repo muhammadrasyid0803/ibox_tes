@@ -155,5 +155,21 @@
         }
       });
     })
+
+    $('#showdata').on('click', '.item-ambil', function(){
+      var id = $(this).attr('data');
+      $.ajax({
+        url: "<?php echo site_url('Jobs/ambil_job/') ;?>/"+id,
+        type: "POST",
+        dataType: "JSON",
+        success: function(data) {
+          TampilJob();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          alert('Error Deleting Data');
+        }
+      });
+    })
+
   });
 </script>
