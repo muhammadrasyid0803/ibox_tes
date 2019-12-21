@@ -231,15 +231,33 @@
           var html = '';
           var i;
           for(i=0; i<data.length; i++){
-            html +='<tr>'+
-                  '<td>'+data[i].id+'. </td>'+
-                  '<td>'+data[i].description+'</td>'+
-                  // '<td>'+data[i].address+'</td>'+
-                  // '<td>'+data[i].created_at+'</td>'+
-                  '<td>'+
-                    '<a href="javascript:;" class="btn btn-info item-tampil" data="'+data[i].id+'">Lihat Detail Job</a>'+
-                  '</td>'+
-                  '</tr>';
+             if (data[i].status == 'belum') {
+                    html +='<tr>'+
+                      '<td>'+data[i].description+'</td>'+
+                       '<td>'+'<span class="label label-danger">Belum Selesai</span>'+'</td>'+
+                      '<td>'+
+                        '<button class="btn btn-theme03 item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                      '</td>'+
+                      '</tr>';
+              }
+              else if (data[i].status == 'selesai') {
+                    html +='<tr>'+
+                      '<td>'+data[i].description+'</td>'+
+                       '<td>'+'<span class="label label-success">Selesai</span>'+'</td>'+
+                      '<td>'+
+                        '<button class="btn btn-theme03 item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                      '</td>'+
+                      '</tr>';  
+              }
+              else if (data[i].status == 'on progress') {
+                    html +='<tr>'+
+                      '<td>'+data[i].description+'</td>'+
+                       '<td>'+'<span class="label label-warning">On Progress</span>'+'</td>'+
+                      '<td>'+
+                        '<button class="btn btn-theme03 item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                      '</td>'+
+                      '</tr>';  
+              }
           }
           $('#showdata').html(html);
           // $("#myModal").modal('show');
