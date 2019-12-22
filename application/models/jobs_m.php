@@ -2,7 +2,7 @@
 class Jobs_m extends CI_Model{
       
       public function list_job(){
-        $this->db->order_by('created_at', 'desc');
+        $this->db->order_by('status', 'asc');
         $query = $this->db->get('jobs');
         if($query->num_rows() > 0){
           return $query->result();

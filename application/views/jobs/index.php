@@ -156,6 +156,7 @@
       });
     })
 
+    // Ubah status ambil
     $('#showdata').on('click', '.item-ambil', function(){
       var id = $(this).attr('data');
       $.ajax({
@@ -171,6 +172,7 @@
       });
     })
 
+    // ubah status on progress
     $('#showdata').on('click', '.item-cetak', function(){
       var id = $(this).attr('data');
       $.ajax({
@@ -185,5 +187,6 @@
         }
       });
     })
+
   });
 </script>
