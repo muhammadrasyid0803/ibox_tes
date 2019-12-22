@@ -171,5 +171,19 @@
       });
     })
 
+    $('#showdata').on('click', '.item-cetak', function(){
+      var id = $(this).attr('data');
+      $.ajax({
+        url: "<?php echo site_url('Jobs/cetak_status/') ;?>/"+id,
+        type: "POST",
+        dataType: "JSON",
+        success: function(data) {
+          TampilJob();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          alert('Error Deleting Data');
+        }
+      });
+    })
   });
 </script>

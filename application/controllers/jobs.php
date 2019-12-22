@@ -28,7 +28,12 @@ class Jobs extends CI_Controller{
   }
 
   public function ambil_job($id){
-    $this->jobs_m->update_status($id);
+    $this->jobs_m->update_status_belum($id);
+    echo json_encode(array("status" => true));
+  }
+
+  public function cetak_status($id){
+    $this->jobs_m->update_status_on_progress($id);
     echo json_encode(array("status" => true));
   }
 }

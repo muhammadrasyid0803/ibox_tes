@@ -22,9 +22,18 @@ class Jobs_m extends CI_Model{
         }
       }
 
-      public function update_status($id){
+      public function update_status_belum($id){
         $data = array(
           'status' => 'on progress', 
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('jobs', $data);
+      }
+
+      public function update_status_on_progress($id){
+        $data = array(
+          'status' => 'selesai', 
         );
 
         $this->db->where('id', $id);
