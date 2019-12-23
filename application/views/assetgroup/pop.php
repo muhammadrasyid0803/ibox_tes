@@ -63,12 +63,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -85,12 +80,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -127,12 +117,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -149,12 +134,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -191,12 +171,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -213,12 +188,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -255,12 +225,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -277,12 +242,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -299,12 +259,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -321,12 +276,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -363,12 +313,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                   <div class="form-group ">
@@ -385,12 +330,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -499,12 +439,7 @@
                       </select>
                     </div>
                     <div class="col-lg-2">
-                      <select class="form-control">
-                        <option value="">-- Pilih --</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
+                      <input type="file" accept="image/*" capture="camera">
                     </div>
                   </div>
                 </form>
@@ -515,4 +450,4 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>     
