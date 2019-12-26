@@ -24,7 +24,7 @@ class Asset_group extends CI_Controller {
 		$pop = $this->input->post('pilih_pop');
 		$data['name'] = $this->asset_m->get_name_pop_by_id($pop);
 		
-		if ($pop == "") {
+		if ($pop == "pilih") {
 			redirect(base_url("Asset_group"));
 		}
 		else{
