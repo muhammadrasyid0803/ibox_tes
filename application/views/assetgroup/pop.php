@@ -48,45 +48,46 @@
                       <h4 class="modal-title" id="myModalLabel">Building and Infrastructure</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">Input Rack</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">Input Building</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form class="cmxform form-horizontal style-form" action="#" id="form">
+                        <div class="form-group ">
+                          <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
+                          <label for="cname" class="control-label col-lg-3">Input Rack</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescRack" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiRack">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_rack" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Input Building</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBuilding" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiBuilding">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_building" capture="camera">
+                          </div>
+                        </div>
+                      </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -450,4 +451,42 @@
                   </div>
                 </div>
               </div>
-            </div>     
+            </div>  
+
+    <script type="text/javascript">
+    
+      function simpan() {
+          var url;
+          url = '<?php echo site_url('Asset_group/tambah_building') ;?>';
+              // var agama = $('#txtNamaAgama').val().length;         
+
+              //     if (agama == 0 ) {              
+              //         if (agama == 0) {              
+              //             $(".pesan-nama_agama").css('display','block');
+              //         }
+              //         return false;
+              //     }
+
+          var formData = new FormData($('#form')[0]);
+          $.ajax({
+              url : url,
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "JSON",
+              success: function(data) {
+                  // $('#modal_form').modal('hide');
+                  // reload_table();
+                  // if(save_method == 'add') {
+                  //     toastr.success('Tambah Agama Berhasil!', 'Success', {timeOut: 5000})
+                  // } else {
+                  //     toastr.success('Ubah Agama Berhasil!', 'Success', {timeOut: 5000})
+                  // }
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  alert('Error adding / upader data');
+              }
+          });
+      }
+    </script>   

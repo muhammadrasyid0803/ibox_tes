@@ -13,4 +13,9 @@ class Asset_m extends CI_Model{
     $query = $this->db->get();
     return $query->row()->name;
   }
+
+  public function tambah_a_build_infs_db($data){
+    $this->db->insert('a_build_infs', $data);   
+    return $this->db->insert_id();
+  }
 }
