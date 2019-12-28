@@ -34,7 +34,9 @@ CREATE TABLE IF NOT EXISTS `asetcustomers` (
   CONSTRAINT `asetcustomers_rackcust_id_foreign` FOREIGN KEY (`rackcust_id`) REFERENCES `rackcustomers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.asetcustomers: ~0 rows (approximately)
+/*!40000 ALTER TABLE `asetcustomers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `asetcustomers` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.asetpops
 CREATE TABLE IF NOT EXISTS `asetpops` (
@@ -55,7 +57,9 @@ CREATE TABLE IF NOT EXISTS `asetpops` (
   CONSTRAINT `asetpops_rackpop_id_foreign` FOREIGN KEY (`rackpop_id`) REFERENCES `rackpops` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.asetpops: ~0 rows (approximately)
+/*!40000 ALTER TABLE `asetpops` DISABLE KEYS */;
+/*!40000 ALTER TABLE `asetpops` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.asets
 CREATE TABLE IF NOT EXISTS `asets` (
@@ -93,7 +97,9 @@ CREATE TABLE IF NOT EXISTS `asets` (
   CONSTRAINT `asets_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.asets: ~0 rows (approximately)
+/*!40000 ALTER TABLE `asets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `asets` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_ac_electricity
 CREATE TABLE IF NOT EXISTS `a_ac_electricity` (
@@ -109,9 +115,11 @@ CREATE TABLE IF NOT EXISTS `a_ac_electricity` (
   PRIMARY KEY (`id`),
   KEY `FK_a_ac_electricity_pops` (`id_pop`),
   CONSTRAINT `FK_a_ac_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_ac_electricity: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_ac_electricity` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_ac_electricity` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_build_infs
 CREATE TABLE IF NOT EXISTS `a_build_infs` (
@@ -129,7 +137,9 @@ CREATE TABLE IF NOT EXISTS `a_build_infs` (
   CONSTRAINT `FK_a_build_infs_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_build_infs: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_build_infs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_build_infs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_dc_electricity
 CREATE TABLE IF NOT EXISTS `a_dc_electricity` (
@@ -145,9 +155,11 @@ CREATE TABLE IF NOT EXISTS `a_dc_electricity` (
   PRIMARY KEY (`id`),
   KEY `FK_a_dc_electricity_pops` (`id_pop`),
   CONSTRAINT `FK_a_dc_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_dc_electricity: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_dc_electricity` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_dc_electricity` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_monitoring_sistem
 CREATE TABLE IF NOT EXISTS `a_monitoring_sistem` (
@@ -163,9 +175,11 @@ CREATE TABLE IF NOT EXISTS `a_monitoring_sistem` (
   PRIMARY KEY (`id`),
   KEY `FK_a_monitoring_sistem_pops` (`id_pop`),
   CONSTRAINT `FK_a_monitoring_sistem_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_monitoring_sistem: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_monitoring_sistem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_monitoring_sistem` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_odf
 CREATE TABLE IF NOT EXISTS `a_odf` (
@@ -178,9 +192,11 @@ CREATE TABLE IF NOT EXISTS `a_odf` (
   PRIMARY KEY (`id`),
   KEY `FK_a_odf_pops` (`id_pop`),
   CONSTRAINT `FK_a_odf_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_odf: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_odf` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_odf` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_pwr_supply
 CREATE TABLE IF NOT EXISTS `a_pwr_supply` (
@@ -204,7 +220,9 @@ CREATE TABLE IF NOT EXISTS `a_pwr_supply` (
   CONSTRAINT `FK_a_pwr_supply_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.a_pwr_supply: ~0 rows (approximately)
+/*!40000 ALTER TABLE `a_pwr_supply` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_pwr_supply` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.customers
 CREATE TABLE IF NOT EXISTS `customers` (
@@ -233,7 +251,9 @@ CREATE TABLE IF NOT EXISTS `customers` (
   CONSTRAINT `customers_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.customers: ~0 rows (approximately)
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.gudangs
 CREATE TABLE IF NOT EXISTS `gudangs` (
@@ -252,7 +272,9 @@ CREATE TABLE IF NOT EXISTS `gudangs` (
   CONSTRAINT `gudangs_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.gudangs: ~0 rows (approximately)
+/*!40000 ALTER TABLE `gudangs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gudangs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.heatmap
 CREATE TABLE IF NOT EXISTS `heatmap` (
@@ -269,7 +291,9 @@ CREATE TABLE IF NOT EXISTS `heatmap` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.heatmap: ~0 rows (approximately)
+/*!40000 ALTER TABLE `heatmap` DISABLE KEYS */;
+/*!40000 ALTER TABLE `heatmap` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.indonesia_cities
 CREATE TABLE IF NOT EXISTS `indonesia_cities` (
@@ -283,7 +307,9 @@ CREATE TABLE IF NOT EXISTS `indonesia_cities` (
   CONSTRAINT `indonesia_cities_province_id_foreign` FOREIGN KEY (`province_id`) REFERENCES `indonesia_provinces` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.indonesia_cities: ~0 rows (approximately)
+/*!40000 ALTER TABLE `indonesia_cities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `indonesia_cities` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.indonesia_districts
 CREATE TABLE IF NOT EXISTS `indonesia_districts` (
@@ -297,7 +323,9 @@ CREATE TABLE IF NOT EXISTS `indonesia_districts` (
   CONSTRAINT `indonesia_districts_city_id_foreign` FOREIGN KEY (`city_id`) REFERENCES `indonesia_cities` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.indonesia_districts: ~0 rows (approximately)
+/*!40000 ALTER TABLE `indonesia_districts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `indonesia_districts` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.indonesia_provinces
 CREATE TABLE IF NOT EXISTS `indonesia_provinces` (
@@ -308,7 +336,9 @@ CREATE TABLE IF NOT EXISTS `indonesia_provinces` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.indonesia_provinces: ~0 rows (approximately)
+/*!40000 ALTER TABLE `indonesia_provinces` DISABLE KEYS */;
+/*!40000 ALTER TABLE `indonesia_provinces` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.indonesia_villages
 CREATE TABLE IF NOT EXISTS `indonesia_villages` (
@@ -322,7 +352,9 @@ CREATE TABLE IF NOT EXISTS `indonesia_villages` (
   CONSTRAINT `indonesia_villages_district_id_foreign` FOREIGN KEY (`district_id`) REFERENCES `indonesia_districts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.indonesia_villages: ~0 rows (approximately)
+/*!40000 ALTER TABLE `indonesia_villages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `indonesia_villages` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.isps
 CREATE TABLE IF NOT EXISTS `isps` (
@@ -333,7 +365,9 @@ CREATE TABLE IF NOT EXISTS `isps` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.isps: ~0 rows (approximately)
+/*!40000 ALTER TABLE `isps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `isps` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
@@ -360,7 +394,11 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.jobs: ~0 rows (approximately)
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+REPLACE INTO `jobs` (`id`, `job_number`, `description`, `location`, `lat`, `lng`, `date`, `category`, `severity`, `priority`, `impact`, `disposisi`, `status`, `file`, `excecution_number`, `relization_date`, `users_id`, `created_at`, `updated_at`, `subcategory`) VALUES
+	(1, '001', 'maintenance kabel jalurA2', '', '', '', '0000-00-00', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.logmutasis
 CREATE TABLE IF NOT EXISTS `logmutasis` (
@@ -378,7 +416,9 @@ CREATE TABLE IF NOT EXISTS `logmutasis` (
   CONSTRAINT `logmutasis_aset_id_foreign` FOREIGN KEY (`aset_id`) REFERENCES `asets` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.logmutasis: ~0 rows (approximately)
+/*!40000 ALTER TABLE `logmutasis` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logmutasis` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.masterasets
 CREATE TABLE IF NOT EXISTS `masterasets` (
@@ -412,7 +452,9 @@ CREATE TABLE IF NOT EXISTS `masterasets` (
   CONSTRAINT `masterasets_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.masterasets: ~0 rows (approximately)
+/*!40000 ALTER TABLE `masterasets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `masterasets` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -422,7 +464,45 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.migrations: ~35 rows (approximately)
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+REPLACE INTO `migrations` (`id`, `migration`, `batch`) VALUES
+	(1, '2014_10_12_000000_create_users_table', 1),
+	(2, '2014_10_12_100000_create_password_resets_table', 1),
+	(3, '2016_08_03_072729_create_provinces_table', 1),
+	(4, '2016_08_03_072750_create_cities_table', 1),
+	(5, '2016_08_03_072804_create_districts_table', 1),
+	(6, '2016_08_03_072819_create_villages_table', 1),
+	(7, '2019_09_07_191957_create_customers_table', 1),
+	(8, '2019_09_09_165858_create_mrtgs_table', 1),
+	(9, '2019_09_11_015009_create_masterasets_table', 1),
+	(10, '2019_09_13_065854_create_pops_table', 1),
+	(11, '2019_09_16_052036_create_rackpops_table', 1),
+	(12, '2019_09_17_160510_create_asetpops_table', 1),
+	(13, '2019_09_24_160245_create_isps_table', 1),
+	(14, '2019_09_24_162247_create_ports_table', 1),
+	(15, '2019_09_24_162259_create_slots_table', 1),
+	(16, '2019_09_30_054040_create_rackcustomers_table', 1),
+	(17, '2019_09_30_055134_create_asetcustomers_table', 1),
+	(18, '2019_10_04_141932_create_jobs_table', 1),
+	(19, '2019_10_07_143210_create_segment_table', 1),
+	(20, '2019_10_14_153243_add_job_table', 1),
+	(21, '2019_11_02_165444_create_gudangs_table', 1),
+	(22, '2019_11_11_075215_create_asets_table', 1),
+	(23, '2019_11_13_011743_create_types_table', 1),
+	(24, '2019_11_13_012135_alter_aset_table', 1),
+	(25, '2019_11_13_012255_alter_cust_table', 1),
+	(26, '2019_11_13_012316_alter_gdg_table', 1),
+	(27, '2019_11_13_012357_alter_pop_table', 1),
+	(28, '2019_11_13_155245_create_heatmap_table', 1),
+	(29, '2019_11_19_151823_create_schedule_table', 1),
+	(30, '2019_11_20_155352_create_logmutasis_table', 1),
+	(31, '2019_11_25_191308_add_poprack_table', 1),
+	(32, '2019_11_25_191341_add_popaset_table', 1),
+	(33, '2019_11_26_073833_create_servicecat_table', 1),
+	(34, '2019_11_27_051811_create_services_table', 1),
+	(35, '2019_11_27_052142_create_terminasis_table', 1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.mrtgs
 CREATE TABLE IF NOT EXISTS `mrtgs` (
@@ -440,7 +520,9 @@ CREATE TABLE IF NOT EXISTS `mrtgs` (
   CONSTRAINT `mrtgs_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.mrtgs: ~0 rows (approximately)
+/*!40000 ALTER TABLE `mrtgs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mrtgs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.password_resets
 CREATE TABLE IF NOT EXISTS `password_resets` (
@@ -450,7 +532,9 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.password_resets: ~0 rows (approximately)
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pops
 CREATE TABLE IF NOT EXISTS `pops` (
@@ -476,7 +560,14 @@ CREATE TABLE IF NOT EXISTS `pops` (
   CONSTRAINT `pops_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.pops: ~4 rows (approximately)
+/*!40000 ALTER TABLE `pops` DISABLE KEYS */;
+REPLACE INTO `pops` (`id`, `id_pop`, `name`, `address`, `lat`, `lng`, `id_pelanggan_pln`, `fasa`, `daya`, `mcb`, `area_pln`, `rayon_yantek`, `users_id`, `created_at`, `updated_at`, `type_id`, `status`) VALUES
+	(1, '1', 'POP PLH', 'PLH', '3.434', '2.323232', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
+	(2, '2', 'POP BJB', 'BJB', '3.1231', '14.22323', NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+	(3, '3', 'POP ULIN', 'ULIN', '5.3234', '3432.2343234', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
+	(4, '4', 'POP CEMPAKA', 'CEMPAKA', '5.343432', '14.4434', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `pops` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.ports
 CREATE TABLE IF NOT EXISTS `ports` (
@@ -491,7 +582,9 @@ CREATE TABLE IF NOT EXISTS `ports` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.ports: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ports` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ports` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.rackcustomers
 CREATE TABLE IF NOT EXISTS `rackcustomers` (
@@ -508,7 +601,9 @@ CREATE TABLE IF NOT EXISTS `rackcustomers` (
   CONSTRAINT `rackcustomers_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.rackcustomers: ~0 rows (approximately)
+/*!40000 ALTER TABLE `rackcustomers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rackcustomers` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.rackpops
 CREATE TABLE IF NOT EXISTS `rackpops` (
@@ -526,7 +621,9 @@ CREATE TABLE IF NOT EXISTS `rackpops` (
   CONSTRAINT `rackpops_pop_id_foreign` FOREIGN KEY (`pop_id`) REFERENCES `pops` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.rackpops: ~0 rows (approximately)
+/*!40000 ALTER TABLE `rackpops` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rackpops` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.schedule
 CREATE TABLE IF NOT EXISTS `schedule` (
@@ -541,7 +638,9 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.schedule: ~0 rows (approximately)
+/*!40000 ALTER TABLE `schedule` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.segment
 CREATE TABLE IF NOT EXISTS `segment` (
@@ -552,7 +651,9 @@ CREATE TABLE IF NOT EXISTS `segment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.segment: ~0 rows (approximately)
+/*!40000 ALTER TABLE `segment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `segment` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.servicecat
 CREATE TABLE IF NOT EXISTS `servicecat` (
@@ -564,7 +665,9 @@ CREATE TABLE IF NOT EXISTS `servicecat` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.servicecat: ~0 rows (approximately)
+/*!40000 ALTER TABLE `servicecat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `servicecat` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.services
 CREATE TABLE IF NOT EXISTS `services` (
@@ -586,7 +689,9 @@ CREATE TABLE IF NOT EXISTS `services` (
   CONSTRAINT `services_service_foreign` FOREIGN KEY (`service`) REFERENCES `servicecat` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.services: ~0 rows (approximately)
+/*!40000 ALTER TABLE `services` DISABLE KEYS */;
+/*!40000 ALTER TABLE `services` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.slots
 CREATE TABLE IF NOT EXISTS `slots` (
@@ -600,7 +705,9 @@ CREATE TABLE IF NOT EXISTS `slots` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.slots: ~0 rows (approximately)
+/*!40000 ALTER TABLE `slots` DISABLE KEYS */;
+/*!40000 ALTER TABLE `slots` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.terminasis
 CREATE TABLE IF NOT EXISTS `terminasis` (
@@ -628,7 +735,9 @@ CREATE TABLE IF NOT EXISTS `terminasis` (
   CONSTRAINT `terminasis_service_id_foreign` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.terminasis: ~0 rows (approximately)
+/*!40000 ALTER TABLE `terminasis` DISABLE KEYS */;
+/*!40000 ALTER TABLE `terminasis` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.types
 CREATE TABLE IF NOT EXISTS `types` (
@@ -639,7 +748,9 @@ CREATE TABLE IF NOT EXISTS `types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.types: ~0 rows (approximately)
+/*!40000 ALTER TABLE `types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `types` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -659,7 +770,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table db_ibox.users: ~0 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+REPLACE INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `role`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(1, 'ADMIN', 'admin', 'admin@gmail.com', NULL, 'admin', 1, 0, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
