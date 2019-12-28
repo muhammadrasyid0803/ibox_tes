@@ -95,21 +95,113 @@ CREATE TABLE IF NOT EXISTS `asets` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table db_ibox.asset_building_infra
-CREATE TABLE IF NOT EXISTS `asset_building_infra` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `id_pops` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+-- Dumping structure for table db_ibox.a_ac_electricity
+CREATE TABLE IF NOT EXISTS `a_ac_electricity` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_kwh` varchar(255) DEFAULT NULL,
+  `desc_acpdb` varchar(255) DEFAULT NULL,
+  `kondisi_kwh` varchar(255) DEFAULT NULL,
+  `kondisi_acpdb` varchar(255) DEFAULT NULL,
+  `file_kwh` varchar(255) DEFAULT NULL,
+  `file_acpdb` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_ac_electricity_pops` (`id_pop`),
+  CONSTRAINT `FK_a_ac_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table db_ibox.a_build_infs
+CREATE TABLE IF NOT EXISTS `a_build_infs` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_rack` varchar(255) DEFAULT NULL,
+  `kondisi_rack` varchar(255) DEFAULT NULL,
+  `file_rack` varchar(255) DEFAULT NULL,
+  `desc_building` varchar(255) DEFAULT NULL,
+  `kondisi_building` varchar(255) DEFAULT NULL,
+  `file_building` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_build_infs_pops` (`id_pop`),
+  CONSTRAINT `FK_a_build_infs_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 
--- Dumping structure for table db_ibox.building
-CREATE TABLE IF NOT EXISTS `building` (
-  `id` int(11) DEFAULT NULL,
-  `desc` varchar(255) DEFAULT NULL,
-  `file` varchar(255) DEFAULT NULL
+-- Dumping structure for table db_ibox.a_dc_electricity
+CREATE TABLE IF NOT EXISTS `a_dc_electricity` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_rectifier` varchar(255) DEFAULT NULL,
+  `kondisi_rectifier` varchar(255) DEFAULT NULL,
+  `file_rectifier` varchar(255) DEFAULT NULL,
+  `desc_dcpdb` varchar(255) DEFAULT NULL,
+  `kondisi_dcpdb` varchar(255) DEFAULT NULL,
+  `file_dcpdb` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_dc_electricity_pops` (`id_pop`),
+  CONSTRAINT `FK_a_dc_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table db_ibox.a_monitoring_sistem
+CREATE TABLE IF NOT EXISTS `a_monitoring_sistem` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_ac` varchar(255) DEFAULT NULL,
+  `kondisi_ac` varchar(255) DEFAULT NULL,
+  `file_ac` varchar(255) DEFAULT NULL,
+  `desc_alarm` varchar(255) DEFAULT NULL,
+  `kondisi_alarm` varchar(255) DEFAULT NULL,
+  `file_alarm` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_monitoring_sistem_pops` (`id_pop`),
+  CONSTRAINT `FK_a_monitoring_sistem_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table db_ibox.a_odf
+CREATE TABLE IF NOT EXISTS `a_odf` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_odf` varchar(255) DEFAULT NULL,
+  `kondisi_odf` varchar(255) DEFAULT NULL,
+  `file_odf` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_odf_pops` (`id_pop`),
+  CONSTRAINT `FK_a_odf_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table db_ibox.a_pwr_supply
+CREATE TABLE IF NOT EXISTS `a_pwr_supply` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `desc_genset` varchar(255) DEFAULT NULL,
+  `kondisi_genset` varchar(255) DEFAULT NULL,
+  `file_genset` varchar(255) DEFAULT NULL,
+  `desc_ats` varchar(255) DEFAULT NULL,
+  `kondisi_ats` varchar(255) DEFAULT NULL,
+  `file_ats` varchar(255) DEFAULT NULL,
+  `desc_inverter` varchar(255) DEFAULT NULL,
+  `kondisi_inverter` varchar(255) DEFAULT NULL,
+  `file_inverter` varchar(255) DEFAULT NULL,
+  `desc_ups` varchar(255) DEFAULT NULL,
+  `kondisi_ups` varchar(255) DEFAULT NULL,
+  `file_ups` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_pop` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_a_pwr_supply_pops` (`id_pop`),
+  CONSTRAINT `FK_a_pwr_supply_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
@@ -266,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `subcategory` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Data exporting was unselected.
 
@@ -382,7 +474,7 @@ CREATE TABLE IF NOT EXISTS `pops` (
   PRIMARY KEY (`id`),
   KEY `pops_type_id_foreign` (`type_id`),
   CONSTRAINT `pops_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Data exporting was unselected.
 
@@ -398,15 +490,6 @@ CREATE TABLE IF NOT EXISTS `ports` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Data exporting was unselected.
-
--- Dumping structure for table db_ibox.rack
-CREATE TABLE IF NOT EXISTS `rack` (
-  `id` int(11) DEFAULT NULL,
-  `desc` varchar(255) DEFAULT NULL,
-  `file` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 
