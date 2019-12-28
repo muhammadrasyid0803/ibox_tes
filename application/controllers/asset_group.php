@@ -109,5 +109,77 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_a_build_infs_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	private function _do_upload_add_foto_kwh(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Kwh')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_acpdb(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_acpdb')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
 	
+	public function tambah_ac(){
+	    $data = array(
+	    	'desc_kwh' => $this->input->post('txtDescKwh'),
+	    	'desc_acpdb' => $this->input->post('txtDescAcpdb'),
+	    	'kondisi_kwh' => $this->input->post('selectKondisiKwh'),
+	    	'kondisi_acpdb' => $this->input->post('selectKondisiAcpdb'),
+	    	'id_pop' => $this->input->post('txtIdFkRack')
+	    );
+
+	    if(!empty($_FILES['foto_Kwh']['name'])){
+	    	$upload = $this->_do_upload_add_foto_kwh();
+	    	$data['file_kwh'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_acpdb']['name'])){
+	    	$upload = $this->_do_upload_add_foto_acpdb();
+	    	$data['file_acpdb'] = $upload;
+	    }
+
+	    $this->asset_m->tambah_ac_db($data);
+		echo json_encode(array("status" => true));
+	}
 }

@@ -103,45 +103,46 @@
                       <h4 class="modal-title">AC Electricity</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">Input KWh Meter</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">Input ACPDB</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form class="cmxform form-horizontal style-form" action="#" id="form2">
+                        <div class="form-group ">
+                          <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
+                          <label for="cname" class="control-label col-lg-3">Input KWh Meter</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescKwh" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiKwh">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Kwh" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Input ACPDB</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAcpdb" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiAcpdb">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_acpdb" capture="camera">
+                          </div>
+                        </div>
+                      </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary"  onclick="simpan_ac()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -471,6 +472,29 @@
                   $('#form')[0].reset();
                   $('#modal_building').modal('hide');                
                   toastr.success('Tambah Data Building and Infrastructure!', 'Success', {timeOut: 5000})
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  alert('Error adding / upader data');
+              }
+          });
+      }
+
+      function simpan_ac() {
+          var url;
+          url = '<?php echo site_url('Asset_group/tambah_ac') ;?>';
+
+          var formData = new FormData($('#form2')[0]);
+          $.ajax({
+              url : url,
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "JSON",
+              success: function(data) {
+                  $('#form2')[0].reset();
+                  $('#modal_ac').modal('hide');                
+                  toastr.success('Tambah Data AC Electricity!', 'Success', {timeOut: 5000})
               },
               error: function(jqXHR, textStatus, errorThrown) {
                   alert('Error adding / upader data');
