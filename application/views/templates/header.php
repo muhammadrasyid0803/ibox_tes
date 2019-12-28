@@ -23,6 +23,9 @@
   <link href="<?php echo base_url();?>assets/dashio/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dashio/css/style-responsive.css" rel="stylesheet">
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery/jquery.min.js"></script>
+  
+  <!-- Toastr Css -->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/

@@ -87,7 +87,7 @@
                       </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" onclick="simpan()">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_building_infa()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -455,17 +455,9 @@
 
     <script type="text/javascript">
     
-      function simpan() {
+      function simpan_building_infa() {
           var url;
           url = '<?php echo site_url('Asset_group/tambah_building') ;?>';
-              // var agama = $('#txtNamaAgama').val().length;         
-
-              //     if (agama == 0 ) {              
-              //         if (agama == 0) {              
-              //             $(".pesan-nama_agama").css('display','block');
-              //         }
-              //         return false;
-              //     }
 
           var formData = new FormData($('#form')[0]);
           $.ajax({
@@ -476,13 +468,9 @@
               processData: false,
               dataType: "JSON",
               success: function(data) {
-                  // $('#modal_form').modal('hide');
-                  // reload_table();
-                  // if(save_method == 'add') {
-                  //     toastr.success('Tambah Agama Berhasil!', 'Success', {timeOut: 5000})
-                  // } else {
-                  //     toastr.success('Ubah Agama Berhasil!', 'Success', {timeOut: 5000})
-                  // }
+                  $('#form')[0].reset();
+                  $('#modal_building').modal('hide');                
+                  toastr.success('Tambah Data Building and Infrastructure!', 'Success', {timeOut: 5000})
               },
               error: function(jqXHR, textStatus, errorThrown) {
                   alert('Error adding / upader data');

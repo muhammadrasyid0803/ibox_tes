@@ -34,7 +34,8 @@
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="<?php echo base_url();?>assets/dashio/lib/common-scripts.js"></script>
-
+  <!-- Toastr Js -->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
    <!-- js placed at the end of the document so the pages load faster -->
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery-ui-1.9.2.custom.min.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/fullcalendar/fullcalendar.min.js"></script>
