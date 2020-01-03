@@ -182,4 +182,77 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_ac_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	private function _do_upload_add_foto_rectifier(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_rectifier')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_dcpdb(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_dcpdb')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	public function tambah_dc(){
+	    $data = array(
+	    	'desc_rectifier' => $this->input->post('txtDescRectifier'),
+	    	'desc_dcpdb' => $this->input->post('txtDescDcpdb'),
+	    	'kondisi_rectifier' => $this->input->post('selectKondisiRectifier'),
+	    	'kondisi_dcpdb' => $this->input->post('selectKondisiDcpdb'),
+	    	'id_pop' => $this->input->post('txtIdFkRack')
+	    );
+
+	    if(!empty($_FILES['foto_rectifier']['name'])){
+	    	$upload = $this->_do_upload_add_foto_rectifier();
+	    	$data['file_rectifier'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_dcpdb']['name'])){
+	    	$upload = $this->_do_upload_add_foto_dcpdb();
+	    	$data['file_dcpdb'] = $upload;
+	    }
+
+	    $this->asset_m->tambah_dc_db($data);
+		echo json_encode(array("status" => true));
+	}
 }

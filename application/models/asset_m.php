@@ -23,4 +23,9 @@ class Asset_m extends CI_Model{
     $this->db->insert('a_ac_electricity', $data);   
     return $this->db->insert_id();
   }
+
+  public function tambah_dc_db($data){
+    $this->db->insert('a_dc_electricity', $data);   
+    return $this->db->insert_id();
+  }
 }
