@@ -158,7 +158,7 @@
                       <h4 class="modal-title" id="myModalLabel">DC Electricity</h4>
                     </div>
                     <div class="modal-body">
-                      <form  class="cmxform form-horizontal style-form" action="#" id="form3">
+                      <form class="cmxform form-horizontal style-form" action="#" id="form3">
                         <div class="form-group ">
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">Rectifier</label>
@@ -213,79 +213,80 @@
                       <h4 class="modal-title" id="myModalLabel">Power Supply Back Up System</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">GENSET</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">ATS</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">INVERTER</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">UPS</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form class="cmxform form-horizontal style-form" action="#" id="form4">
+                        <div class="form-group ">
+                          <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
+                          <label for="cname" class="control-label col-lg-3">GENSET</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiGenset">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_genset" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">ATS</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiAts">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Ats" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">INVERTER</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiInverter">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Inverter" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-3">UPS</label>
+                          <div class="col-lg-3">
+                            <input class="form-control" placeholder="Description" type="text" name="txtDescUps" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiUps">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Ups" capture="camera">
+                          </div>
+                        </div>
+                      </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_power()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -301,45 +302,46 @@
                       <h4 class="modal-title" id="myModalLabel">External Alarm And Monitoring System</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">AC</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">ALARM</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form class="cmxform form-horizontal style-form" action="#" id="form6">
+                        <div class="form-group ">
+                          <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
+                          <label for="cname" class="control-label col-lg-3">AC</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiAc">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Ac" capture="camera">
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">ALARM</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiAlarm">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Alarm" capture="camera">
+                          </div>
+                        </div>
+                      </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_alarm()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -427,28 +429,29 @@
                       <h4 class="modal-title" id="myModalLabel">Passive Device (ODF)</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">ODF</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form class="cmxform form-horizontal style-form" action="#" id="form8">
+                        <div class="form-group ">
+                          <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
+                          <label for="cname" class="control-label col-lg-3">ODF</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiOdf">
+                              <option value="">Pilih</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_Odf" capture="camera">
+                          </div>
+                        </div>
+                      </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_odf()">Save changes</button>
                     </div>
                   </div>
                 </div>
@@ -519,6 +522,29 @@
                   $('#form3')[0].reset();
                   $('#modal_dc').modal('hide');                
                   toastr.success('Tambah Data DC Electricity!', 'Success', {timeOut: 5000})
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  alert('Error adding / upader data');
+              }
+          });
+      }
+
+      function simpan_power() {
+          var url;
+          url = '<?php echo site_url('Asset_group/tambah_power') ;?>';
+
+          var formData = new FormData($('#form4')[0]);
+          $.ajax({
+              url : url,
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "JSON",
+              success: function(data) {
+                  $('#form4')[0].reset();
+                  $('#modal_power').modal('hide');                
+                  toastr.success('Tambah Data Power Supply Back Up System!', 'Success', {timeOut: 5000})
               },
               error: function(jqXHR, textStatus, errorThrown) {
                   alert('Error adding / upader data');

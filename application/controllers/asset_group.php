@@ -255,4 +255,141 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_dc_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	private function _do_upload_add_foto_genset(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_genset')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_ats(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Ats')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_inverter(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Inverter')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_ups(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Ups')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	public function tambah_power(){
+	    $data = array(
+	    	'desc_genset' => $this->input->post('txtDescGenset'),
+	    	'kondisi_genset' => $this->input->post('selectKondisiGenset'),
+	    	'desc_ats' => $this->input->post('txtDescAts'),
+	    	'kondisi_ats' => $this->input->post('selectKondisiAts'),
+	    	'desc_inverter' => $this->input->post('txtDescInverter'),
+	    	'kondisi_inverter' => $this->input->post('selectKondisiInverter'),
+	    	'desc_ups' => $this->input->post('txtDescUps'),
+	    	'kondisi_ups' => $this->input->post('selectKondisiUps'),
+	    	'id_pop' => $this->input->post('txtIdFkRack')
+	    );
+
+	    if(!empty($_FILES['foto_genset']['name'])){
+	    	$upload = $this->_do_upload_add_foto_genset();
+	    	$data['file_genset'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Ats']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ats();
+	    	$data['file_ats'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Inverter']['name'])){
+	    	$upload = $this->_do_upload_add_foto_inverter();
+	    	$data['file_inverter'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Ups']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ups();
+	    	$data['file_ups'] = $upload;
+	    }
+
+	    $this->asset_m->tambah_power_db($data);
+		echo json_encode(array("status" => true));
+	}
 }
