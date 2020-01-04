@@ -392,4 +392,77 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_power_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	private function _do_upload_add_foto_ac(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Ac')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_alarm(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Alarm')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	public function tambah_alarm(){
+	    $data = array(
+	    	'desc_ac' => $this->input->post('txtDescAc'),
+	    	'kondisi_ac' => $this->input->post('selectKondisiAc'),
+	    	'desc_alarm' => $this->input->post('txtDescAlarm'),
+	    	'kondisi_alarm' => $this->input->post('selectKondisiAlarm'),
+	    	'id_pop' => $this->input->post('txtIdFkRack')
+	    );
+
+	    if(!empty($_FILES['foto_Ac']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ac();
+	    	$data['file_ac'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Alarm']['name'])){
+	    	$upload = $this->_do_upload_add_foto_alarm();
+	    	$data['file_alarm'] = $upload;
+	    }
+
+	    $this->asset_m->tambah_alarm_db($data);
+		echo json_encode(array("status" => true));
+	}
 }

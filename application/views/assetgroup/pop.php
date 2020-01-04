@@ -551,4 +551,27 @@
               }
           });
       }
+
+      function simpan_alarm() {
+          var url;
+          url = '<?php echo site_url('Asset_group/tambah_alarm') ;?>';
+
+          var formData = new FormData($('#form6')[0]);
+          $.ajax({
+              url : url,
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "JSON",
+              success: function(data) {
+                  $('#form6')[0].reset();
+                  $('#modal_alarm').modal('hide');                
+                  toastr.success('Tambah Data Power Supply Back Up System!', 'Success', {timeOut: 5000})
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  alert('Error adding / upader data');
+              }
+          });
+      }
     </script>   

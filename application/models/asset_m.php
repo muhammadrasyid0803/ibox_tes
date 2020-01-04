@@ -32,5 +32,10 @@ class Asset_m extends CI_Model{
   public function tambah_power_db($data){
     $this->db->insert('a_pwr_supply', $data);   
     return $this->db->insert_id();
-  }  
+  } 
+
+  public function tambah_alarm_db($data){
+    $this->db->insert('a_monitoring_sistem', $data);   
+    return $this->db->insert_id();
+  } 
 }
