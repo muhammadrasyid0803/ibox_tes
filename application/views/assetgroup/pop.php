@@ -574,4 +574,27 @@
               }
           });
       }
+
+      function simpan_odf() {
+          var url;
+          url = '<?php echo site_url('Asset_group/tambah_odf') ;?>';
+
+          var formData = new FormData($('#form8')[0]);
+          $.ajax({
+              url : url,
+              type: "POST",
+              data: formData,
+              contentType: false,
+              processData: false,
+              dataType: "JSON",
+              success: function(data) {
+                  $('#form8')[0].reset();
+                  $('#modal_device').modal('hide');                
+                  toastr.success('Tambah Data Power Supply Back Up System!', 'Success', {timeOut: 5000})
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  alert('Error adding / upader data');
+              }
+          });
+      }
     </script>   

@@ -465,4 +465,45 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_alarm_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	private function _do_upload_add_foto_odf(){
+	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_Odf')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	public function tambah_odf(){
+	    $data = array(
+	    	'desc_odf' => $this->input->post('txtDescOdf'),
+	    	'kondisi_odf' => $this->input->post('selectKondisiOdf'),
+	    	'id_pop' => $this->input->post('txtIdFkRack')
+	    );
+
+	    if(!empty($_FILES['foto_Odf']['name'])){
+	    	$upload = $this->_do_upload_add_foto_odf();
+	    	$data['file_odf'] = $upload;
+	    }
+
+	    $this->asset_m->tambah_odf_db($data);
+		echo json_encode(array("status" => true));
+	}
 }

@@ -38,4 +38,9 @@ class Asset_m extends CI_Model{
     $this->db->insert('a_monitoring_sistem', $data);   
     return $this->db->insert_id();
   } 
+
+  public function tambah_odf_db($data){
+    $this->db->insert('a_odf', $data);   
+    return $this->db->insert_id();
+  }
 }
