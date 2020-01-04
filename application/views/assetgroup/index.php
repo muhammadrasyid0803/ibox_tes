@@ -22,20 +22,45 @@
                             <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
                         <?php endforeach;?>
                   </select>
-                  <!-- <select class="form-control" name="pilih_pop">
-                     <option value="">-- Pilih --</option>
-                    <option value="POP PLH">POP PLH</option>
-                    <option value="POP BJB">POP BJB</option>
-                    <option value="POP ULIN">POP ULIN</option>
-                    <option value="POP CEMPAKA">POP CEMPAKA</option>
-                  </select> -->
                 </div>
                 <div class="col-xs-2">
                   <button type="submit" class="btn btn-theme03">Pilih</button>
                 </div>
                 </form>
               </div>
-          </div>
             </section>
           </div>
-        </div>
+
+          <div class="col-sm-12">
+            <section class="panel">
+              <div class="panel-body minimal">
+                <div class="adv-table">
+                <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                  <thead>
+                    <tr>
+                      <th>POP</th>
+                      <th>Kondisi</th>
+                      <th>Deskripsi</th>
+                      <th>Foto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="gradeA">
+                      <td>Trident</td>
+                      <td>Internet Explorer 4.0</td>
+                      <td class="hidden-phone">Win 95+</td>
+                      <td class="center hidden-phone">4</td>
+                    </tr>
+                    <tr class="gradeA">
+                      <td>Gecko</td>
+                      <td>Mozilla 1.5</td>
+                      <td class="hidden-phone">Win 95+ / OSX.1+</td>
+                      <td class="center hidden-phone">1.5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </section>
+          </div>
+          </div>
