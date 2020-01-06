@@ -106,6 +106,21 @@
       });
     });
   </script>
+
+  <!-- power -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var oTable = $('#table_id_power').dataTable({
+        "aoColumnDefs": [{
+          "bSortable": false,
+          "aTargets": [0]
+        }],
+        "aaSorting": [
+          [1, 'asc']
+        ]
+      });
+    });
+  </script>
 </body>
 
 </html>

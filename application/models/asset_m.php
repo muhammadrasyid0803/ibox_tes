@@ -70,4 +70,13 @@ class Asset_m extends CI_Model{
 
     return $hasil->result();
   }
+
+  public function tampil_data_power(){
+    $this->db->select('a_pwr_supply.*, pops.name');
+    $this->db->from('a_pwr_supply');
+    $this->db->join ( 'pops', 'pops.id = a_pwr_supply.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
 }
