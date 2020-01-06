@@ -136,6 +136,21 @@
       });
     });
   </script>
+
+  <!-- odf -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var oTable = $('#table_id_odf').dataTable({
+        "aoColumnDefs": [{
+          "bSortable": false,
+          "aTargets": [0]
+        }],
+        "aaSorting": [
+          [1, 'asc']
+        ]
+      });
+    });
+  </script>
 </body>
 
 </html>

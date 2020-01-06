@@ -170,8 +170,24 @@
                 <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
               </div>
               <div id="ODF" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                 <section class="panel">
+                  <div class="panel-body minimal">
+                      <div class="adv-table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="table_id_odf">
+                          <thead>
+                            <tr>
+                              <th>POP</th>
+                              <th>Tanggal di Buat</th>
+                              <th>Aksi</th>
+                            </tr>
+                          </thead>
+                          <tbody id="show_data_odf">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </section>
               </div>
             </div>
             
@@ -185,6 +201,7 @@
     tampil_data_dc();
     tampil_data_power();
     tampil_data_alarm();
+    tampil_data_odf();
 
     //fungsi tampil_data_building
     function tampil_data_building(){
@@ -207,7 +224,7 @@
                             // '<td>'+data[i].file_building+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -234,15 +251,9 @@
                 for(i=0; i<data.length; i++){
                     html += '<tr>'+
                             '<td>'+data[i].name+'</td>'+
-                            // '<td>'+data[i].desc_acpdb+'</td>'+
-                            // '<td>'+data[i].kondisi_acpdb+'</td>'+
-                            // '<td>'+data[i].file_acpdb+'</td>'+
-                            // '<td>'+data[i].desc_kwh+'</td>'+
-                            // '<td>'+data[i].kondisi_kwh+'</td>'+
-                            // '<td>'+data[i].file_kwh+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -268,7 +279,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -294,7 +305,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -320,13 +331,39 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                 }
                 $('#show_data_alarm').html(html);
+            }
+        });
+    }
+
+    //fungsi tampil_data_odf
+    function tampil_data_odf(){
+        $.ajax({
+            type  : 'ajax',
+            url   : '<?php echo site_url('Asset_group/tampil_data_odf') ;?>',
+            async : false,
+            dataType : 'json',
+            success : function(data){
+                var html = '';
+                var i;
+                for(i=0; i<data.length; i++){
+                    html += '<tr>'+
+                            '<td>'+data[i].name+'</td>'+
+                            '<td>'+data[i].created_at+'</td>'+
+                            '<td style="text-align:right;">'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
+                            '</td>'+
+                            '</tr>';
+                }
+                $('#show_data_odf').html(html);
             }
         });
     }

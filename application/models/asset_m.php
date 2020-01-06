@@ -88,4 +88,13 @@ class Asset_m extends CI_Model{
 
     return $hasil->result();
   }
+
+  public function tampil_data_odf(){
+    $this->db->select('a_odf.*, pops.name');
+    $this->db->from('a_odf');
+    $this->db->join ( 'pops', 'pops.id = a_odf.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
 }
