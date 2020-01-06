@@ -18,7 +18,8 @@ class Jobs extends CI_Controller{
   }
 
   public function tampil_job(){
-    $result = $this->jobs_m->list_job();
+    $users_id = $this->session->userdata('id');
+    $result = $this->jobs_m->list_job($users_id);
     echo json_encode($result);
   }
 
