@@ -126,12 +126,44 @@
                 </section>
               </div>
               <div id="Cooling" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <!-- <section class="panel">
+                  <div class="panel-body minimal">
+                      <div class="adv-table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="table_id_cooling">
+                          <thead>
+                            <tr>
+                              <th>POP</th>
+                              <th>Tanggal di Buat</th>
+                              <th>Aksi</th>
+                            </tr>
+                          </thead>
+                          <tbody id="show_data_cooling">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </section> -->
               </div>
               <div id="Alarm" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <section class="panel">
+                  <div class="panel-body minimal">
+                      <div class="adv-table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="table_id_alarm">
+                          <thead>
+                            <tr>
+                              <th>POP</th>
+                              <th>Tanggal di Buat</th>
+                              <th>Aksi</th>
+                            </tr>
+                          </thead>
+                          <tbody id="show_data_alarm">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </section>
               </div>
               <div id="Network" class="tab-pane fade">
                 <h3>Menu 3</h3>
@@ -152,6 +184,7 @@
     tampil_data_ac();
     tampil_data_dc();
     tampil_data_power();
+    tampil_data_alarm();
 
     //fungsi tampil_data_building
     function tampil_data_building(){
@@ -268,6 +301,32 @@
                             '</tr>';
                 }
                 $('#show_data_power').html(html);
+            }
+        });
+    }
+
+    //fungsi tampil_data_alarm
+    function tampil_data_alarm(){
+        $.ajax({
+            type  : 'ajax',
+            url   : '<?php echo site_url('Asset_group/tampil_data_alarm') ;?>',
+            async : false,
+            dataType : 'json',
+            success : function(data){
+                var html = '';
+                var i;
+                for(i=0; i<data.length; i++){
+                    html += '<tr>'+
+                            '<td>'+data[i].name+'</td>'+
+                            '<td>'+data[i].created_at+'</td>'+
+                            '<td style="text-align:right;">'+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+
+                                '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
+                            '</td>'+
+                            '</tr>';
+                }
+                $('#show_data_alarm').html(html);
             }
         });
     }

@@ -79,4 +79,13 @@ class Asset_m extends CI_Model{
 
     return $hasil->result();
   }
+
+  public function tampil_data_alarm(){
+    $this->db->select('a_monitoring_sistem.*, pops.name');
+    $this->db->from('a_monitoring_sistem');
+    $this->db->join ( 'pops', 'pops.id = a_monitoring_sistem.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
 }
