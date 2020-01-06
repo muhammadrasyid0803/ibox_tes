@@ -506,4 +506,19 @@ class Asset_group extends CI_Controller {
 	    $this->asset_m->tambah_odf_db($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function tampil_data_building(){
+		$data = $this->asset_m->tampil_data_building();
+		echo json_encode($data);
+	}
+
+	public function tampil_data_ac(){
+		$data = $this->asset_m->tampil_data_ac();
+		echo json_encode($data);
+	}
+
+	public function tampil_data_dc(){
+		$data = $this->asset_m->tampil_data_dc();
+		echo json_encode($data);
+	}
 }

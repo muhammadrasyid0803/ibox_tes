@@ -43,4 +43,31 @@ class Asset_m extends CI_Model{
     $this->db->insert('a_odf', $data);   
     return $this->db->insert_id();
   }
+
+  public function tampil_data_building(){
+    $this->db->select('a_build_infs.*, pops.name');
+    $this->db->from('a_build_infs');
+    $this->db->join ( 'pops', 'pops.id = a_build_infs.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
+
+  public function tampil_data_ac(){
+    $this->db->select('a_ac_electricity.*, pops.name');
+    $this->db->from('a_ac_electricity');
+    $this->db->join ( 'pops', 'pops.id = a_ac_electricity.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
+
+  public function tampil_data_dc(){
+    $this->db->select('a_dc_electricity.*, pops.name');
+    $this->db->from('a_dc_electricity');
+    $this->db->join ( 'pops', 'pops.id = a_dc_electricity.id_pop', 'left');
+    $hasil = $this->db->get();
+
+    return $hasil->result();
+  }
 }

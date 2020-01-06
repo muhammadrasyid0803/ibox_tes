@@ -25,6 +25,7 @@
   <link href="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/css/DT_bootstrap.css" />
 
+
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery/jquery.min.js"></script>
 
   <!-- Toastr Css -->
@@ -33,6 +34,12 @@
   <!-- Custom styles for this template -->
   <link href="<?php echo base_url();?>assets/dashio/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dashio/css/style-responsive.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/dashio/css/table-responsive.css" rel="stylesheet">
+ <!--  <style type="text/css">
+    table.table_id_building{
+        width: 50px;
+    }
+  </style> -->
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
