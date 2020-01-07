@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `asetcustomers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.asetcustomers: ~0 rows (approximately)
+DELETE FROM `asetcustomers`;
 /*!40000 ALTER TABLE `asetcustomers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `asetcustomers` ENABLE KEYS */;
 
@@ -58,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `asetpops` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.asetpops: ~0 rows (approximately)
+DELETE FROM `asetpops`;
 /*!40000 ALTER TABLE `asetpops` DISABLE KEYS */;
 /*!40000 ALTER TABLE `asetpops` ENABLE KEYS */;
 
@@ -98,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `asets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.asets: ~0 rows (approximately)
+DELETE FROM `asets`;
 /*!40000 ALTER TABLE `asets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `asets` ENABLE KEYS */;
 
@@ -115,10 +118,14 @@ CREATE TABLE IF NOT EXISTS `a_ac_electricity` (
   PRIMARY KEY (`id`),
   KEY `FK_a_ac_electricity_pops` (`id_pop`),
   CONSTRAINT `FK_a_ac_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.a_ac_electricity: ~0 rows (approximately)
+DELETE FROM `a_ac_electricity`;
 /*!40000 ALTER TABLE `a_ac_electricity` DISABLE KEYS */;
+INSERT INTO `a_ac_electricity` (`id`, `desc_kwh`, `desc_acpdb`, `kondisi_kwh`, `kondisi_acpdb`, `file_kwh`, `file_acpdb`, `created_at`, `id_pop`) VALUES
+	(1, 'yy', 'ss', 'Baik', 'Rusak', '05012020_062402.jpg', '05012020_0624021.jpg', '2020-01-05 14:24:02', 4),
+	(2, 'tayib', 'sddd', 'Baik', 'Baik', '05012020_071042.png', '05012020_071042.jpg', '2020-01-05 15:10:42', 2);
 /*!40000 ALTER TABLE `a_ac_electricity` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_build_infs
@@ -132,13 +139,22 @@ CREATE TABLE IF NOT EXISTS `a_build_infs` (
   `file_building` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_pop` bigint(20) unsigned DEFAULT NULL,
+  `no_rack` bigint(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_a_build_infs_pops` (`id_pop`),
-  CONSTRAINT `FK_a_build_infs_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `FK_a_build_infs_rackpops` (`no_rack`),
+  CONSTRAINT `FK_a_build_infs_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`),
+  CONSTRAINT `FK_a_build_infs_rackpops` FOREIGN KEY (`no_rack`) REFERENCES `rackpops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.a_build_infs: ~0 rows (approximately)
+-- Dumping data for table db_ibox.a_build_infs: ~3 rows (approximately)
+DELETE FROM `a_build_infs`;
 /*!40000 ALTER TABLE `a_build_infs` DISABLE KEYS */;
+INSERT INTO `a_build_infs` (`id`, `desc_rack`, `kondisi_rack`, `file_rack`, `desc_building`, `kondisi_building`, `file_building`, `created_at`, `id_pop`, `no_rack`) VALUES
+	(1, 'ssd', 'Baik', '04012020_080002.jpg', 'dfsdf', 'Baik', '04012020_0800021.jpg', '2020-01-04 16:00:02', 1, 2),
+	(2, 'tse', 'Baik', '04012020_084623.jpg', 'ssd', 'Baik', '04012020_0846231.jpg', '2020-01-04 16:46:23', 1, 2),
+	(3, 'asdf', 'Baik', '04012020_085319.jpg', 'ssfd', 'Rusak', '04012020_0853191.jpg', '2020-01-04 16:53:19', 4, 1),
+	(4, 'ada no rack', 'Baik', '07012020_130213.png', 'buildign', 'Kurang', '07012020_130213.jpg', '2020-01-07 21:02:14', 2, 1);
 /*!40000 ALTER TABLE `a_build_infs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_dc_electricity
@@ -155,10 +171,13 @@ CREATE TABLE IF NOT EXISTS `a_dc_electricity` (
   PRIMARY KEY (`id`),
   KEY `FK_a_dc_electricity_pops` (`id_pop`),
   CONSTRAINT `FK_a_dc_electricity_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.a_dc_electricity: ~0 rows (approximately)
+DELETE FROM `a_dc_electricity`;
 /*!40000 ALTER TABLE `a_dc_electricity` DISABLE KEYS */;
+INSERT INTO `a_dc_electricity` (`id`, `desc_rectifier`, `kondisi_rectifier`, `file_rectifier`, `desc_dcpdb`, `kondisi_dcpdb`, `file_dcpdb`, `created_at`, `id_pop`) VALUES
+	(1, 'ini', 'Baik', '06012020_122121.jpg', 'dc', 'Rusak', '06012020_1221211.jpg', '2020-01-06 20:21:21', 2);
 /*!40000 ALTER TABLE `a_dc_electricity` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_monitoring_sistem
@@ -175,10 +194,13 @@ CREATE TABLE IF NOT EXISTS `a_monitoring_sistem` (
   PRIMARY KEY (`id`),
   KEY `FK_a_monitoring_sistem_pops` (`id_pop`),
   CONSTRAINT `FK_a_monitoring_sistem_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.a_monitoring_sistem: ~0 rows (approximately)
+DELETE FROM `a_monitoring_sistem`;
 /*!40000 ALTER TABLE `a_monitoring_sistem` DISABLE KEYS */;
+INSERT INTO `a_monitoring_sistem` (`id`, `desc_ac`, `kondisi_ac`, `file_ac`, `desc_alarm`, `kondisi_alarm`, `file_alarm`, `created_at`, `id_pop`) VALUES
+	(1, 'ini AC', 'Baik', '06012020_124557.jpg', 'ini ALARM', 'Kurang', '06012020_1245571.jpg', '2020-01-06 20:45:57', 2);
 /*!40000 ALTER TABLE `a_monitoring_sistem` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_odf
@@ -187,15 +209,18 @@ CREATE TABLE IF NOT EXISTS `a_odf` (
   `desc_odf` varchar(255) DEFAULT NULL,
   `kondisi_odf` varchar(255) DEFAULT NULL,
   `file_odf` varchar(255) DEFAULT NULL,
-  `created_at` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_pop` bigint(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_a_odf_pops` (`id_pop`),
   CONSTRAINT `FK_a_odf_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.a_odf: ~0 rows (approximately)
+DELETE FROM `a_odf`;
 /*!40000 ALTER TABLE `a_odf` DISABLE KEYS */;
+INSERT INTO `a_odf` (`id`, `desc_odf`, `kondisi_odf`, `file_odf`, `created_at`, `id_pop`) VALUES
+	(1, 'ini odf', 'Baik', '06012020_124951.jpg', '2020-01-06 20:49:51', 3);
 /*!40000 ALTER TABLE `a_odf` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.a_pwr_supply
@@ -218,10 +243,13 @@ CREATE TABLE IF NOT EXISTS `a_pwr_supply` (
   PRIMARY KEY (`id`),
   KEY `FK_a_pwr_supply_pops` (`id_pop`),
   CONSTRAINT `FK_a_pwr_supply_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.a_pwr_supply: ~0 rows (approximately)
+DELETE FROM `a_pwr_supply`;
 /*!40000 ALTER TABLE `a_pwr_supply` DISABLE KEYS */;
+INSERT INTO `a_pwr_supply` (`id`, `desc_genset`, `kondisi_genset`, `file_genset`, `desc_ats`, `kondisi_ats`, `file_ats`, `desc_inverter`, `kondisi_inverter`, `file_inverter`, `desc_ups`, `kondisi_ups`, `file_ups`, `created_at`, `id_pop`) VALUES
+	(1, 'ini genset', 'Baik', '06012020_123601.jpg', 'ini ATS', 'Baik', '06012020_1236011.jpg', 'ini INVERTER', 'Rusak', '06012020_1236012.jpg', 'ini UPS', 'Baik', '06012020_1236013.jpg', '2020-01-06 20:36:01', 2);
 /*!40000 ALTER TABLE `a_pwr_supply` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.customers
@@ -252,6 +280,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.customers: ~0 rows (approximately)
+DELETE FROM `customers`;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
@@ -273,6 +302,7 @@ CREATE TABLE IF NOT EXISTS `gudangs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.gudangs: ~0 rows (approximately)
+DELETE FROM `gudangs`;
 /*!40000 ALTER TABLE `gudangs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `gudangs` ENABLE KEYS */;
 
@@ -292,6 +322,7 @@ CREATE TABLE IF NOT EXISTS `heatmap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.heatmap: ~0 rows (approximately)
+DELETE FROM `heatmap`;
 /*!40000 ALTER TABLE `heatmap` DISABLE KEYS */;
 /*!40000 ALTER TABLE `heatmap` ENABLE KEYS */;
 
@@ -308,6 +339,7 @@ CREATE TABLE IF NOT EXISTS `indonesia_cities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.indonesia_cities: ~0 rows (approximately)
+DELETE FROM `indonesia_cities`;
 /*!40000 ALTER TABLE `indonesia_cities` DISABLE KEYS */;
 /*!40000 ALTER TABLE `indonesia_cities` ENABLE KEYS */;
 
@@ -324,6 +356,7 @@ CREATE TABLE IF NOT EXISTS `indonesia_districts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.indonesia_districts: ~0 rows (approximately)
+DELETE FROM `indonesia_districts`;
 /*!40000 ALTER TABLE `indonesia_districts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `indonesia_districts` ENABLE KEYS */;
 
@@ -337,6 +370,7 @@ CREATE TABLE IF NOT EXISTS `indonesia_provinces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.indonesia_provinces: ~0 rows (approximately)
+DELETE FROM `indonesia_provinces`;
 /*!40000 ALTER TABLE `indonesia_provinces` DISABLE KEYS */;
 /*!40000 ALTER TABLE `indonesia_provinces` ENABLE KEYS */;
 
@@ -353,6 +387,7 @@ CREATE TABLE IF NOT EXISTS `indonesia_villages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.indonesia_villages: ~0 rows (approximately)
+DELETE FROM `indonesia_villages`;
 /*!40000 ALTER TABLE `indonesia_villages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `indonesia_villages` ENABLE KEYS */;
 
@@ -366,6 +401,7 @@ CREATE TABLE IF NOT EXISTS `isps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.isps: ~0 rows (approximately)
+DELETE FROM `isps`;
 /*!40000 ALTER TABLE `isps` DISABLE KEYS */;
 /*!40000 ALTER TABLE `isps` ENABLE KEYS */;
 
@@ -392,12 +428,14 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `subcategory` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.jobs: ~0 rows (approximately)
+DELETE FROM `jobs`;
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-REPLACE INTO `jobs` (`id`, `job_number`, `description`, `location`, `lat`, `lng`, `date`, `category`, `severity`, `priority`, `impact`, `disposisi`, `status`, `file`, `excecution_number`, `relization_date`, `users_id`, `created_at`, `updated_at`, `subcategory`) VALUES
-	(1, '001', 'maintenance kabel jalurA2', '', '', '', '0000-00-00', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `jobs` (`id`, `job_number`, `description`, `location`, `lat`, `lng`, `date`, `category`, `severity`, `priority`, `impact`, `disposisi`, `status`, `file`, `excecution_number`, `relization_date`, `users_id`, `created_at`, `updated_at`, `subcategory`) VALUES
+	(1, '001', 'maintenance kabel jalurA2', '', '', '', '0000-00-00', '', '', '', '', NULL, 'selesai', NULL, NULL, NULL, '2', NULL, NULL, NULL),
+	(2, '002', 'ini job admin', 'pgg', '3.434', '3.434', '2020-01-06', '3', '4', '4', '3', NULL, 'belum', NULL, NULL, NULL, '1', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.logmutasis
@@ -417,6 +455,7 @@ CREATE TABLE IF NOT EXISTS `logmutasis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.logmutasis: ~0 rows (approximately)
+DELETE FROM `logmutasis`;
 /*!40000 ALTER TABLE `logmutasis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `logmutasis` ENABLE KEYS */;
 
@@ -453,6 +492,7 @@ CREATE TABLE IF NOT EXISTS `masterasets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.masterasets: ~0 rows (approximately)
+DELETE FROM `masterasets`;
 /*!40000 ALTER TABLE `masterasets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `masterasets` ENABLE KEYS */;
 
@@ -465,8 +505,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.migrations: ~35 rows (approximately)
+DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-REPLACE INTO `migrations` (`id`, `migration`, `batch`) VALUES
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2014_10_12_100000_create_password_resets_table', 1),
 	(3, '2016_08_03_072729_create_provinces_table', 1),
@@ -521,6 +562,7 @@ CREATE TABLE IF NOT EXISTS `mrtgs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.mrtgs: ~0 rows (approximately)
+DELETE FROM `mrtgs`;
 /*!40000 ALTER TABLE `mrtgs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mrtgs` ENABLE KEYS */;
 
@@ -533,6 +575,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.password_resets: ~0 rows (approximately)
+DELETE FROM `password_resets`;
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
@@ -561,8 +604,9 @@ CREATE TABLE IF NOT EXISTS `pops` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.pops: ~4 rows (approximately)
+DELETE FROM `pops`;
 /*!40000 ALTER TABLE `pops` DISABLE KEYS */;
-REPLACE INTO `pops` (`id`, `id_pop`, `name`, `address`, `lat`, `lng`, `id_pelanggan_pln`, `fasa`, `daya`, `mcb`, `area_pln`, `rayon_yantek`, `users_id`, `created_at`, `updated_at`, `type_id`, `status`) VALUES
+INSERT INTO `pops` (`id`, `id_pop`, `name`, `address`, `lat`, `lng`, `id_pelanggan_pln`, `fasa`, `daya`, `mcb`, `area_pln`, `rayon_yantek`, `users_id`, `created_at`, `updated_at`, `type_id`, `status`) VALUES
 	(1, '1', 'POP PLH', 'PLH', '3.434', '2.323232', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(2, '2', 'POP BJB', 'BJB', '3.1231', '14.22323', NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
 	(3, '3', 'POP ULIN', 'ULIN', '5.3234', '3432.2343234', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
@@ -583,6 +627,7 @@ CREATE TABLE IF NOT EXISTS `ports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.ports: ~0 rows (approximately)
+DELETE FROM `ports`;
 /*!40000 ALTER TABLE `ports` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ports` ENABLE KEYS */;
 
@@ -602,6 +647,7 @@ CREATE TABLE IF NOT EXISTS `rackcustomers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.rackcustomers: ~0 rows (approximately)
+DELETE FROM `rackcustomers`;
 /*!40000 ALTER TABLE `rackcustomers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `rackcustomers` ENABLE KEYS */;
 
@@ -619,10 +665,14 @@ CREATE TABLE IF NOT EXISTS `rackpops` (
   PRIMARY KEY (`id`),
   KEY `rackpops_pop_id_foreign` (`pop_id`),
   CONSTRAINT `rackpops_pop_id_foreign` FOREIGN KEY (`pop_id`) REFERENCES `pops` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.rackpops: ~0 rows (approximately)
+DELETE FROM `rackpops`;
 /*!40000 ALTER TABLE `rackpops` DISABLE KEYS */;
+INSERT INTO `rackpops` (`id`, `pop_id`, `aset_id`, `hostname`, `alias`, `users_id`, `created_at`, `updated_at`, `asset_group`) VALUES
+	(1, 1, '43', 'ww.tes.com', 'ww.tes.com', 1, NULL, NULL, NULL),
+	(2, 1, '40', 'www.ibox.com', 'www.ibox.com', 2, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `rackpops` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.schedule
@@ -639,6 +689,7 @@ CREATE TABLE IF NOT EXISTS `schedule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.schedule: ~0 rows (approximately)
+DELETE FROM `schedule`;
 /*!40000 ALTER TABLE `schedule` DISABLE KEYS */;
 /*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
 
@@ -652,6 +703,7 @@ CREATE TABLE IF NOT EXISTS `segment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.segment: ~0 rows (approximately)
+DELETE FROM `segment`;
 /*!40000 ALTER TABLE `segment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `segment` ENABLE KEYS */;
 
@@ -666,6 +718,7 @@ CREATE TABLE IF NOT EXISTS `servicecat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.servicecat: ~0 rows (approximately)
+DELETE FROM `servicecat`;
 /*!40000 ALTER TABLE `servicecat` DISABLE KEYS */;
 /*!40000 ALTER TABLE `servicecat` ENABLE KEYS */;
 
@@ -690,6 +743,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.services: ~0 rows (approximately)
+DELETE FROM `services`;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 
@@ -706,6 +760,7 @@ CREATE TABLE IF NOT EXISTS `slots` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.slots: ~0 rows (approximately)
+DELETE FROM `slots`;
 /*!40000 ALTER TABLE `slots` DISABLE KEYS */;
 /*!40000 ALTER TABLE `slots` ENABLE KEYS */;
 
@@ -736,6 +791,7 @@ CREATE TABLE IF NOT EXISTS `terminasis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.terminasis: ~0 rows (approximately)
+DELETE FROM `terminasis`;
 /*!40000 ALTER TABLE `terminasis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `terminasis` ENABLE KEYS */;
 
@@ -749,6 +805,7 @@ CREATE TABLE IF NOT EXISTS `types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.types: ~0 rows (approximately)
+DELETE FROM `types`;
 /*!40000 ALTER TABLE `types` DISABLE KEYS */;
 /*!40000 ALTER TABLE `types` ENABLE KEYS */;
 
@@ -768,12 +825,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_username_unique` (`username`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_ibox.users: ~0 rows (approximately)
+DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-REPLACE INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `role`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'ADMIN', 'admin', 'admin@gmail.com', NULL, 'admin', 1, 0, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `role`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(1, 'ADMIN', 'admin', 'admin@gmail.com', NULL, 'admin', 1, 0, NULL, NULL, NULL),
+	(2, 'toyib', 'toyib', 'toyib@gmail.com', NULL, 'toyib', 2, 0, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
