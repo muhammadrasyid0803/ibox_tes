@@ -357,13 +357,7 @@
               <!-- <span class="label label-theme pull-right mail-info">3</span> -->
               </a>
           </li>
-          <li>
-            <a class="<?php echo activate_menu('Cetak'); ?>" href="<?php echo site_url('Cetak');?>">
-              <i class="fa fa-tasks"></i>
-              <span>Cetak Laporan </span>
-              <!-- <span class="label label-theme pull-right mail-info">3</span> -->
-              </a>
-          </li>
+         
           <!-- <li class="sub-menu">
             <a href="javascript:;">
               <i class=" fa fa-bar-chart-o"></i>
