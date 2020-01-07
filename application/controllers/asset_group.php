@@ -24,6 +24,7 @@ class Asset_group extends CI_Controller {
 		$pop = $this->input->post('pilih_pop');
 		$data['name'] = $this->asset_m->get_name_pop_by_id($pop);
 		$data['id'] = $pop;
+		$data['no'] = $this->asset_m->get_no_rack();
 		// var_dump($data['id']);
 		// die();
 		
@@ -93,6 +94,7 @@ class Asset_group extends CI_Controller {
 	    	'desc_building' => $this->input->post('txtDescBuilding'),
 	    	'kondisi_rack' => $this->input->post('selectKondisiRack'),
 	    	'kondisi_building' => $this->input->post('selectKondisiBuilding'),
+	    	'no_rack' => $this->input->post('selectNoRack'),
 	    	'id_pop' => $this->input->post('txtIdFkRack')
 	    );
 

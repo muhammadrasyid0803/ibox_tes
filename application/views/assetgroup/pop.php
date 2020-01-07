@@ -42,7 +42,7 @@
         <!-- Modal modal_building -->
               <div class="modal fade" id="modal_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">
+                  <div class="modal-content" style="width: 108%;margin: auto;">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                       <h4 class="modal-title" id="myModalLabel">Building and Infrastructure</h4>
@@ -51,16 +51,24 @@
                       <form class="cmxform form-horizontal style-form" action="#" id="form">
                         <div class="form-group ">
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
-                          <label for="cname" class="control-label col-lg-3">Input Rack</label>
+                          <label for="cname" class="control-label col-lg-2">Input Rack</label>
                           <div class="col-lg-3">
                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRack" required />
                           </div>
-                          <div class="col-lg-3">
+                          <div class="col-lg-2">
                             <select class="form-control" name="selectKondisiRack">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <select class="form-control" name="selectNoRack">
+                              <option value="">Pilih No. Rack</option>
+                                <?php foreach ($no as $n ): ?>
+                                    <option value="<?php echo $n->id;?>"><?php echo $n->aset_id;?></option>
+                                <?php endforeach;?>
                             </select>
                           </div>
                           <div class="col-lg-2">
@@ -68,13 +76,13 @@
                           </div>
                         </div>
                         <div class="form-group ">
-                          <label for="cemail" class="control-label col-lg-3">Input Building</label>
+                          <label for="cemail" class="control-label col-lg-2">Input Building</label>
                           <div class="col-lg-3">
                             <input class=" form-control" placeholder="Description" type="text" name="txtDescBuilding" required />
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiBuilding">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -112,7 +120,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiKwh">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -129,7 +137,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiAcpdb">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -167,7 +175,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiRectifier">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -184,7 +192,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiDcpdb">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -222,7 +230,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiGenset">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -239,7 +247,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiAts">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -256,7 +264,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiInverter">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -273,7 +281,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiUps">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -311,7 +319,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiAc">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -328,7 +336,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiAlarm">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
@@ -438,7 +446,7 @@
                           </div>
                           <div class="col-lg-3">
                             <select class="form-control" name="selectKondisiOdf">
-                              <option value="">Pilih</option>
+                              <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>

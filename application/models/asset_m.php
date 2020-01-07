@@ -6,6 +6,11 @@ class Asset_m extends CI_Model{
     return $query->result();
   }
 
+  public function get_no_rack(){
+    $query = $this->db->get('rackpops');
+    return $query->result();
+  }
+
   public function get_name_pop_by_id($pop){
     $this->db->select('name');
     $this->db->from('pops');
