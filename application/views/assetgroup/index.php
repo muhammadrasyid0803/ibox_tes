@@ -4,7 +4,7 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     Asset Group
-                  </h4>
+                </h4>
               </header>
               <div class="panel-body minimal">
                 <form action="<?php echo base_url('asset_group/pop'); ?>" method="post" >
@@ -190,11 +190,42 @@
                 </section>
               </div>
             </div>
-            
           </div>
           </div>
 
+          <!-- Modal Detail Bulding -->
+              <div class="modal fade" id="detail_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi Rack :</label> <label class="desc_rack"></label>
+                      <br/>
+                      <label>Kondisi Rack :</label> <label class="kondisi_rack"></label>
+                      <br/>
+                      <label>No. Rack :</label> <label class="no_rack"></label>
+                      <br/>
+                      <label>Foto Rack :</label><img src="" id="foto_rack" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi Building :</label> <label class="desc_building"></label>
+                      <br/>
+                      <label>Kondisi Building :</label> <label class="kondisi_building"></label>
+                      <br/>
+                      <label>Foto Building :</label> <label class="foto_building"></label>
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 <script type="text/javascript">
+  window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
     tampil_data_building();
     tampil_data_ac();
@@ -224,15 +255,12 @@
                             // '<td>'+data[i].file_building+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                 }
-                // $("table").css("z-index", "1500");
-                // $("table_id_building").css("overflow-x", "scroll");
-                // overflow-x: scroll;
                 $('#show_data_building').html(html);
             }
         });
@@ -367,5 +395,32 @@
             }
         });
     }
+
+    //Tampil Detail tampil_data_building
+    $('#show_data_building').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_building').modal('show');
+      $('#detail_building').find('.modal-title').text('Building and Infrastructure');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_building',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_building').find('.desc_rack').text(data.desc_rack);
+          $('#detail_building').find('.kondisi_rack').text(data.kondisi_rack);
+          $('#detail_building').find('.no_rack').text(data.aset_id);
+          $('#detail_building').find('#foto_rack').attr('src', base_url + "assets/dokumen/" + data.file_rack);
+          $('#detail_building').find('.desc_building').text(data.desc_building);
+          $('#detail_building').find('.kondisi_building').text(data.kondisi_building);
+          $('#detail_building').find('.foto_building').text(data.file_building);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
   });
 </script>

@@ -102,4 +102,16 @@ class Asset_m extends CI_Model{
 
     return $hasil->result();
   }
+
+  public function tampil_detail_building(){
+    $id = $this->input->get('id');
+    $this->db->select('a_build_infs.*, rackpops.aset_id');
+    $this->db->from('a_build_infs');
+    $this->db->join('rackpops', 'rackpops.id = a_build_infs.no_rack');
+    $this->db->where('a_build_infs.id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
 }

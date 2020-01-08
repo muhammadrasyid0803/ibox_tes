@@ -10,8 +10,8 @@
   <title>Dashio - Bootstrap Admin Template</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?php echo base_url();?>assets/dashio/img/favicon.png" rel="icon">
+  <link href="<?php echo base_url();?>assets/dashio/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url();?>assets/dashio/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -261,7 +261,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="<?php echo base_url();?>assets/dashio/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered"><?php echo $this->session->userdata('name'); ?></h5>
           <li class="mt">
             <a class="<?php echo activate_menu('Dashboard'); ?>" href="<?php echo site_url('Dashboard');?>">
