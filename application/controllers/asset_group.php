@@ -39,7 +39,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_rack(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -64,7 +64,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_building(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -113,7 +113,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_kwh(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -138,7 +138,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_acpdb(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -186,7 +186,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_rectifier(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -211,7 +211,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_dcpdb(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -259,7 +259,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_genset(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -284,7 +284,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_ats(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -309,7 +309,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_inverter(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -334,7 +334,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_ups(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -396,7 +396,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_ac(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -421,7 +421,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_alarm(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
@@ -469,7 +469,7 @@ class Asset_group extends CI_Controller {
 	}
 
 	private function _do_upload_add_foto_odf(){
-	        $config['upload_path']          = 'dokumen/upload/';
+	        $config['upload_path']          = 'assets/dokumen/';
 	        $config['allowed_types']        = 'jpg|png';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
