@@ -214,7 +214,7 @@
                       <br/>
                       <label>Kondisi Building :</label> <label class="kondisi_building"></label>
                       <br/>
-                      <label>Foto Building :</label> <label class="foto_building"></label>
+                      <label>Foto Building :</label> <img src="" id="foto_building" class="img" width="240">
                       <br/>
                     </div>
                     <div class="modal-footer">
@@ -415,7 +415,7 @@
           $('#detail_building').find('#foto_rack').attr('src', base_url + "assets/dokumen/" + data.file_rack);
           $('#detail_building').find('.desc_building').text(data.desc_building);
           $('#detail_building').find('.kondisi_building').text(data.kondisi_building);
-          $('#detail_building').find('.foto_building').text(data.file_building);
+          $('#detail_building').find('#foto_building').attr('src', base_url + "assets/dokumen/" + data.file_building);
         },
         error: function(){
           alert('Could not Edit Data');
