@@ -352,6 +352,29 @@
                 </div>
           </div>
 
+          <!-- Modal detail_odf -->
+          <div class="modal fade" id="detail_odf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi ODF :</label> <label class="desc_odf"></label>
+                      <br/>
+                      <label>Kondisi ODF :</label> <label class="kondisi_odf"></label>
+                      <br/>
+                      <label>Foto ODF :</label><img src="" id="file_odf" class="img" width="240">
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -513,7 +536,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -607,7 +630,7 @@
     $('#show_data_power').on('click', '.item_detail', function(){
       var id = $(this).attr('data');
       $('#detail_power').modal('show');
-      $('#detail_power').find('.modal-title').text('DC Electricity');
+      $('#detail_power').find('.modal-title').text('Power Supply Back Up System');
       $.ajax({
         type: 'ajax',
         method: 'get',
@@ -639,7 +662,7 @@
     $('#show_data_alarm').on('click', '.item_detail', function(){
       var id = $(this).attr('data');
       $('#detail_alarm').modal('show');
-      $('#detail_alarm').find('.modal-title').text('DC Electricity');
+      $('#detail_alarm').find('.modal-title').text('External Alarm And Monitoring System');
       $.ajax({
         type: 'ajax',
         method: 'get',
@@ -654,6 +677,29 @@
           $('#detail_alarm').find('.desc_alarm').text(data.desc_alarm);
           $('#detail_alarm').find('.kondisi_alarm').text(data.kondisi_alarm);
           $('#detail_alarm').find('#file_alarm').attr('src', base_url + "assets/dokumen/" + data.file_alarm);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
+
+    //Tampil Detail show_data_odf
+    $('#show_data_odf').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_odf').modal('show');
+      $('#detail_odf').find('.modal-title').text('Passive Device (ODF)');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_odf',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_odf').find('.desc_odf').text(data.desc_odf);
+          $('#detail_odf').find('.kondisi_odf').text(data.kondisi_odf);
+          $('#detail_odf').find('#file_odf').attr('src', base_url + "assets/dokumen/" + data.file_odf);
         },
         error: function(){
           alert('Could not Edit Data');
