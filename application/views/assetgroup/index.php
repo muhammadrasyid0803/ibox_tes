@@ -253,6 +253,35 @@
                 </div>
           </div>
 
+          <!-- Modal detail_dc -->
+          <div class="modal fade" id="detail_dc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi Rectifier :</label> <label class="desc_rectifier"></label>
+                      <br/>
+                      <label>Kondisi Rectifier :</label> <label class="kondisi_rectifier"></label>
+                      <br/>
+                      <label>Foto Rectifier :</label><img src="" id="foto_rectifier" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi DCPDB :</label> <label class="desc_dcpdb"></label>
+                      <br/>
+                      <label>Kondisi DCPDB :</label> <label class="kondisi_dcpdb"></label>
+                      <br/>
+                      <label>Foto DCPDB :</label> <img src="" id="foto_dcpdb" class="img" width="240">
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -336,7 +365,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -471,6 +500,32 @@
           $('#detail_ac').find('.desc_acpdb').text(data.desc_acpdb);
           $('#detail_ac').find('.kondisi_acpdb').text(data.kondisi_acpdb);
           $('#detail_ac').find('#foto_acpdb').attr('src', base_url + "assets/dokumen/" + data.file_acpdb);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
+
+    //Tampil Detail show_data_dc
+    $('#show_data_dc').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_dc').modal('show');
+      $('#detail_dc').find('.modal-title').text('DC Electricity');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_dc',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_dc').find('.desc_rectifier').text(data.desc_rectifier);
+          $('#detail_dc').find('.kondisi_rectifier').text(data.kondisi_rectifier);
+          $('#detail_dc').find('#foto_rectifier').attr('src', base_url + "assets/dokumen/" + data.file_rectifier);
+          $('#detail_dc').find('.desc_dcpdb').text(data.desc_dcpdb);
+          $('#detail_dc').find('.kondisi_dcpdb').text(data.kondisi_dcpdb);
+          $('#detail_dc').find('#foto_dcpdb').attr('src', base_url + "assets/dokumen/" + data.file_dcpdb);
         },
         error: function(){
           alert('Could not Edit Data');

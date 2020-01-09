@@ -125,4 +125,15 @@ class Asset_m extends CI_Model{
 
     return $hasil->row();
   }
+
+  public function tampil_detail_dc(){
+    $id = $this->input->get('id');
+    $this->db->select('*');
+    $this->db->from('a_dc_electricity');
+    $this->db->where('id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
 }
