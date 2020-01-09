@@ -323,6 +323,35 @@
                 </div>
           </div>
 
+          <!-- Modal detail_alarm -->
+          <div class="modal fade" id="detail_alarm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi AC :</label> <label class="desc_ac"></label>
+                      <br/>
+                      <label>Kondisi AC :</label> <label class="kondisi_ac"></label>
+                      <br/>
+                      <label>Foto AC :</label><img src="" id="file_ac" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi Alarm :</label> <label class="desc_alarm"></label>
+                      <br/>
+                      <label>Kondisi Alarm :</label> <label class="kondisi_alarm"></label>
+                      <br/>
+                      <label>Foto Alarm :</label> <img src="" id="file_alarm" class="img" width="240">
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -458,7 +487,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -599,6 +628,32 @@
           $('#detail_power').find('.desc_ups').text(data.desc_ups);
           $('#detail_power').find('.kondisi_ups').text(data.kondisi_ups);
           $('#detail_power').find('#file_ups').attr('src', base_url + "assets/dokumen/" + data.file_ups);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
+
+    //Tampil Detail show_data_alarm
+    $('#show_data_alarm').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_alarm').modal('show');
+      $('#detail_alarm').find('.modal-title').text('DC Electricity');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_alarm',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_alarm').find('.desc_ac').text(data.desc_ac);
+          $('#detail_alarm').find('.kondisi_ac').text(data.kondisi_ac);
+          $('#detail_alarm').find('#file_ac').attr('src', base_url + "assets/dokumen/" + data.file_ac);
+          $('#detail_alarm').find('.desc_alarm').text(data.desc_alarm);
+          $('#detail_alarm').find('.kondisi_alarm').text(data.kondisi_alarm);
+          $('#detail_alarm').find('#file_alarm').attr('src', base_url + "assets/dokumen/" + data.file_alarm);
         },
         error: function(){
           alert('Could not Edit Data');
