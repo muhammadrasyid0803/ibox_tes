@@ -282,6 +282,47 @@
                 </div>
           </div>
 
+          <!-- Modal detail_power -->
+          <div class="modal fade" id="detail_power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi Genset :</label> <label class="desc_genset"></label>
+                      <br/>
+                      <label>Kondisi Genset :</label> <label class="kondisi_genset"></label>
+                      <br/>
+                      <label>Foto Genset :</label><img src="" id="file_genset" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi ATS :</label> <label class="desc_ats"></label>
+                      <br/>
+                      <label>Kondisi ATS :</label> <label class="kondisi_ats"></label>
+                      <br/>
+                      <label>Foto ATS :</label> <img src="" id="file_ats" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi Inverter :</label> <label class="desc_inverter"></label>
+                      <br/>
+                      <label>Kondisi Inverter :</label> <label class="kondisi_inverter"></label>
+                      <br/>
+                      <label>Foto Inverter :</label> <img src="" id="file_inverter" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi UPS :</label> <label class="desc_ups"></label>
+                      <br/>
+                      <label>Kondisi UPS :</label> <label class="kondisi_ups"></label>
+                      <br/>
+                      <label>Foto UPS :</label> <img src="" id="file_ups" class="img" width="240">
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -391,7 +432,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -526,6 +567,38 @@
           $('#detail_dc').find('.desc_dcpdb').text(data.desc_dcpdb);
           $('#detail_dc').find('.kondisi_dcpdb').text(data.kondisi_dcpdb);
           $('#detail_dc').find('#foto_dcpdb').attr('src', base_url + "assets/dokumen/" + data.file_dcpdb);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
+
+    //Tampil Detail show_data_power
+    $('#show_data_power').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_power').modal('show');
+      $('#detail_power').find('.modal-title').text('DC Electricity');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_power',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_power').find('.desc_genset').text(data.desc_genset);
+          $('#detail_power').find('.kondisi_genset').text(data.kondisi_genset);
+          $('#detail_power').find('#file_genset').attr('src', base_url + "assets/dokumen/" + data.file_genset);
+          $('#detail_power').find('.desc_ats').text(data.desc_ats);
+          $('#detail_power').find('.kondisi_ats').text(data.kondisi_ats);
+          $('#detail_power').find('#file_ats').attr('src', base_url + "assets/dokumen/" + data.file_ats);
+          $('#detail_power').find('.desc_inverter').text(data.desc_inverter);
+          $('#detail_power').find('.kondisi_inverter').text(data.kondisi_inverter);
+          $('#detail_power').find('#file_inverter').attr('src', base_url + "assets/dokumen/" + data.file_inverter);
+          $('#detail_power').find('.desc_ups').text(data.desc_ups);
+          $('#detail_power').find('.kondisi_ups').text(data.kondisi_ups);
+          $('#detail_power').find('#file_ups').attr('src', base_url + "assets/dokumen/" + data.file_ups);
         },
         error: function(){
           alert('Could not Edit Data');
