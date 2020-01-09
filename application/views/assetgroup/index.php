@@ -194,7 +194,7 @@
           </div>
 
           <!-- Modal Detail Bulding -->
-              <div class="modal fade" id="detail_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="detail_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -222,7 +222,36 @@
                     </div>
                   </div>
                 </div>
-              </div>
+          </div>
+
+          <!-- Modal detail_ac -->
+          <div class="modal fade" id="detail_ac" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" id="detail_jobs">
+                      <label>Deskripsi KWH :</label> <label class="desc_kwh"></label>
+                      <br/>
+                      <label>Kondisi KWH :</label> <label class="kondisi_kwh"></label>
+                      <br/>
+                      <label>Foto KWH :</label><img src="" id="foto_kwh" class="img" width="240">
+                      <br/>
+                      <label>Deskripsi ACPDB :</label> <label class="desc_acpdb"></label>
+                      <br/>
+                      <label>Kondisi ACPDB :</label> <label class="kondisi_acpdb"></label>
+                      <br/>
+                      <label>Foto ACPDB :</label> <img src="" id="foto_acpdb" class="img" width="240">
+                      <br/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
 
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
@@ -281,7 +310,7 @@
                             '<td>'+data[i].name+'</td>'+
                             '<td>'+data[i].created_at+'</td>'+
                             '<td style="text-align:right;">'+
-                                '<a href="javascript:;" class="btn btn-success btn-xs item_hapus" data="'+data[i].id+'">Detail</a>'+' '+
+                                '<a href="javascript:;" class="btn btn-success btn-xs item_detail" data="'+data[i].id+'">Detail</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-primary btn-xs item_edit" data="'+data[i].id+'">Edit</a>'+' '+
                                 '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id+'">Hapus</a>'+
                             '</td>'+
@@ -416,6 +445,32 @@
           $('#detail_building').find('.desc_building').text(data.desc_building);
           $('#detail_building').find('.kondisi_building').text(data.kondisi_building);
           $('#detail_building').find('#foto_building').attr('src', base_url + "assets/dokumen/" + data.file_building);
+        },
+        error: function(){
+          alert('Could not Edit Data');
+        }
+      });
+    })
+
+    //Tampil Detail show_data_ac
+    $('#show_data_ac').on('click', '.item_detail', function(){
+      var id = $(this).attr('data');
+      $('#detail_ac').modal('show');
+      $('#detail_ac').find('.modal-title').text('AC Electricity');
+      $.ajax({
+        type: 'ajax',
+        method: 'get',
+        url: '<?php echo base_url() ?>asset_group/detail_ac',
+        data: {id: id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          $('#detail_ac').find('.desc_kwh').text(data.desc_kwh);
+          $('#detail_ac').find('.kondisi_kwh').text(data.kondisi_kwh);
+          $('#detail_ac').find('#foto_kwh').attr('src', base_url + "assets/dokumen/" + data.file_kwh);
+          $('#detail_ac').find('.desc_acpdb').text(data.desc_acpdb);
+          $('#detail_ac').find('.kondisi_acpdb').text(data.kondisi_acpdb);
+          $('#detail_ac').find('#foto_acpdb').attr('src', base_url + "assets/dokumen/" + data.file_acpdb);
         },
         error: function(){
           alert('Could not Edit Data');

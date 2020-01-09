@@ -543,4 +543,9 @@ class Asset_group extends CI_Controller {
 		$result = $this->asset_m->tampil_detail_building();
 		echo json_encode($result);
 	}
+
+	public function detail_ac(){
+		$result = $this->asset_m->tampil_detail_ac();
+		echo json_encode($result);
+	}
 }
