@@ -421,6 +421,52 @@
                 </div>
           </div>
 
+          <!-- Modal Hapus Dc -->
+          <div class="modal fade" id="modal_hapus_dc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Hapus Data</h4>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="modal-body">
+                        <input type="hidden" name="TxtId" id="id_building" value="">
+                        <div class="alert alert-warning">
+                          <p>Apakah Anda yakin ingin menghapus data ini?</p></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button class="btn_hapus btn btn-danger" id="btn_hapus_dc">Hapus</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+
+          <!-- Modal Hapus Power -->
+          <div class="modal fade" id="modal_hapus_power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Hapus Data</h4>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="modal-body">
+                        <input type="hidden" name="TxtId" id="id_building" value="">
+                        <div class="alert alert-warning">
+                          <p>Apakah Anda yakin ingin menghapus data ini?</p></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button class="btn_hapus btn btn-danger" id="btn_hapus_power">Hapus</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -796,6 +842,54 @@
           $('#modal_hapus_ac').modal('hide');
           tampil_data_ac();
           toastr.success('Hapus Data AC Electricity !', 'Success', {timeOut: 5000})
+        }
+      });
+      return false;
+    });
+
+    // Tampil Modal Hapus data DC
+    $('#show_data_dc').on('click','.item_hapus',function(){
+      var id=$(this).attr('data');
+      $('#modal_hapus_dc').modal('show');
+      $('[name="TxtId"]').val(id);
+    });
+
+    // Hapus data DC
+    $('#btn_hapus_dc').on('click',function(){
+      var TxtId=$('#id_building').val();
+      $.ajax({
+        type : "POST",
+        url  : "<?php echo base_url() ?>asset_group/hapus_data_dc",
+        dataType : "JSON",
+        data : {TxtId: TxtId},
+        success: function(data){
+          $('#modal_hapus_dc').modal('hide');
+          tampil_data_dc();
+          toastr.success('Hapus Data DC Electricity !', 'Success', {timeOut: 5000})
+        }
+      });
+      return false;
+    });
+
+    // Tampil Modal Hapus data Power
+    $('#show_data_power').on('click','.item_hapus',function(){
+      var id=$(this).attr('data');
+      $('#modal_hapus_power').modal('show');
+      $('[name="TxtId"]').val(id);
+    });
+
+    // Hapus data Power
+    $('#btn_hapus_power').on('click',function(){
+      var TxtId=$('#id_building').val();
+      $.ajax({
+        type : "POST",
+        url  : "<?php echo base_url() ?>asset_group/hapus_data_power",
+        dataType : "JSON",
+        data : {TxtId: TxtId},
+        success: function(data){
+          $('#modal_hapus_power').modal('hide');
+          tampil_data_power();
+          toastr.success('Hapus Data Power Supply Back Up System!', 'Success', {timeOut: 5000})
         }
       });
       return false;

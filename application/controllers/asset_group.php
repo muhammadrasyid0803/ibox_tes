@@ -580,4 +580,16 @@ class Asset_group extends CI_Controller {
 		$data = $this->asset_m->hapus_data_ac($id);
 		echo json_encode($data);
 	}
+
+	public function hapus_data_dc(){
+		$id = $this->input->post('TxtId');
+		$data = $this->asset_m->hapus_data_dc($id);
+		echo json_encode($data);
+	}
+
+	public function hapus_data_power(){
+		$id = $this->input->post('TxtId');
+		$data = $this->asset_m->hapus_data_power($id);
+		echo json_encode($data);
+	}
 }

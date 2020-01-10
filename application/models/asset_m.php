@@ -179,4 +179,14 @@ class Asset_m extends CI_Model{
     $hasil=$this->db->query("DELETE FROM a_ac_electricity WHERE id='$id'");
     return $hasil;
   }
+
+  public function hapus_data_dc($id){
+    $hasil=$this->db->query("DELETE FROM a_dc_electricity WHERE id='$id'");
+    return $hasil;
+  }
+
+  public function hapus_data_power($id){
+    $hasil=$this->db->query("DELETE FROM a_pwr_supply WHERE id='$id'");
+    return $hasil;
+  }
 }
