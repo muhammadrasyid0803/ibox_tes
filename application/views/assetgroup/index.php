@@ -467,6 +467,52 @@
                 </div>
           </div>
 
+          <!-- Modal Hapus Alarm -->
+          <div class="modal fade" id="modal_hapus_alarm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Hapus Data</h4>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="modal-body">
+                        <input type="hidden" name="TxtId" id="id_building" value="">
+                        <div class="alert alert-warning">
+                          <p>Apakah Anda yakin ingin menghapus data ini?</p></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button class="btn_hapus btn btn-danger" id="btn_hapus_alarm">Hapus</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+
+          <!-- Modal Hapus ODF -->
+          <div class="modal fade" id="modal_hapus_odf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Hapus Data</h4>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="modal-body">
+                        <input type="hidden" name="TxtId" id="id_building" value="">
+                        <div class="alert alert-warning">
+                          <p>Apakah Anda yakin ingin menghapus data ini?</p></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button class="btn_hapus btn btn-danger" id="btn_hapus_odf">Hapus</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -890,6 +936,54 @@
           $('#modal_hapus_power').modal('hide');
           tampil_data_power();
           toastr.success('Hapus Data Power Supply Back Up System!', 'Success', {timeOut: 5000})
+        }
+      });
+      return false;
+    });
+
+    // Tampil Modal Hapus data Alarm
+    $('#show_data_alarm').on('click','.item_hapus',function(){
+      var id=$(this).attr('data');
+      $('#modal_hapus_alarm').modal('show');
+      $('[name="TxtId"]').val(id);
+    });
+
+    // Hapus data Alarm
+    $('#btn_hapus_alarm').on('click',function(){
+      var TxtId=$('#id_building').val();
+      $.ajax({
+        type : "POST",
+        url  : "<?php echo base_url() ?>asset_group/hapus_data_alarm",
+        dataType : "JSON",
+        data : {TxtId: TxtId},
+        success: function(data){
+          $('#modal_hapus_alarm').modal('hide');
+          tampil_data_alarm();
+          toastr.success('Hapus Data External Alarm And Monitoring System!', 'Success', {timeOut: 5000})
+        }
+      });
+      return false;
+    });
+
+    // Tampil Modal Hapus data ODF
+    $('#show_data_odf').on('click','.item_hapus',function(){
+      var id=$(this).attr('data');
+      $('#modal_hapus_odf').modal('show');
+      $('[name="TxtId"]').val(id);
+    });
+
+    // Hapus data ODF
+    $('#btn_hapus_odf').on('click',function(){
+      var TxtId=$('#id_building').val();
+      $.ajax({
+        type : "POST",
+        url  : "<?php echo base_url() ?>asset_group/hapus_data_odf",
+        dataType : "JSON",
+        data : {TxtId: TxtId},
+        success: function(data){
+          $('#modal_hapus_odf').modal('hide');
+          tampil_data_odf();
+          toastr.success('Hapus Data Passive Device (ODF)!', 'Success', {timeOut: 5000})
         }
       });
       return false;
