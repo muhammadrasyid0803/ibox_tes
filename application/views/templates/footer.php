@@ -54,7 +54,7 @@
   <!-- Builidng -->
   <script type="text/javascript">
     $(document).ready(function() {
-      var oTable = $('#table_id_building').dataTable({
+      oTable = $('#table_id_building').dataTable({
         // "autoWidth": true,
         
         "aoColumnDefs": [{
@@ -75,6 +75,8 @@
         // "fixedColumns": true
       });
     });
+
+    var oTable;
   </script>
 
   <!-- ac -->

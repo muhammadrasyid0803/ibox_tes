@@ -568,4 +568,16 @@ class Asset_group extends CI_Controller {
 		$result = $this->asset_m->tampil_detail_odf();
 		echo json_encode($result);
 	}
+
+	public function hapus_data_building(){
+		$id = $this->input->post('TxtId');
+		$data = $this->asset_m->hapus_data_building($id);
+		echo json_encode($data);
+	}
+
+	public function hapus_data_ac(){
+		$id = $this->input->post('TxtId');
+		$data = $this->asset_m->hapus_data_ac($id);
+		echo json_encode($data);
+	}
 }
