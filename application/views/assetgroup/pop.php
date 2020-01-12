@@ -202,6 +202,23 @@
                             <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
                           </div>
                         </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Baterai</label>
+                          <div class="col-lg-3">
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                          </div>
+                          <div class="col-lg-3">
+                            <select class="form-control" name="selectKondisiBaterai">
+                              <option value="">Pilih Kondisi</option>
+                              <option value="Baik">Baik</option>
+                              <option value="Kurang">Kurang</option>
+                              <option value="Rusak">Rusak</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                          </div>
+                        </div>
                       </form>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

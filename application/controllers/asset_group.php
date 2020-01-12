@@ -236,12 +236,39 @@ class Asset_group extends CI_Controller {
 	        return $this->upload->data('file_name');
 	}
 
+	private function _do_upload_add_foto_baterai(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_baterai')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
 	public function tambah_dc(){
 	    $data = array(
 	    	'desc_rectifier' => $this->input->post('txtDescRectifier'),
 	    	'desc_dcpdb' => $this->input->post('txtDescDcpdb'),
 	    	'kondisi_rectifier' => $this->input->post('selectKondisiRectifier'),
 	    	'kondisi_dcpdb' => $this->input->post('selectKondisiDcpdb'),
+	    	'desc_baterai' => $this->input->post('txtDescBaterai'),
+	    	'kondisi_baterai' => $this->input->post('selectKondisiBaterai'),
 	    	'id_pop' => $this->input->post('txtIdFkRack')
 	    );
 
@@ -253,6 +280,11 @@ class Asset_group extends CI_Controller {
 	    if(!empty($_FILES['foto_dcpdb']['name'])){
 	    	$upload = $this->_do_upload_add_foto_dcpdb();
 	    	$data['file_dcpdb'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_baterai']['name'])){
+	    	$upload = $this->_do_upload_add_foto_baterai();
+	    	$data['file_baterai'] = $upload;
 	    }
 
 	    $this->asset_m->tambah_dc_db($data);

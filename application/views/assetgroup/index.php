@@ -248,6 +248,12 @@
                       <br/>
                       <label>Foto DCPDB :</label> <img src="" id="foto_dcpdb" class="img" width="240">
                       <br/>
+                      <label>Deskripsi Baterai :</label> <label class="desc_baterai"></label>
+                      <br/>
+                      <label>Kondisi Baterai :</label> <label class="kondisi_baterai"></label>
+                      <br/>
+                      <label>Foto Baterai :</label> <img src="" id="foto_baterai" class="img" width="240">
+                      <br/>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -794,6 +800,9 @@
           $('#detail_dc').find('.desc_dcpdb').text(data.desc_dcpdb);
           $('#detail_dc').find('.kondisi_dcpdb').text(data.kondisi_dcpdb);
           $('#detail_dc').find('#foto_dcpdb').attr('src', base_url + "assets/dokumen/" + data.file_dcpdb);
+          $('#detail_dc').find('.desc_baterai').text(data.desc_baterai);
+          $('#detail_dc').find('.kondisi_baterai').text(data.kondisi_baterai);
+          $('#detail_dc').find('#foto_baterai').attr('src', base_url + "assets/dokumen/" + data.file_baterai);
         },
         error: function(){
           alert('Could not Edit Data');
