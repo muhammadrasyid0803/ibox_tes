@@ -38,9 +38,7 @@
               <li><a data-toggle="tab" href="#ac">AC Electricity</a></li>
               <li><a data-toggle="tab" href="#DC">DC Electricity</a></li>
               <li><a data-toggle="tab" href="#Power">Power Supply Back Up System</a></li>
-              <li><a data-toggle="tab" href="#Cooling">Cooling System</a></li>
               <li><a data-toggle="tab" href="#Alarm">External Alarm And Monitoring System</a></li>
-              <li><a data-toggle="tab" href="#Network">Network Device</a></li>
               <li><a data-toggle="tab" href="#ODF">Passive Device (ODF)</a></li>
             </ul>
             
@@ -125,26 +123,6 @@
                   </div>
                 </section>
               </div>
-              <div id="Cooling" class="tab-pane fade">
-                <!-- <section class="panel">
-                  <div class="panel-body minimal">
-                      <div class="adv-table">
-                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="table_id_cooling">
-                          <thead>
-                            <tr>
-                              <th>POP</th>
-                              <th>Tanggal di Buat</th>
-                              <th>Aksi</th>
-                            </tr>
-                          </thead>
-                          <tbody id="show_data_cooling">
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                  </div>
-                </section> -->
-              </div>
               <div id="Alarm" class="tab-pane fade">
                 <section class="panel">
                   <div class="panel-body minimal">
@@ -164,10 +142,6 @@
                       </div>
                   </div>
                 </section>
-              </div>
-              <div id="Network" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
               </div>
               <div id="ODF" class="tab-pane fade">
                  <section class="panel">
