@@ -199,4 +199,20 @@ class Asset_m extends CI_Model{
     $hasil=$this->db->query("DELETE FROM a_odf WHERE id='$id'");
     return $hasil;
   }
+
+  public function get_building_by_id($id){
+    $this->db->select('a_build_infs.*, rackpops.aset_id');
+    $this->db->from('a_build_infs');
+    $this->db->join('rackpops', 'rackpops.id = a_build_infs.no_rack');
+    $this->db->where('a_build_infs.id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
+
+  public function update_building($where, $data){
+    $this->db->update('a_build_infs', $data, $where);
+    return $this->db->affected_rows();
+  }
 }

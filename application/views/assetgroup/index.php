@@ -513,6 +513,69 @@
                 </div>
           </div>
 
+          <!-- Modal Edit Building -->
+          <div class="modal fade" id="modal_edit_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Edit Data Building</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" action="#" class="form-horizontal">
+                          <div class="form-group ">
+                            <input type="hidden" name="txtIdBuilding" id="txtIdBuilding" value="" />
+                            <label for="cname" class="control-label col-lg-2">Input Rack</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescRack" id="txtDescRack" required />
+                            </div>
+                            <div class="col-lg-2">
+                              <select class="form-control" name="selectKondisiRack" id="selectKondisiRack">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <select class="form-control" name="selectNoRack" id="selectNoRack">
+                                <option value="">Pilih No. Rack</option>
+                                  <?php foreach ($no as $n ): ?>
+                                      <option value="<?php echo $n->id;?>"><?php echo $n->aset_id;?></option>
+                                  <?php endforeach;?>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_rack" id="foto_rack" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-2">Input Building</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBuilding" id="txtDescBuilding" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiBuilding" id="selectKondisiBuilding">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_building" id="foto_building" capture="camera">
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                      <button type="button" onclick="simpan_edit_building()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -988,5 +1051,50 @@
       });
       return false;
     });
+
+    // Tampil Modal Edit data Building
+    $('#show_data_building').on('click','.item_edit',function(){
+      var id=$(this).attr('data');
+
+      //load data dari AJAX
+        $.ajax({
+            url: "<?php echo base_url() ?>asset_group/edit_building",
+            type: "GET",
+            dataType: "JSON",
+            data : {id:id},
+            success: function(data) {
+                $('[name="txtIdBuilding"]').val(data.id);
+                $('[name="txtDescRack"]').val(data.desc_rack);
+                $('[name="selectKondisiRack"]').val(data.kondisi_rack);
+                $('[name="selectNoRack"]').val(data.no_rack);
+                $('[name="txtDescBuilding"]').val(data.desc_building);
+                $('[name="selectKondisiBuilding"]').val(data.kondisi_building);
+                $('#modal_edit_building').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error Get Data From AJAX');
+            }
+        });
+    });
   });
+
+  function simpan_edit_building() {
+    var formData = new FormData($('#form')[0]);
+        $.ajax({
+            url : "<?php echo base_url() ?>asset_group/update_building",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            success: function(data) {
+                $('#modal_edit_building').modal('hide');
+                toastr.success('Ubah Data Building and Infrastructure!', 'Success', {timeOut: 5000})
+                tampil_data_building();                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / upader data');
+            }
+        });
+  }
 </script>

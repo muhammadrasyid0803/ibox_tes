@@ -11,6 +11,7 @@ class Asset_group extends CI_Controller {
 	{
 		if($this->session->userdata('username')!=""){
 			$data['pop'] = $this->asset_m->get_pop();
+			$data['no'] = $this->asset_m->get_no_rack();
       		$this->load->view('templates/header');
 			$this->load->view('assetgroup/index', $data);
 			$this->load->view('templates/footer');
@@ -603,5 +604,34 @@ class Asset_group extends CI_Controller {
 		$id = $this->input->post('TxtId');
 		$data = $this->asset_m->hapus_data_odf($id);
 		echo json_encode($data);
+	}
+
+	public function edit_building(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_building_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_building(){
+		$data = array(
+			'desc_rack' => $this->input->post('txtDescRack'),
+			'kondisi_rack' => $this->input->post('selectKondisiRack'),
+			'no_rack' => $this->input->post('selectNoRack'),
+			'desc_building' => $this->input->post('txtDescBuilding'),
+			'kondisi_building' => $this->input->post('selectKondisiBuilding'),
+		);
+
+		if(!empty($_FILES['foto_rack']['name'])){
+	    	$upload = $this->_do_upload_add_foto_rack();
+	    	$data['file_rack'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_building']['name'])){
+	    	$upload = $this->_do_upload_add_foto_building();
+	    	$data['file_building'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_building(array('id' => $this->input->post('txtIdBuilding')), $data);
+		echo json_encode($hasil);
 	}
 }
