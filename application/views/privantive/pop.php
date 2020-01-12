@@ -21,13 +21,7 @@
                     <a href="<?php echo base_url('privantive/pilih_asset/4') ?>">Power Supply Back Up System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/5') ?>">Cooling System</a>
-                  </h5>
-                  <h5 class="gen-case">
                      <a href="<?php echo base_url('privantive/pilih_asset/6') ?>">External Alarm And Monitoring System</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/7') ?>">Network Device</a>
                   </h5>
                   <h5 class="gen-case">
                      <a href="<?php echo base_url('privantive/pilih_asset/8') ?>">Passive Device (ODF)</a>
