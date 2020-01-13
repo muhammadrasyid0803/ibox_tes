@@ -9,22 +9,22 @@
               <div class="panel-body minimal">
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset') ?>">Building and Infrastructure</a>
+                     <a href="<?php echo base_url('privantive/pilih_asset/1/').$id ?>">Building and Infrastructure</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/2') ?>">AC Electricity</a>
+                     <a href="<?php echo base_url('privantive/pilih_asset/2/').$id ?>">AC Electricity</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/3') ?>">DC Electricity</a>
+                     <a href="<?php echo base_url('privantive/pilih_asset/3/').$id ?>">DC Electricity</a>
                   </h5>
                   <h5 class="gen-case">
-                    <a href="<?php echo base_url('privantive/pilih_asset/4') ?>">Power Supply Back Up System</a>
+                    <a href="<?php echo base_url('privantive/pilih_asset/4/').$id ?>">Power Supply Back Up System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/6') ?>">External Alarm And Monitoring System</a>
+                     <a href="<?php echo base_url('privantive/pilih_asset/6/').$id ?>">External Alarm And Monitoring System</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/pilih_asset/8') ?>">Passive Device (ODF)</a>
+                     <a href="<?php echo base_url('privantive/pilih_asset/8/').$id ?>">Passive Device (ODF)</a>
                   </h5>
                 </div>
               </div>

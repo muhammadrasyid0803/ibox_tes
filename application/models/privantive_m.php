@@ -13,4 +13,9 @@ class Privantive_m extends CI_Model{
     $query = $this->db->get();
     return $query->row()->name;
   }
+
+  public function tambah_data_kwh($data){
+    $this->db->insert('pm_ac_datakwhmeter', $data);   
+    return $this->db->insert_id();
+  }
 }

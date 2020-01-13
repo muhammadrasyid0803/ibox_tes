@@ -4,6 +4,7 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     Pilih Asset
+                    <!-- <?php echo $id_pop; ?> -->
                   </h4>
               </header>
               <div class="panel-body minimal">
@@ -11,43 +12,43 @@
                 <?php if($nomor == '1'){ ?>
                 <?php } elseif ($nomor == '2') { ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/kwh_meter') ?>">KWH Meter</a>
+                     <a href="<?php echo base_url('privantive/kwh_meter/').$id_pop?>">KWH Meter</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ACPDB') ?>">ACPDB</a>
+                     <a href="<?php echo base_url('privantive/ACPDB/').$id_pop ?>">ACPDB</a>
                   </h5>
                 <?php } elseif($nomor == '3'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/DCPDB') ?>">DCPDB</a>
+                     <a href="<?php echo base_url('privantive/DCPDB/').$id_pop ?>">DCPDB</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/RECTIFIER') ?>">RECTIFIER</a>
+                     <a href="<?php echo base_url('privantive/RECTIFIER/').$id_pop ?>">RECTIFIER</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/Baterai') ?>">Baterai</a>
+                     <a href="<?php echo base_url('privantive/Baterai/').$id_pop ?>">Baterai</a>
                   </h5>
                 <?php } elseif($nomor == '4'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/genset') ?>">Genset</a>
+                     <a href="<?php echo base_url('privantive/genset/').$id_pop ?>">Genset</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ATS') ?>">ATS</a>
+                     <a href="<?php echo base_url('privantive/ATS').$id_pop ?>">ATS</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/Inverter') ?>">Inverter</a>
+                     <a href="<?php echo base_url('privantive/Inverter').$id_pop ?>">Inverter</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/UPS') ?>">UPS</a>
+                     <a href="<?php echo base_url('privantive/UPS').$id_pop ?>">UPS</a>
                   </h5>
                 <?php } elseif($nomor == '5'){ ?>
                 <?php } elseif($nomor == '6'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ENVIROMMENT') ?>">ENVIROMMENT & AC & EKSTERNAL ALARM</a>
+                     <a href="<?php echo base_url('privantive/ENVIROMMENT').$id_pop ?>">ENVIROMMENT & AC & EKSTERNAL ALARM</a>
                   </h5>
                 <?php } elseif($nomor == '7'){ ?>
                 <?php } elseif($nomor == '8'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ODF') ?>">ODF</a>
+                     <a href="<?php echo base_url('privantive/ODF').$id_pop ?>">ODF</a>
                   </h5>
                 <?php } ?>
                 </div>

@@ -23,7 +23,7 @@ class Privantive extends CI_Controller {
 	{
 		$pop = $this->input->post('pilih_pop');
 		$data['name'] = $this->privantive_m->get_name_pop_by_id($pop);
-		
+		$data['id'] = $pop;
 		if ($pop == "pilih") {
 			redirect(base_url("Privantive"));
 		}
@@ -38,7 +38,7 @@ class Privantive extends CI_Controller {
 	{
 		if($this->session->userdata('username')!=""){
 			// $data['pop'] = $this->privantive_m->get_pop();
-
+			$data['id_pop'] = $this->uri->segment('4');
 			$data['nomor'] = $no;
       		$this->load->view('templates/header');
 			$this->load->view('privantive/pilih_asset', $data);
@@ -51,8 +51,9 @@ class Privantive extends CI_Controller {
 	public function kwh_meter()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/kwh');
+			$this->load->view('privantive/kwh', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -167,5 +168,22 @@ class Privantive extends CI_Controller {
     	} else {
       		$this->load->view('pesan_error');
     	}
+	}
+
+	public function tambah_data_kwh()
+	{
+		$data = array(
+	    	'id_pelanggan' => $this->input->post('txtIdPelanggan'),
+	    	'id_kwh_meter' => $this->input->post('txtIdKwh'),
+	    	'daya_pasang' => $this->input->post('txtDaya'),
+	    	'mcb_pasang' => $this->input->post('txtMcb'),
+	    	'fasa' => $this->input->post('txtFasa'),
+	    	'no_label_amarta' => $this->input->post('txtAmarta'),
+	    	'gembok' => $this->input->post('rd_gembok'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_data_kwh($data);
+		echo json_encode(array("status" => true));
 	}
 }
