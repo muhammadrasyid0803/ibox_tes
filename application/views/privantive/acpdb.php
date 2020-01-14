@@ -9,7 +9,7 @@
               <div class="panel-body minimal">
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Data ACPDB</a> 
+                     <a data-target="#modal_data_acpdb" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_data_acpdb">Data ACPDB</a> 
                   </h5>
                   <h5 class="gen-case">
                      <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Inpeksi</a> 
@@ -36,13 +36,13 @@
           </div>
         </div>
 
-        <!-- Modal modal_building -->
-              <div class="modal fade" id="modal_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- Modal modal_data_acpdb -->
+              <div class="modal fade" id="modal_data_acpdb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel">Building and Infrastructure</h4>
+                      <h4 class="modal-title" id="myModalLabel">Data ACPDB</h4>
                     </div>
                     <div class="modal-body">
                       <form class="cmxform form-horizontal style-form" method="get" action="">

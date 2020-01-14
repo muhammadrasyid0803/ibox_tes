@@ -97,7 +97,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
         <!-- Modal modal_inpeksi -->
               <div class="modal fade" id="modal_inpeksi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -164,7 +163,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
          <!-- Modal modal_pengukur_tegangan -->
               <div class="modal fade" id="modal_pengukur_tegangan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -244,7 +242,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
         <!-- Modal modal_lain_lain -->
               <div class="modal fade" id="modal_lain_lain" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -259,8 +256,7 @@
                         <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
                         <div class="form-group">
                           <div class="col-lg-12">
-                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtLainlain" required/>
-                            </textarea>
+                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtLainlain" required/></textarea>
                           </div>
                         </div>
                       </form>
@@ -272,7 +268,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
         <!-- Modal modal_temuan -->
               <div class="modal fade" id="modal_temuan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -287,8 +282,7 @@
                         <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
                         <div class="form-group">
                           <div class="col-lg-12">
-                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtTemuan" required/>
-                            </textarea>
+                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtTemuan" required/></textarea>
                           </div>
                         </div>
                       </form>
@@ -300,7 +294,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
         <!-- Modal modal_dokumentasi -->
               <div class="modal fade" id="modal_dokumentasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -336,7 +329,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
 
         <script type="text/javascript">
           function simpan_data_kwh() {

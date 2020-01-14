@@ -15,32 +15,32 @@ class Privantive_m extends CI_Model{
   }
 
   public function tambah_data_kwh($data){
-    $this->db->insert('pm_ac_datakwhmeter', $data);   
+    $this->db->insert('pm_ac_kwh_datakwhmeter', $data);   
     return $this->db->insert_id();
   }
 
   public function tambah_inspeksi($data){
-    $this->db->insert('pm_ac_inspeksi', $data);   
+    $this->db->insert('pm_ac_kwh_inspeksi', $data);   
     return $this->db->insert_id();
   }
 
   public function tambah_pengukuran_tegangan($data){
-    $this->db->insert('pm_ac_pengukuran_tegangan', $data);   
+    $this->db->insert('pm_ac_kwh_pengukuran_tegangan', $data);   
     return $this->db->insert_id();
   }
 
   public function tambah_lain_lain($data){
-    $this->db->insert('pm_ac_lain_lain', $data);   
+    $this->db->insert('pm_ac_kwh_lain_lain', $data);   
     return $this->db->insert_id();
   }
 
   public function tambah_temuan($data){
-    $this->db->insert('pm_ac_temuan', $data);   
+    $this->db->insert('pm_ac_kwh_temuan', $data);   
     return $this->db->insert_id();
   }
 
   public function tambah_dokumentasi($data){
-    $this->db->insert('pm_ac_dokumentasi', $data);   
+    $this->db->insert('pm_ac_kwh_dokumentasi', $data);   
     return $this->db->insert_id();
   }
 }
