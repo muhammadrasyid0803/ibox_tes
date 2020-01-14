@@ -325,17 +325,17 @@ class Privantive extends CI_Controller {
 
 	    if(!empty($_FILES['foto_1']['name'])){
 	    	$upload = $this->_do_upload_add_foto_1();
-	    	$data['file_rack'] = $upload;
+	    	$data['foto_1'] = $upload;
 	    }
 
 	    if(!empty($_FILES['foto_2']['name'])){
 	    	$upload = $this->_do_upload_add_foto_2();
-	    	$data['file_rack'] = $upload;
+	    	$data['foto_2'] = $upload;
 	    }
 
 	    if(!empty($_FILES['foto_3']['name'])){
 	    	$upload = $this->_do_upload_add_foto_3();
-	    	$data['file_rack'] = $upload;
+	    	$data['foto_3'] = $upload;
 	    }
 
 	    $this->privantive_m->tambah_dokumentasi($data);
