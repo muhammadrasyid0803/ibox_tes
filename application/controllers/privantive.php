@@ -170,8 +170,7 @@ class Privantive extends CI_Controller {
     	}
 	}
 
-	public function tambah_data_kwh()
-	{
+	public function tambah_data_kwh(){
 		$data = array(
 	    	'id_pelanggan' => $this->input->post('txtIdPelanggan'),
 	    	'id_kwh_meter' => $this->input->post('txtIdKwh'),
@@ -184,6 +183,21 @@ class Privantive extends CI_Controller {
 	    );
 
 	    $this->privantive_m->tambah_data_kwh($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_inspeksi(){
+		$data = array(
+	    	'kondisi_box' => $this->input->post('selectKondisiKwh'),
+	    	'indikator_r' => $this->input->post('rd_frasa_r'),
+	    	'indikator_s' => $this->input->post('rd_frasa_s'),
+	    	'indikator_t' => $this->input->post('rd_frasa_t'),
+	    	'merek_tipe' => $this->input->post('txtMerekNTipe'),
+	    	'k_terminal_mcb' => $this->input->post('rd_terminal_mcb'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_inspeksi($data);
 		echo json_encode(array("status" => true));
 	}
 }
