@@ -200,4 +200,145 @@ class Privantive extends CI_Controller {
 	    $this->privantive_m->tambah_inspeksi($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function tambah_pengukuran_tegangan(){
+		$data = array(
+	    	'r_s_tegangan' => $this->input->post('txtR_S_tegangan'),
+	    	'r_t_tegangan' => $this->input->post('txtR_T_tegangan'),
+	    	's_t_tegangan' => $this->input->post('txtS_T_tegangan'),
+	    	'n_g_tegangan' => $this->input->post('txtN_G_tegangan'),
+	    	'r_n_tegangan' => $this->input->post('txtR_N_tegangan'),
+	    	's_n_tegangan' => $this->input->post('txtS_N_tegangan'),
+	    	't_n_tegangan' => $this->input->post('txtT_N_tegangan'),
+	    	'r_g_tegangan' => $this->input->post('txtR_G_tegangan'),
+	    	's_g_tegangan' => $this->input->post('txtS_G_tegangan'),
+	    	't_g_tegangan' => $this->input->post('txtT_G_tegangan'),
+	    	'fasa_r_beban' => $this->input->post('txt_fasa_r_beban'),
+	    	'fasa_s_beban' => $this->input->post('txt_fasa_s_beban'),
+	    	'fasa_t_beban' => $this->input->post('txt_fasa_t_beban'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_pengukuran_tegangan($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_lain_lain(){
+		$data = array(
+	    	'kondisi_box' => $this->input->post('txtLainlain'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_lain_lain($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_temuan(){
+		$data = array(
+	    	'kondisi_box' => $this->input->post('txtTemuan'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_temuan($data);
+		echo json_encode(array("status" => true));
+	}
+
+	private function _do_upload_add_foto_1(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_1')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_2(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_2')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_3(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_3')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	public function tambah_dokumentasi(){
+		$data = array(
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    if(!empty($_FILES['foto_1']['name'])){
+	    	$upload = $this->_do_upload_add_foto_1();
+	    	$data['file_rack'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_2']['name'])){
+	    	$upload = $this->_do_upload_add_foto_2();
+	    	$data['file_rack'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_3']['name'])){
+	    	$upload = $this->_do_upload_add_foto_3();
+	    	$data['file_rack'] = $upload;
+	    }
+
+	    $this->privantive_m->tambah_dokumentasi($data);
+		echo json_encode(array("status" => true));
+	}
 }

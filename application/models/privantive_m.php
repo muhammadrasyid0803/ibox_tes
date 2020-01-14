@@ -23,4 +23,25 @@ class Privantive_m extends CI_Model{
     $this->db->insert('pm_ac_inspeksi', $data);   
     return $this->db->insert_id();
   }
+
+  public function tambah_pengukuran_tegangan($data){
+    $this->db->insert('pm_ac_pengukuran_tegangan', $data);   
+    return $this->db->insert_id();
+  }
+
+  // public function tambah_lain_lain($data){
+  //   $this->db->insert('pm_ac_inspeksi', $data);   
+  //   return $this->db->insert_id();
+  // }
+
+  // public function tambah_temuan($data){
+  //   $this->db->insert('pm_ac_inspeksi', $data);   
+  //   return $this->db->insert_id();
+  // }
+
+// public function tambah_dokumentasi($data){
+  //   $this->db->insert('pm_ac_inspeksi', $data);   
+  //   return $this->db->insert_id();
+  // }
+  
 }
