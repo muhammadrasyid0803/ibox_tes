@@ -225,7 +225,7 @@ class Privantive extends CI_Controller {
 
 	public function tambah_lain_lain(){
 		$data = array(
-	    	'kondisi_box' => $this->input->post('txtLainlain'),
+	    	'keterangan' => $this->input->post('txtLainlain'),
 	    	'id_pop' => $this->input->post('txtIdPOP'),
 	    );
 
