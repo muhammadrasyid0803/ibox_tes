@@ -63,8 +63,9 @@ class Privantive extends CI_Controller {
 	public function ACPDB()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/acpdb');
+			$this->load->view('privantive/acpdb', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -339,6 +340,36 @@ class Privantive extends CI_Controller {
 	    }
 
 	    $this->privantive_m->tambah_dokumentasi($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_data_acpdb(){
+		$data = array(
+	    	'kondisi_box' => $this->input->post('selectKondisiAcpdb'),
+	    	'aset_amarta' => $this->input->post('txtAmarta'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_data_acpdb($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_inspeksi_acpdb(){
+		$data = array(
+	    	'k_terminal_mcb' => $this->input->post('selectKondisiTerminalMCB'),
+	    	'indikator_r' => $this->input->post('rd_frasa_r'),
+	    	'indikator_s' => $this->input->post('rd_frasa_s'),
+	    	'indikator_t' => $this->input->post('rd_frasa_t'),
+	    	'timer_theben_ac' => $this->input->post('selectUjiTimerAC'),
+	    	'thermostat_honeywell_k' => $this->input->post('selectUjiThermostatKontraktor'),
+	    	'thermostat_dc_fan' => $this->input->post('selectUjiThermostatDcFan'),
+	    	'fail_over' => $this->input->post('selectFailMcbAcpdb'),
+	    	'merek_tipe' => $this->input->post('txtMerekNTipe'),
+	    	'perangkat_off' => $this->input->post('txtPerangkatOFF'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_inspeksi_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
 }
