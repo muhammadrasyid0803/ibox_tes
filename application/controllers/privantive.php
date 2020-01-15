@@ -404,4 +404,14 @@ class Privantive extends CI_Controller {
 	    $this->privantive_m->tambah_lain_lain_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function tambah_temuan_acpdb(){
+		$data = array(
+	    	'keterangan' => $this->input->post('txtTemuan'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_temuan_acpdb($data);
+		echo json_encode(array("status" => true));
+	}
 }
