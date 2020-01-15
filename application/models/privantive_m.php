@@ -53,4 +53,9 @@ class Privantive_m extends CI_Model{
     $this->db->insert('pm_ac_acpdb_inspeksi', $data);   
     return $this->db->insert_id();
   }
+
+  public function tambah_pengukuran_tegangan_acpdb($data){
+    $this->db->insert('pm_ac_acpdb_pengukuran_tegangan', $data);   
+    return $this->db->insert_id();
+  }
 }

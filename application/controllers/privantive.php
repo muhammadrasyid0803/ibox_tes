@@ -372,4 +372,26 @@ class Privantive extends CI_Controller {
 	    $this->privantive_m->tambah_inspeksi_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function tambah_pengukuran_tegangan_acpdb(){
+		$data = array(
+	    	'r_s_tegangan' => $this->input->post('txtR_S_tegangan'),
+	    	'r_t_tegangan' => $this->input->post('txtR_T_tegangan'),
+	    	's_t_tegangan' => $this->input->post('txtS_T_tegangan'),
+	    	'n_g_tegangan' => $this->input->post('txtN_G_tegangan'),
+	    	'r_n_tegangan' => $this->input->post('txtR_N_tegangan'),
+	    	's_n_tegangan' => $this->input->post('txtS_N_tegangan'),
+	    	't_n_tegangan' => $this->input->post('txtT_N_tegangan'),
+	    	'r_g_tegangan' => $this->input->post('txtR_G_tegangan'),
+	    	's_g_tegangan' => $this->input->post('txtS_G_tegangan'),
+	    	't_g_tegangan' => $this->input->post('txtT_G_tegangan'),
+	    	'fasa_r_beban' => $this->input->post('txt_fasa_r_beban'),
+	    	'fasa_s_beban' => $this->input->post('txt_fasa_s_beban'),
+	    	'fasa_t_beban' => $this->input->post('txt_fasa_t_beban'),
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    $this->privantive_m->tambah_pengukuran_tegangan_acpdb($data);
+		echo json_encode(array("status" => true));
+	}
 }
