@@ -215,4 +215,18 @@ class Asset_m extends CI_Model{
     $this->db->update('a_build_infs', $data, $where);
     return $this->db->affected_rows();
   }
+
+  public function get_ac_by_id($id){
+    $this->db->from('a_ac_electricity');
+    $this->db->where('id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
+
+  public function update_ac($where, $data){
+    $this->db->update('a_ac_electricity', $data, $where);
+    return $this->db->affected_rows();
+  }
 }

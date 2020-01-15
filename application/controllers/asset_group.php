@@ -666,4 +666,32 @@ class Asset_group extends CI_Controller {
 	    $hasil = $this->asset_m->update_building(array('id' => $this->input->post('txtIdBuilding')), $data);
 		echo json_encode($hasil);
 	}
+
+	public function edit_ac(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_ac_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_ac(){
+		$data = array(
+			'desc_kwh' => $this->input->post('txtDescKwh'),
+			'kondisi_kwh' => $this->input->post('selectKondisiKwh'),
+			'desc_acpdb' => $this->input->post('txtDescAcpdb'),
+			'kondisi_acpdb' => $this->input->post('selectKondisiAcpdb'),
+		);
+
+		if(!empty($_FILES['foto_Kwh']['name'])){
+	    	$upload = $this->_do_upload_add_foto_kwh();
+	    	$data['file_kwh'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_acpdb']['name'])){
+	    	$upload = $this->_do_upload_add_foto_acpdb();
+	    	$data['file_acpdb'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_ac(array('id' => $this->input->post('txtIdAC')), $data);
+		echo json_encode($hasil);
+	}
 }
