@@ -428,9 +428,9 @@
 
           function simpan_lain_lain() {
               var url;
-              // url = '<?php echo site_url('Privantive/tambah_data_acpdb') ;?>';
+              url = '<?php echo site_url('Privantive/tambah_lain_lain_acpdb') ;?>';
 
-              var formData = new FormData($('#form_inspeksi')[0]);
+              var formData = new FormData($('#form_lain_lain')[0]);
               $.ajax({
                   url : url,
                   type: "POST",
@@ -439,9 +439,9 @@
                   processData: false,
                   dataType: "JSON",
                   success: function(data) {
-                      $('#form_inspeksi')[0].reset();
-                      $('#modal_inspeksi').modal('hide');                
-                      toastr.success('Tambah Data ACPDB Berhasil!', 'Success', {timeOut: 5000})
+                      $('#form_lain_lain')[0].reset();
+                      $('#modal_lain_lain').modal('hide');                
+                      toastr.success('Tambah Lain-Lain ACPDB Berhasil!', 'Success', {timeOut: 5000})
                   },
                   error: function(jqXHR, textStatus, errorThrown) {
                       alert('Error adding / upader data');
