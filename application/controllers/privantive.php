@@ -246,7 +246,7 @@ class Privantive extends CI_Controller {
 
 	private function _do_upload_add_foto_1(){
 	        $config['upload_path']          = 'assets/dokumen/';
-	        $config['allowed_types']        = 'jpg|png';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
 	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
@@ -271,7 +271,7 @@ class Privantive extends CI_Controller {
 
 	private function _do_upload_add_foto_2(){
 	        $config['upload_path']          = 'assets/dokumen/';
-	        $config['allowed_types']        = 'jpg|png';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
 	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
@@ -296,7 +296,7 @@ class Privantive extends CI_Controller {
 
 	private function _do_upload_add_foto_3(){
 	        $config['upload_path']          = 'assets/dokumen/';
-	        $config['allowed_types']        = 'jpg|png';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
 	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
 	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
 	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
@@ -412,6 +412,30 @@ class Privantive extends CI_Controller {
 	    );
 
 	    $this->privantive_m->tambah_temuan_acpdb($data);
+		echo json_encode(array("status" => true));
+	}
+
+	public function tambah_dokumentasi_acpdb(){
+		$data = array(
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    if(!empty($_FILES['foto_1']['name'])){
+	    	$upload = $this->_do_upload_add_foto_1();
+	    	$data['foto_1'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_2']['name'])){
+	    	$upload = $this->_do_upload_add_foto_2();
+	    	$data['foto_2'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_3']['name'])){
+	    	$upload = $this->_do_upload_add_foto_3();
+	    	$data['foto_3'] = $upload;
+	    }
+
+	    $this->privantive_m->tambah_dokumentasi_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
 }

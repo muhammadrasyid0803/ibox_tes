@@ -303,7 +303,7 @@
                       <h4 class="modal-title" id="myModalLabel">Foto single line ACPDB (1 FOTO)</h4>
                     </div>
                     <div class="modal-body">
-                      <form id="form_dokumentasi" action="#" class="cmxform form-horizontal style-form">
+                      <form id="form_foto_single" action="#" class="cmxform form-horizontal style-form">
                         <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
                         <div class="form-group">
                           <label for="cemail" class="control-label col-lg-2">Foto 1</label>
@@ -497,9 +497,9 @@
 
           function simpan_dokumentasi() {
               var url;
-              // url = '<?php echo site_url('Privantive/tambah_data_acpdb') ;?>';
+              url = '<?php echo site_url('Privantive/tambah_dokumentasi_acpdb') ;?>';
 
-              var formData = new FormData($('#form_inspeksi')[0]);
+              var formData = new FormData($('#form_dokumentasi')[0]);
               $.ajax({
                   url : url,
                   type: "POST",
@@ -508,9 +508,9 @@
                   processData: false,
                   dataType: "JSON",
                   success: function(data) {
-                      $('#form_inspeksi')[0].reset();
-                      $('#modal_inspeksi').modal('hide');                
-                      toastr.success('Tambah Data ACPDB Berhasil!', 'Success', {timeOut: 5000})
+                      $('#form_dokumentasi')[0].reset();
+                      $('#modal_dokumentasi').modal('hide');                
+                      toastr.success('Tambah Dokumentasi ACPDB Berhasil!', 'Success', {timeOut: 5000})
                   },
                   error: function(jqXHR, textStatus, errorThrown) {
                       alert('Error adding / upader data');

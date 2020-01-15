@@ -68,4 +68,9 @@ class Privantive_m extends CI_Model{
     $this->db->insert('pm_ac_acpdb_temuan', $data);   
     return $this->db->insert_id();
   }
+
+  public function tambah_dokumentasi_acpdb($data){
+    $this->db->insert('pm_ac_acpdb_dokumentasi', $data);   
+    return $this->db->insert_id();
+  }
 }
