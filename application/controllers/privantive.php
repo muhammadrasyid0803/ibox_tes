@@ -438,4 +438,18 @@ class Privantive extends CI_Controller {
 	    $this->privantive_m->tambah_dokumentasi_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function tambah_foto_single_acpdb(){
+		$data = array(
+	    	'id_pop' => $this->input->post('txtIdPOP'),
+	    );
+
+	    if(!empty($_FILES['foto_1']['name'])){
+	    	$upload = $this->_do_upload_add_foto_1();
+	    	$data['foto'] = $upload;
+	    }
+
+	    $this->privantive_m->tambah_foto_single_acpdb($data);
+		echo json_encode(array("status" => true));
+	}
 }

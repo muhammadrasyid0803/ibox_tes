@@ -474,9 +474,9 @@
 
           function simpan_foto_single() {
               var url;
-              // url = '<?php echo site_url('Privantive/tambah_data_acpdb') ;?>';
+              url = '<?php echo site_url('Privantive/tambah_foto_single_acpdb') ;?>';
 
-              var formData = new FormData($('#form_inspeksi')[0]);
+              var formData = new FormData($('#form_foto_single')[0]);
               $.ajax({
                   url : url,
                   type: "POST",
@@ -485,9 +485,9 @@
                   processData: false,
                   dataType: "JSON",
                   success: function(data) {
-                      $('#form_inspeksi')[0].reset();
-                      $('#modal_inspeksi').modal('hide');                
-                      toastr.success('Tambah Data ACPDB Berhasil!', 'Success', {timeOut: 5000})
+                      $('#form_foto_single')[0].reset();
+                      $('#modal_foto_single').modal('hide');                
+                      toastr.success('Tambah Foto single line ACPDB Berhasil!', 'Success', {timeOut: 5000})
                   },
                   error: function(jqXHR, textStatus, errorThrown) {
                       alert('Error adding / upader data');
