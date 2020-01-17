@@ -827,6 +827,44 @@
                 </div>
           </div>
 
+          <!-- Modal Edit ODF -->
+          <div class="modal fade" id="modal_edit_odf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Edit Data ODF</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_odf" action="#" class="form-horizontal">
+                          <div class="form-group ">
+                            <input type="hidden" name="txtIdOdf" value="" />
+                            <label for="cname" class="control-label col-lg-3">ODF</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiOdf">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_Odf" capture="camera">
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                      <button type="button" onclick="simpan_edit_odf()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -1432,6 +1470,28 @@
             }
         });
     });
+
+    // Tampil Modal Edit data ODF
+    $('#show_data_odf').on('click','.item_edit',function(){
+      var id=$(this).attr('data');
+
+      //load data dari AJAX
+        $.ajax({
+            url: "<?php echo base_url() ?>asset_group/edit_odf",
+            type: "GET",
+            dataType: "JSON",
+            data : {id:id},
+            success: function(data) {
+                $('[name="txtIdOdf"]').val(data.id);
+                $('[name="txtDescOdf"]').val(data.desc_odf);
+                $('[name="selectKondisiOdf"]').val(data.kondisi_odf);
+                $('#modal_edit_odf').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error Get Data From AJAX');
+            }
+        });
+    });
   });
 
   function simpan_edit_building() {
@@ -1531,6 +1591,27 @@
                 $('#modal_edit_alarm').modal('hide');
                 toastr.success('Ubah Data External Alarm And Monitoring System Berhasil!', 'Success', {timeOut: 5000})
                 tampil_data_alarm();                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / upader data');
+            }
+        });
+  }
+
+  function simpan_edit_odf() {
+    var formData = new FormData($('#form_odf')[0]);
+        $.ajax({
+            url : "<?php echo base_url() ?>asset_group/update_odf",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            success: function(data) {
+                $('#form_odf')[0].reset();
+                $('#modal_edit_odf').modal('hide');
+                toastr.success('Ubah Data Passive Device (ODF) Berhasil!', 'Success', {timeOut: 5000})
+                tampil_data_odf();                
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error adding / upader data');

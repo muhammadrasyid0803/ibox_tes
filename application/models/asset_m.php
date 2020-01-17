@@ -271,4 +271,18 @@ class Asset_m extends CI_Model{
     $this->db->update('a_monitoring_sistem', $data, $where);
     return $this->db->affected_rows();
   }
+
+  public function get_odf_by_id($id){
+    $this->db->from('a_odf');
+    $this->db->where('id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
+
+  public function update_odf($where, $data){
+    $this->db->update('a_odf', $data, $where);
+    return $this->db->affected_rows();
+  }
 }

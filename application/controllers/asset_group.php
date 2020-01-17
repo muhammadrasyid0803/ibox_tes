@@ -802,4 +802,25 @@ class Asset_group extends CI_Controller {
 	    $hasil = $this->asset_m->update_alarm(array('id' => $this->input->post('txtIdAlarm')), $data);
 		echo json_encode($hasil);
 	}
+
+	public function edit_odf(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_odf_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_odf(){
+		$data = array(
+			'desc_odf' => $this->input->post('txtDescOdf'),
+			'kondisi_odf' => $this->input->post('selectKondisiOdf'),
+		);
+
+		if(!empty($_FILES['foto_Odf']['name'])){
+	    	$upload = $this->_do_upload_add_foto_odf();
+	    	$data['file_odf'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_odf(array('id' => $this->input->post('txtIdOdf')), $data);
+		echo json_encode($hasil);
+	}
 }
