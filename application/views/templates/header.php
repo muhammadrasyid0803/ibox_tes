@@ -35,11 +35,15 @@
   <link href="<?php echo base_url();?>assets/dashio/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dashio/css/style-responsive.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dashio/css/table-responsive.css" rel="stylesheet">
- <!--  <style type="text/css">
-    table.table_id_building{
-        width: 50px;
+
+  <!-- Validasi Css -->
+  <style type="text/css">
+    .pesan{
+      display: none;
+      color: red; 
+      margin: 10px;
     }
-  </style> -->
+  </style>
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/

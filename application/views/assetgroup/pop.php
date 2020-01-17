@@ -9,7 +9,7 @@
               <div class="panel-body minimal">
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Building and Infrastructure</a>
+                     <button type="button" class="btn btn-primary" onclick="Building()">Building and Infrastructure</button>
                   </h5>
                   <h5 class="gen-case">
                      <a data-target="#modal_ac" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_ac">AC Electricity</a>
@@ -53,43 +53,49 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-2">Input Rack</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescRack" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescRack" id="txtDescRack" required />
+                            <span class="pesan pesan-desc_rack">Silahkan Isi Kolom Rack</span>
                           </div>
                           <div class="col-lg-2">
-                            <select class="form-control" name="selectKondisiRack">
+                            <select class="form-control" name="selectKondisiRack" id="selectKondisiRack">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiRack">Silahkan Pilih Kondisi Rack</span>
                           </div>
                           <div class="col-lg-2">
-                            <select class="form-control" name="selectNoRack">
+                            <select class="form-control" name="selectNoRack" id="selectNoRack">
                               <option value="">Pilih No. Rack</option>
                                 <?php foreach ($no as $n ): ?>
                                     <option value="<?php echo $n->id;?>"><?php echo $n->aset_id;?></option>
                                 <?php endforeach;?>
                             </select>
+                            <span class="pesan pesan-selectNoRack">Silahkan Pilih No Rack</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_rack" capture="camera">
+                            <input type="file" accept="image/*" name="foto_rack" id="foto_rack" capture="camera">
+                            <!-- <span class="pesan pesan-foto_rack">Silahkan Isi Kolom Rack</span> -->
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-2">Input Building</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBuilding" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBuilding" id="txtDescBuilding" required />
+                            <span class="pesan pesan-txtDescBuilding">Silahkan Isi Kolom Building</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiBuilding">
+                            <select class="form-control" name="selectKondisiBuilding" id="selectKondisiBuilding">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiBuilding">Silahkan Pilih Kondisi Building</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_building" capture="camera">
+                            <input type="file" accept="image/*" name="foto_building" id="foto_building" capture="camera">
                           </div>
                         </div>
                       </form>
@@ -412,9 +418,61 @@
             </div>  
 
     <script type="text/javascript">
-    
+      $(document).ready(function(){
+          $("#txtDescRack").keyup(function () {
+              $(".pesan-desc_rack").hide();
+          });
+          $("#txtDescBuilding").keyup(function () {
+              $(".pesan-txtDescBuilding").hide();
+          });
+          $('#selectKondisiBuilding').change(function(){
+              $(".pesan-selectKondisiBuilding").hide();
+          });
+          $('#selectNoRack').change(function(){
+              $(".pesan-selectNoRack").hide();
+          });
+          $('#selectKondisiRack').change(function(){
+              $(".pesan-selectKondisiRack").hide();
+          });
+      });
+      
+      function Building() {
+        $('#form')[0].reset();
+        $(".pesan-desc_rack").hide();
+        $(".pesan-txtDescBuilding").hide();
+        $(".pesan-selectKondisiBuilding").hide();
+        $(".pesan-selectNoRack").hide();
+        $(".pesan-selectKondisiRack").hide();
+        $('#modal_building').modal('show');
+      }
+
       function simpan_building_infa() {
           var url;
+
+            var desc_rack = $('#txtDescRack').val().length;
+            var selectKondisiRack = $('#selectKondisiRack').val().length;                    
+            var selectNoRack = $('#selectNoRack').val().length;         
+            var txtDescBuilding = $('#txtDescBuilding').val().length;           
+            var selectKondisiBuilding = $('#selectKondisiBuilding').val().length; 
+
+                if (desc_rack == 0 || selectKondisiRack == "" || selectNoRack == 0 || txtDescBuilding == 0 || selectKondisiBuilding == "") {              
+                    if (desc_rack == 0) {              
+                        $(".pesan-desc_rack").css('display','block');
+                    }
+                    if (selectKondisiRack == 0) {                
+                        $(".pesan-selectKondisiRack").css('display','block');
+                    }
+                    if (selectNoRack == 0) {                
+                        $(".pesan-selectNoRack").css('display','block');
+                    }
+                    if (txtDescBuilding == 0) {              
+                        $(".pesan-txtDescBuilding").css('display','block');
+                    }
+                    if (selectKondisiBuilding == 0) {             
+                        $(".pesan-selectKondisiBuilding").css('display','block');
+                    }
+                    return false;
+                }
           url = '<?php echo site_url('Asset_group/tambah_building') ;?>';
 
           var formData = new FormData($('#form')[0]);
