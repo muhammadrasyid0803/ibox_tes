@@ -694,4 +694,39 @@ class Asset_group extends CI_Controller {
 	    $hasil = $this->asset_m->update_ac(array('id' => $this->input->post('txtIdAC')), $data);
 		echo json_encode($hasil);
 	}
+
+	public function edit_dc(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_dc_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_dc(){
+		$data = array(
+			'desc_rectifier' => $this->input->post('txtDescRectifier'),
+			'kondisi_rectifier' => $this->input->post('selectKondisiRectifier'),
+			'desc_dcpdb' => $this->input->post('txtDescDcpdb'),
+			'kondisi_dcpdb' => $this->input->post('selectKondisiDcpdb'),
+			'desc_baterai' => $this->input->post('txtDescBaterai'),
+			'kondisi_baterai' => $this->input->post('selectKondisiBaterai'),
+		);
+
+		if(!empty($_FILES['foto_rectifier']['name'])){
+	    	$upload = $this->_do_upload_add_foto_rectifier();
+	    	$data['file_rectifier'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_dcpdb']['name'])){
+	    	$upload = $this->_do_upload_add_foto_dcpdb();
+	    	$data['file_dcpdb'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_baterai']['name'])){
+	    	$upload = $this->_do_upload_add_foto_baterai();
+	    	$data['file_baterai'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_dc(array('id' => $this->input->post('txtIdDc')), $data);
+		echo json_encode($hasil);
+	}
 }

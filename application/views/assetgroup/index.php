@@ -611,6 +611,78 @@
                 </div>
           </div>
 
+          <!-- Modal Edit DC -->
+          <div class="modal fade" id="modal_edit_dc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Edit Data DC</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_dc" action="#" class="form-horizontal">
+                          <div class="form-group ">
+                            <input type="hidden" name="txtIdDc" value="" />
+                            <label for="cname" class="control-label col-lg-3">Rectifier</label>
+                            <div class="col-lg-3">
+                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiRectifier">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_rectifier" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-3">DCPDB</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiDcpdb">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-3">Baterai</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiBaterai">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                      <button type="button" onclick="simpan_edit_dc()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -1138,6 +1210,32 @@
             }
         });
     });
+
+    // Tampil Modal Edit data DC
+    $('#show_data_dc').on('click','.item_edit',function(){
+      var id=$(this).attr('data');
+
+      //load data dari AJAX
+        $.ajax({
+            url: "<?php echo base_url() ?>asset_group/edit_dc",
+            type: "GET",
+            dataType: "JSON",
+            data : {id:id},
+            success: function(data) {
+                $('[name="txtIdDc"]').val(data.id);
+                $('[name="txtDescRectifier"]').val(data.desc_rectifier);
+                $('[name="selectKondisiRectifier"]').val(data.kondisi_rectifier);
+                $('[name="txtDescDcpdb"]').val(data.desc_dcpdb);
+                $('[name="selectKondisiDcpdb"]').val(data.kondisi_dcpdb);
+                $('[name="txtDescBaterai"]').val(data.desc_baterai);
+                $('[name="selectKondisiBaterai"]').val(data.kondisi_baterai);
+                $('#modal_edit_dc').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error Get Data From AJAX');
+            }
+        });
+    });
   });
 
   function simpan_edit_building() {
@@ -1173,11 +1271,33 @@
                 $('#form_ac')[0].reset();
                 $('#modal_edit_ac').modal('hide');
                 toastr.success('Ubah Data AC Electricity Berhasil!', 'Success', {timeOut: 5000})
-                tampil_data_building();                
+                tampil_data_ac();                
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error adding / upader data');
             }
         });
   }
+
+  function simpan_edit_dc() {
+    var formData = new FormData($('#form_dc')[0]);
+        $.ajax({
+            url : "<?php echo base_url() ?>asset_group/update_dc",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            success: function(data) {
+                $('#form_dc')[0].reset();
+                $('#modal_edit_dc').modal('hide');
+                toastr.success('Ubah Data AC Electricity Berhasil!', 'Success', {timeOut: 5000})
+                tampil_data_dc();                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / upader data');
+            }
+        });
+  }
+  
 </script>
