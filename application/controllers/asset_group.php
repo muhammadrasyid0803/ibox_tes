@@ -726,6 +726,9 @@ class Asset_group extends CI_Controller {
 	    	$data['file_baterai'] = $upload;
 	    }
 
+	    // var_dump($data);
+	    // die();
+
 	    $hasil = $this->asset_m->update_dc(array('id' => $this->input->post('txtIdDc')), $data);
 		echo json_encode($hasil);
 	}

@@ -611,6 +611,78 @@
                 </div>
           </div>
 
+          <!-- Modal Edit DC -->
+          <div class="modal fade" id="modal_edit_dc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Edit Data DC</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_dc" action="#" class="form-horizontal">
+                          <div class="form-group ">
+                            <input type="hidden" name="txtIdDc" value="" />
+                            <label for="cname" class="control-label col-lg-3">Rectifier</label>
+                            <div class="col-lg-3">
+                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiRectifier">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_rectifier" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-3">DCPDB</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiDcpdb">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-3">Baterai</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiBaterai">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                      <button type="button" onclick="simpan_edit_dc()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
           <!-- Modal Edit Power -->
           <div class="modal fade" id="modal_edit_power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -1307,7 +1379,7 @@
                 alert('Error Get Data From AJAX');
             }
         });
-    });
+    });    
 
     // Tampil Modal Edit data Power
     $('#show_data_power').on('click','.item_edit',function(){
