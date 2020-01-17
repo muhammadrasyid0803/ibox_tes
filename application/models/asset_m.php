@@ -243,4 +243,18 @@ class Asset_m extends CI_Model{
     $this->db->update('a_dc_electricity', $data, $where);
     return $this->db->affected_rows();
   }
+
+  public function get_power_by_id($id){
+    $this->db->from('a_pwr_supply');
+    $this->db->where('id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
+
+  public function update_power($where, $data){
+    $this->db->update('a_pwr_supply', $data, $where);
+    return $this->db->affected_rows();
+  }
 }

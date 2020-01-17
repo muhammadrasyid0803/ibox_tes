@@ -611,8 +611,8 @@
                 </div>
           </div>
 
-          <!-- Modal Edit DC -->
-          <div class="modal fade" id="modal_edit_dc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <!-- Modal Edit Power -->
+          <div class="modal fade" id="modal_edit_power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -620,15 +620,15 @@
                       <h4 class="modal-title" id="myModalLabel">Edit Data DC</h4>
                     </div>
                     <div class="modal-body">
-                        <form id="form_dc" action="#" class="form-horizontal">
+                        <form id="form_power" action="#" class="form-horizontal">
                           <div class="form-group ">
-                            <input type="hidden" name="txtIdDc" value="" />
-                            <label for="cname" class="control-label col-lg-3">Rectifier</label>
+                            <input type="hidden" name="txtIdPower" value="" />
+                            <label for="cname" class="control-label col-lg-3">GENSET</label>
                             <div class="col-lg-3">
-                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" required />
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiRectifier">
+                              <select class="form-control" name="selectKondisiGenset">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -636,16 +636,16 @@
                               </select>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_rectifier" capture="camera">
+                              <input type="file" accept="image/*" name="foto_genset" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
-                            <label for="cemail" class="control-label col-lg-3">DCPDB</label>
+                            <label for="cemail" class="control-label col-lg-3">ATS</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" required />
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiDcpdb">
+                              <select class="form-control" name="selectKondisiAts">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -653,16 +653,16 @@
                               </select>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Ats" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
-                            <label for="cemail" class="control-label col-lg-3">Baterai</label>
+                            <label for="cemail" class="control-label col-lg-3">INVERTER</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" required />
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiBaterai">
+                              <select class="form-control" name="selectKondisiInverter">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -670,14 +670,31 @@
                               </select>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Inverter" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="cemail" class="control-label col-lg-3">UPS</label>
+                            <div class="col-lg-3">
+                              <input class="form-control" placeholder="Description" type="text" name="txtDescUps" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiUps">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_Ups" capture="camera">
                             </div>
                           </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-                      <button type="button" onclick="simpan_edit_dc()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                      <button type="button" onclick="simpan_edit_power()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
                     </div>
                   </div>
                 </div>
@@ -1236,6 +1253,34 @@
             }
         });
     });
+
+    // Tampil Modal Edit data Power
+    $('#show_data_power').on('click','.item_edit',function(){
+      var id=$(this).attr('data');
+
+      //load data dari AJAX
+        $.ajax({
+            url: "<?php echo base_url() ?>asset_group/edit_power",
+            type: "GET",
+            dataType: "JSON",
+            data : {id:id},
+            success: function(data) {
+                $('[name="txtIdPower"]').val(data.id);
+                $('[name="txtDescGenset"]').val(data.desc_genset);
+                $('[name="selectKondisiGenset"]').val(data.kondisi_genset);
+                $('[name="txtDescAts"]').val(data.desc_ats);
+                $('[name="selectKondisiAts"]').val(data.kondisi_ats);
+                $('[name="txtDescInverter"]').val(data.desc_inverter);
+                $('[name="selectKondisiInverter"]').val(data.kondisi_inverter);
+                $('[name="txtDescUps"]').val(data.desc_ups);
+                $('[name="selectKondisiUps"]').val(data.kondisi_ups);
+                $('#modal_edit_power').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error Get Data From AJAX');
+            }
+        });
+    });
   });
 
   function simpan_edit_building() {
@@ -1291,7 +1336,7 @@
             success: function(data) {
                 $('#form_dc')[0].reset();
                 $('#modal_edit_dc').modal('hide');
-                toastr.success('Ubah Data AC Electricity Berhasil!', 'Success', {timeOut: 5000})
+                toastr.success('Ubah Data DC Electricity Berhasil!', 'Success', {timeOut: 5000})
                 tampil_data_dc();                
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -1300,4 +1345,24 @@
         });
   }
   
+  function simpan_edit_power() {
+    var formData = new FormData($('#form_power')[0]);
+        $.ajax({
+            url : "<?php echo base_url() ?>asset_group/update_power",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            success: function(data) {
+                $('#form_power')[0].reset();
+                $('#modal_edit_power').modal('hide');
+                toastr.success('Ubah Data Power Supply Back Up System Berhasil!', 'Success', {timeOut: 5000})
+                tampil_data_power();                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / upader data');
+            }
+        });
+  }
 </script>

@@ -729,4 +729,46 @@ class Asset_group extends CI_Controller {
 	    $hasil = $this->asset_m->update_dc(array('id' => $this->input->post('txtIdDc')), $data);
 		echo json_encode($hasil);
 	}
+
+	public function edit_power(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_power_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_power(){
+		$data = array(
+			'desc_genset' => $this->input->post('txtDescGenset'),
+			'kondisi_genset' => $this->input->post('selectKondisiGenset'),
+			'desc_ats' => $this->input->post('txtDescAts'),
+			'kondisi_ats' => $this->input->post('selectKondisiAts'),
+			'desc_inverter' => $this->input->post('txtDescInverter'),
+			'kondisi_inverter' => $this->input->post('selectKondisiInverter'),
+			'desc_ups' => $this->input->post('txtDescUps'),
+			'kondisi_ups' => $this->input->post('selectKondisiUps'),
+		);
+
+		if(!empty($_FILES['foto_genset']['name'])){
+	    	$upload = $this->_do_upload_add_foto_genset();
+	    	$data['file_genset'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Ats']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ats();
+	    	$data['file_ats'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Inverter']['name'])){
+	    	$upload = $this->_do_upload_add_foto_inverter();
+	    	$data['file_inverter'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Ups']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ups();
+	    	$data['file_ups'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_power(array('id' => $this->input->post('txtIdPower')), $data);
+		echo json_encode($hasil);
+	}
 }
