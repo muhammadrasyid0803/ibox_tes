@@ -771,4 +771,32 @@ class Asset_group extends CI_Controller {
 	    $hasil = $this->asset_m->update_power(array('id' => $this->input->post('txtIdPower')), $data);
 		echo json_encode($hasil);
 	}
+
+	public function edit_alarm(){
+		$id = $this->input->get('id');
+		$data = $this->asset_m->get_alarm_by_id($id);
+		echo json_encode($data);
+	}
+
+	public function update_alarm(){
+		$data = array(
+			'desc_ac' => $this->input->post('txtDescAc'),
+			'kondisi_ac' => $this->input->post('selectKondisiAc'),
+			'desc_alarm' => $this->input->post('txtDescAlarm'),
+			'kondisi_alarm' => $this->input->post('selectKondisiAlarm'),
+		);
+
+		if(!empty($_FILES['foto_Ac']['name'])){
+	    	$upload = $this->_do_upload_add_foto_ac();
+	    	$data['file_ac'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_Alarm']['name'])){
+	    	$upload = $this->_do_upload_add_foto_alarm();
+	    	$data['file_alarm'] = $upload;
+	    }
+
+	    $hasil = $this->asset_m->update_alarm(array('id' => $this->input->post('txtIdAlarm')), $data);
+		echo json_encode($hasil);
+	}
 }

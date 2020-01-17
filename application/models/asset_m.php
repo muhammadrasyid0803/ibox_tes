@@ -257,4 +257,18 @@ class Asset_m extends CI_Model{
     $this->db->update('a_pwr_supply', $data, $where);
     return $this->db->affected_rows();
   }
+
+  public function get_alarm_by_id($id){
+    $this->db->from('a_monitoring_sistem');
+    $this->db->where('id', $id);
+
+    $hasil = $this->db->get();
+
+    return $hasil->row();
+  }
+
+  public function update_alarm($where, $data){
+    $this->db->update('a_monitoring_sistem', $data, $where);
+    return $this->db->affected_rows();
+  }
 }

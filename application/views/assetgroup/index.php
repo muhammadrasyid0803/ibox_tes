@@ -700,6 +700,61 @@
                 </div>
           </div>
 
+          <!-- Modal Edit Alarm -->
+          <div class="modal fade" id="modal_edit_alarm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Edit Data DC</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_alarm" action="#" class="form-horizontal">
+                          <div class="form-group ">
+                            <input type="hidden" name="txtIdAlarm" value="" />
+                            <label for="cname" class="control-label col-lg-3">AC</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiAc">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_Ac" capture="camera">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <label for="cemail" class="control-label col-lg-3">ALARM</label>
+                            <div class="col-lg-3">
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" required />
+                            </div>
+                            <div class="col-lg-3">
+                              <select class="form-control" name="selectKondisiAlarm">
+                                <option value="">Pilih Kondisi</option>
+                                <option value="Baik">Baik</option>
+                                <option value="Kurang">Kurang</option>
+                                <option value="Rusak">Rusak</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="file" accept="image/*" name="foto_Alarm" capture="camera">
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                      <button type="button" onclick="simpan_edit_alarm()" class="btn btn-primary" id="btn_edit_building">Simpan</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
 <script type="text/javascript">
   window.base_url = <?php echo json_encode(base_url()); ?>;
   $(document).ready(function(){
@@ -1281,6 +1336,30 @@
             }
         });
     });
+
+    // Tampil Modal Edit data Alarm
+    $('#show_data_alarm').on('click','.item_edit',function(){
+      var id=$(this).attr('data');
+
+      //load data dari AJAX
+        $.ajax({
+            url: "<?php echo base_url() ?>asset_group/edit_alarm",
+            type: "GET",
+            dataType: "JSON",
+            data : {id:id},
+            success: function(data) {
+                $('[name="txtIdAlarm"]').val(data.id);
+                $('[name="txtDescAc"]').val(data.desc_ac);
+                $('[name="selectKondisiAc"]').val(data.kondisi_ac);
+                $('[name="txtDescAlarm"]').val(data.desc_alarm);
+                $('[name="selectKondisiAlarm"]').val(data.kondisi_alarm);
+                $('#modal_edit_alarm').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error Get Data From AJAX');
+            }
+        });
+    });
   });
 
   function simpan_edit_building() {
@@ -1359,6 +1438,27 @@
                 $('#modal_edit_power').modal('hide');
                 toastr.success('Ubah Data Power Supply Back Up System Berhasil!', 'Success', {timeOut: 5000})
                 tampil_data_power();                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error adding / upader data');
+            }
+        });
+  }
+
+  function simpan_edit_alarm() {
+    var formData = new FormData($('#form_alarm')[0]);
+        $.ajax({
+            url : "<?php echo base_url() ?>asset_group/update_alarm",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            dataType: "JSON",
+            success: function(data) {
+                $('#form_alarm')[0].reset();
+                $('#modal_edit_alarm').modal('hide');
+                toastr.success('Ubah Data External Alarm And Monitoring System Berhasil!', 'Success', {timeOut: 5000})
+                tampil_data_alarm();                
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error adding / upader data');
