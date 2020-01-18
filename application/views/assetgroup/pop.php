@@ -12,7 +12,7 @@
                      <button type="button" class="btn btn-primary" onclick="Building()">Building and Infrastructure</button>
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_ac" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_ac">AC Electricity</a>
+                     <button type="button" class="btn btn-primary" onclick="ac()">AC Electricity</button>
                   </h5>
                   <h5 class="gen-case">
                      <a data-target="#modal_dc" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_dc">DC Electricity</a>
@@ -122,35 +122,39 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">Input KWh Meter</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescKwh" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescKwh" id="txtDescKwh" required />
+                            <span class="pesan pesan-txtDescKwh">Silahkan Isi Kolom KWh Meter</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiKwh">
+                            <select class="form-control" name="selectKondisiKwh" id="selectKondisiKwh">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiKwh">Silahkan Pilih Kondisi KWh Meter</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_Kwh" capture="camera">
+                            <input type="file" accept="image/*" name="foto_Kwh" id="foto_Kwh" capture="camera">
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Input ACPDB</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAcpdb" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAcpdb" id="txtDescAcpdb" required />
+                            <span class="pesan pesan-txtDescAcpdb">Silahkan Isi Kolom ACPDB</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiAcpdb">
+                            <select class="form-control" name="selectKondisiAcpdb" id="selectKondisiAcpdb">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiAcpdb">Silahkan Pilih Kondisi ACPDB</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_acpdb" capture="camera">
+                            <input type="file" accept="image/*" name="foto_acpdb" id="foto_acpdb" capture="camera">
                           </div>
                         </div>
                       </form>
@@ -419,6 +423,7 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
+          // aksi untuk hide span di modal Building
           $("#txtDescRack").keyup(function () {
               $(".pesan-desc_rack").hide();
           });
@@ -434,6 +439,20 @@
           $('#selectKondisiRack').change(function(){
               $(".pesan-selectKondisiRack").hide();
           });
+
+          // aksi untuk hide span di modal AC
+          $("#txtDescKwh").keyup(function () {
+              $(".pesan-txtDescKwh").hide();
+          });
+          $('#selectKondisiKwh').change(function(){
+              $(".pesan-selectKondisiKwh").hide();
+          });
+          $("#txtDescAcpdb").keyup(function () {
+              $(".pesan-txtDescAcpdb").hide();
+          });
+          $('#selectKondisiAcpdb').change(function(){
+              $(".pesan-selectKondisiAcpdb").hide();
+          });
       });
       
       function Building() {
@@ -444,6 +463,15 @@
         $(".pesan-selectNoRack").hide();
         $(".pesan-selectKondisiRack").hide();
         $('#modal_building').modal('show');
+      }
+
+      function ac() {
+        $('#form2')[0].reset();
+        $(".pesan-txtDescKwh").hide();
+        $(".pesan-selectKondisiKwh").hide();
+        $(".pesan-txtDescAcpdb").hide();
+        $(".pesan-selectKondisiAcpdb").hide();
+        $('#modal_ac').modal('show');
       }
 
       function simpan_building_infa() {
@@ -496,6 +524,28 @@
 
       function simpan_ac() {
           var url;
+
+          var txtDescKwh = $('#txtDescKwh').val().length;
+          var selectKondisiKwh = $('#selectKondisiKwh').val().length;                    
+          var txtDescAcpdb = $('#txtDescAcpdb').val().length;         
+          var selectKondisiAcpdb = $('#selectKondisiAcpdb').val().length;
+
+          if (txtDescKwh == 0 || selectKondisiKwh == "" || txtDescAcpdb == 0 || selectKondisiAcpdb == "") {              
+                    if (txtDescKwh == 0) {              
+                        $(".pesan-txtDescKwh").css('display','block');
+                    }
+                    if (selectKondisiKwh == "") {                
+                        $(".pesan-selectKondisiKwh").css('display','block');
+                    }
+                    if (txtDescAcpdb == 0) {                
+                        $(".pesan-txtDescAcpdb").css('display','block');
+                    }
+                    if (selectKondisiAcpdb == "") {              
+                        $(".pesan-selectKondisiAcpdb").css('display','block');
+                    }
+                    return false;
+          }
+
           url = '<?php echo site_url('Asset_group/tambah_ac') ;?>';
 
           var formData = new FormData($('#form2')[0]);
