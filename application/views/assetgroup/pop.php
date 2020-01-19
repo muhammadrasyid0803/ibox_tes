@@ -9,26 +9,20 @@
               <div class="panel-body minimal">
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <button type="button" class="btn btn-primary" onclick="Building()">Building and Infrastructure</button>
+                     <button type="button" class="btn btn-primary btn-sm" onclick="Building()">Building and Infrastructure</button>
                   </h5>
                   <h5 class="gen-case">
-                     <button type="button" class="btn btn-primary" onclick="ac()">AC Electricity</button>
+                     <button type="button" class="btn btn-primary btn-sm" onclick="ac()">AC Electricity</button>
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_dc" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_dc">DC Electricity</a>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="dc()">DC Electricity</button>
                   </h5>
                   <h5 class="gen-case">
                      <a data-target="#modal_power" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_power">Power Supply Back Up System</a>
                   </h5>
-                  <!-- <h5 class="gen-case">
-                     <a data-target="#modal_cooling" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_cooling">Cooling System</a>
-                  </h5> -->
                   <h5 class="gen-case">
                      <a data-target="#modal_alarm" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_alarm">External Alarm And Monitoring System</a>
                   </h5>
-                  <!-- <h5 class="gen-case">
-                     <a data-target="#modal_network" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_network">Network Device</a>
-                  </h5> -->
                   <h5 class="gen-case">
                      <a data-target="#modal_device" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_device">Passive Device (ODF)</a>
                   </h5>
@@ -181,52 +175,58 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">Rectifier</label>
                           <div class="col-lg-3">
-                           <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" required />
+                           <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" id="txtDescRectifier" required />
+                           <span class="pesan pesan-txtDescRectifier">Silahkan Isi Kolom Rectifier</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiRectifier">
+                            <select class="form-control" name="selectKondisiRectifier" id="selectKondisiRectifier">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiRectifier">Silahkan Pilih Kondisi Rectifier</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_rectifier" capture="camera">
+                            <input type="file" accept="image/*" name="foto_rectifier" id="foto_rectifier" capture="camera">
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">DCPDB</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" id="txtDescDcpdb" required />
+                            <span class="pesan pesan-txtDescDcpdb">Silahkan Isi Kolom DCPDB</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiDcpdb">
+                            <select class="form-control" name="selectKondisiDcpdb" id="selectKondisiDcpdb">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiDcpdb">Silahkan Pilih Kondisi Dcpdb</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
+                            <input type="file" accept="image/*" name="foto_dcpdb" id="foto_dcpdb" capture="camera">
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Baterai</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" id="txtDescBaterai" required />
+                            <span class="pesan pesan-txtDescBaterai">Silahkan Isi Kolom Baterai</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiBaterai">
+                            <select class="form-control" name="selectKondisiBaterai" id="selectKondisiBaterai">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiBaterai">Silahkan Pilih Kondisi Baterai</span>
                           </div>
                           <div class="col-lg-2">
-                            <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                            <input type="file" accept="image/*" name="foto_baterai" id="foto_baterai" capture="camera">
                           </div>
                         </div>
                       </form>
@@ -453,6 +453,26 @@
           $('#selectKondisiAcpdb').change(function(){
               $(".pesan-selectKondisiAcpdb").hide();
           });
+
+          // aksi untuk hide span di modal DC
+          $("#txtDescRectifier").keyup(function () {
+              $(".pesan-txtDescRectifier").hide();
+          });
+          $('#selectKondisiRectifier').change(function(){
+              $(".pesan-selectKondisiRectifier").hide();
+          });
+          $("#txtDescDcpdb").keyup(function () {
+              $(".pesan-txtDescDcpdb").hide();
+          });
+          $('#selectKondisiDcpdb').change(function(){
+              $(".pesan-selectKondisiDcpdb").hide();
+          });
+          $("#txtDescBaterai").keyup(function () {
+              $(".pesan-txtDescBaterai").hide();
+          });
+          $('#selectKondisiBaterai').change(function(){
+              $(".pesan-selectKondisiBaterai").hide();
+          });
       });
       
       function Building() {
@@ -472,6 +492,18 @@
         $(".pesan-txtDescAcpdb").hide();
         $(".pesan-selectKondisiAcpdb").hide();
         $('#modal_ac').modal('show');
+      }
+
+      function dc() {
+        $('#form3')[0].reset();
+        $(".pesan-txtDescRectifier").hide();
+        $(".pesan-selectKondisiRectifier").hide();
+        $(".pesan-txtDescDcpdb").hide();
+        $(".pesan-selectKondisiDcpdb").hide();
+        $(".pesan-txtDescBaterai").hide();
+        $(".pesan-selectKondisiBaterai").hide();
+
+        $('#modal_dc').modal('show');
       }
 
       function simpan_building_infa() {
@@ -569,6 +601,36 @@
 
       function simpan_dc() {
           var url;
+
+          var txtDescRectifier = $('#txtDescRectifier').val().length;
+          var selectKondisiRectifier = $('#selectKondisiRectifier').val().length;                    
+          var txtDescDcpdb = $('#txtDescDcpdb').val().length;         
+          var selectKondisiDcpdb = $('#selectKondisiDcpdb').val().length;
+          var txtDescBaterai = $('#txtDescBaterai').val().length;
+          var selectKondisiBaterai = $('#selectKondisiBaterai').val().length;
+
+          if (txtDescRectifier == 0 || selectKondisiRectifier == "" || txtDescDcpdb == 0 || selectKondisiDcpdb == "" || txtDescBaterai == 0 || selectKondisiBaterai == "") {              
+                    if (txtDescRectifier == 0) {              
+                        $(".pesan-txtDescRectifier").css('display','block');
+                    }
+                    if (selectKondisiRectifier == "") {                
+                        $(".pesan-selectKondisiRectifier").css('display','block');
+                    }
+                    if (txtDescDcpdb == 0) {                
+                        $(".pesan-txtDescDcpdb").css('display','block');
+                    }
+                    if (selectKondisiDcpdb == "") {              
+                        $(".pesan-selectKondisiDcpdb").css('display','block');
+                    }
+                    if (txtDescBaterai == "") {              
+                        $(".pesan-txtDescBaterai").css('display','block');
+                    }
+                    if (selectKondisiBaterai == "") {              
+                        $(".pesan-selectKondisiBaterai").css('display','block');
+                    }
+                    return false;
+          }
+
           url = '<?php echo site_url('Asset_group/tambah_dc') ;?>';
 
           var formData = new FormData($('#form3')[0]);
