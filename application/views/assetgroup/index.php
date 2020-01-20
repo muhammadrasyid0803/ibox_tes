@@ -575,11 +575,11 @@
                             <input type="hidden" name="txtIdAC" value="" />
                             <label for="cname" class="control-label col-lg-3">Input KWh Meter</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescKwh" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescKwh" id="txtDescKwh" required />
                               <span class="pesan pesan-txtDescKwh">Silahkan Isi Kolom KWh Meter</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiKwh">
+                              <select class="form-control" name="selectKondisiKwh" id="selectKondisiKwh">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -588,17 +588,17 @@
                               <span class="pesan pesan-selectKondisiKwh">Silahkan Pilih Kondisi KWh Meter</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Kwh" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Kwh" id="foto_Kwh" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">Input ACPDB</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAcpdb" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAcpdb" id="txtDescAcpdb" required />
                               <span class="pesan pesan-txtDescAcpdb">Silahkan Isi Kolom ACPDB</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiAcpdb">
+                              <select class="form-control" name="selectKondisiAcpdb" id="selectKondisiAcpdb">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -607,7 +607,7 @@
                               <span class="pesan pesan-selectKondisiAcpdb">Silahkan Pilih Kondisi ACPDB</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_acpdb" capture="camera">
+                              <input type="file" accept="image/*" name="foto_acpdb" id="foto_acpdb" capture="camera">
                             </div>
                           </div>
                         </form>
@@ -634,11 +634,11 @@
                             <input type="hidden" name="txtIdDc" value="" />
                             <label for="cname" class="control-label col-lg-3">Rectifier</label>
                             <div class="col-lg-3">
-                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" required />
+                             <input class=" form-control" placeholder="Description" type="text" name="txtDescRectifier" id="txtDescRectifier" required />
                              <span class="pesan pesan-txtDescRectifier">Silahkan Isi Kolom Rectifier</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiRectifier">
+                              <select class="form-control" name="selectKondisiRectifier" id="selectKondisiRectifier">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -647,17 +647,17 @@
                               <span class="pesan pesan-selectKondisiRectifier">Silahkan Pilih Kondisi Rectifier</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_rectifier" capture="camera">
+                              <input type="file" accept="image/*" name="foto_rectifier" id="foto_rectifier" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">DCPDB</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescDcpdb" id="txtDescDcpdb" required />
                               <span class="pesan pesan-txtDescDcpdb">Silahkan Isi Kolom DCPDB</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiDcpdb">
+                              <select class="form-control" name="selectKondisiDcpdb" id="selectKondisiDcpdb">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -666,17 +666,17 @@
                               <span class="pesan pesan-selectKondisiDcpdb">Silahkan Pilih Kondisi Dcpdb</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_dcpdb" capture="camera">
+                              <input type="file" accept="image/*" name="foto_dcpdb" id="foto_dcpdb" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">Baterai</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescBaterai" id="txtDescBaterai" required />
                               <span class="pesan pesan-txtDescBaterai">Silahkan Isi Kolom Baterai</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiBaterai">
+                              <select class="form-control" name="selectKondisiBaterai" id="selectKondisiBaterai">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -685,7 +685,7 @@
                               <span class="pesan pesan-selectKondisiBaterai">Silahkan Pilih Kondisi Baterai</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_baterai" capture="camera">
+                              <input type="file" accept="image/*" name="foto_baterai" id="foto_baterai" capture="camera">
                             </div>
                           </div>
                         </form>
@@ -712,11 +712,11 @@
                             <input type="hidden" name="txtIdPower" value="" />
                             <label for="cname" class="control-label col-lg-3">GENSET</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" id="txtDescGenset" required />
                               <span class="pesan pesan-txtDescGenset">Silahkan Isi Kolom GENSET</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiGenset">
+                              <select class="form-control" name="selectKondisiGenset" id="selectKondisiGenset">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -725,17 +725,17 @@
                               <span class="pesan pesan-selectKondisiGenset">Silahkan Pilih Kondisi Genset</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_genset" capture="camera">
+                              <input type="file" accept="image/*" name="foto_genset" id="foto_genset" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">ATS</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" id="txtDescAts" required />
                               <span class="pesan pesan-txtDescAts">Silahkan Isi Kolom ATS</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiAts">
+                              <select class="form-control" name="selectKondisiAts" id="selectKondisiAts">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -744,17 +744,17 @@
                               <span class="pesan pesan-selectKondisiAts">Silahkan Pilih Kondisi ATS</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Ats" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Ats" id="foto_Ats" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">INVERTER</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" id="txtDescInverter" required />
                               <span class="pesan pesan-txtDescInverter">Silahkan Isi Kolom INVERTER</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiInverter">
+                              <select class="form-control" name="selectKondisiInverter" id="selectKondisiInverter">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -763,17 +763,17 @@
                               <span class="pesan pesan-selectKondisiInverter">Silahkan Pilih Kondisi INVERTER</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Inverter" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Inverter" id="foto_Inverter" capture="camera">
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="cemail" class="control-label col-lg-3">UPS</label>
                             <div class="col-lg-3">
-                              <input class="form-control" placeholder="Description" type="text" name="txtDescUps" required />
+                              <input class="form-control" placeholder="Description" type="text" name="txtDescUps" id="txtDescUps" required />
                               <span class="pesan pesan-txtDescUps">Silahkan Isi Kolom UPS</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiUps">
+                              <select class="form-control" name="selectKondisiUps" id="selectKondisiUps">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -782,7 +782,7 @@
                               <span class="pesan pesan-selectKondisiUps">Silahkan Pilih Kondisi UPS</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Ups" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Ups" id="foto_Ups" capture="camera">
                             </div>
                           </div>
                         </form>
@@ -809,11 +809,11 @@
                             <input type="hidden" name="txtIdAlarm" value="" />
                             <label for="cname" class="control-label col-lg-3">AC</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" id="txtDescAc" required />
                               <span class="pesan pesan-txtDescAc">Silahkan Isi Kolom AC</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiAc">
+                              <select class="form-control" name="selectKondisiAc" id="selectKondisiAc">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -822,17 +822,17 @@
                               <span class="pesan pesan-selectKondisiAc">Silahkan Pilih Kondisi AC</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Ac" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Ac" id="foto_Ac" capture="camera">
                             </div>
                           </div>
                           <div class="form-group ">
                             <label for="cemail" class="control-label col-lg-3">ALARM</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" id="txtDescAlarm" required />
                               <span class="pesan pesan-txtDescAlarm">Silahkan Isi Kolom Alarm</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiAlarm">
+                              <select class="form-control" name="selectKondisiAlarm" id="selectKondisiAlarm">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -841,7 +841,7 @@
                               <span class="pesan pesan-selectKondisiAlarm">Silahkan Pilih Kondisi Alarm</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Alarm" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Alarm" id="foto_Alarm" capture="camera">
                             </div>
                           </div>
                         </form>
@@ -868,11 +868,11 @@
                             <input type="hidden" name="txtIdOdf" value="" />
                             <label for="cname" class="control-label col-lg-3">ODF</label>
                             <div class="col-lg-3">
-                              <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" required />
+                              <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" id="txtDescOdf" required />
                               <span class="pesan pesan-txtDescOdf">Silahkan Isi Kolom ODF</span>
                             </div>
                             <div class="col-lg-3">
-                              <select class="form-control" name="selectKondisiOdf">
+                              <select class="form-control" name="selectKondisiOdf" id="selectKondisiOdf">
                                 <option value="">Pilih Kondisi</option>
                                 <option value="Baik">Baik</option>
                                 <option value="Kurang">Kurang</option>
@@ -881,7 +881,7 @@
                               <span class="pesan pesan-selectKondisiOdf">Silahkan Pilih Kondisi ODF</span>
                             </div>
                             <div class="col-lg-2">
-                              <input type="file" accept="image/*" name="foto_Odf" capture="camera">
+                              <input type="file" accept="image/*" name="foto_Odf" id="foto_Odf" capture="camera">
                             </div>
                           </div>
                         </form>
