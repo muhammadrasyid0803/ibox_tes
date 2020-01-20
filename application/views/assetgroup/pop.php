@@ -21,10 +21,10 @@
                     <button type="button" class="btn btn-primary btn-sm" onclick="power()">Power Supply Back Up System</button>
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_alarm" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_alarm">External Alarm And Monitoring System</a>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="Alarm()">External Alarm And Monitoring System</button>
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_device" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_device">Passive Device (ODF)</a>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="Device()">Passive Device (ODF)</button>
                   </h5>
                 </div>
               </div>
@@ -350,15 +350,17 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">AC</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAc" id="txtDescAc" required />
+                            <span class="pesan pesan-txtDescAc">Silahkan Isi Kolom AC</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiAc">
+                            <select class="form-control" name="selectKondisiAc" id="selectKondisiAc">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiAc">Silahkan Pilih Kondisi AC</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Ac" capture="camera">
@@ -367,15 +369,17 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">ALARM</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAlarm" id="txtDescAlarm" required />
+                            <span class="pesan pesan-txtDescAlarm">Silahkan Isi Kolom Alarm</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiAlarm">
+                            <select class="form-control" name="selectKondisiAlarm" id="selectKondisiAlarm">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiAlarm">Silahkan Pilih Kondisi Alarm</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Alarm" capture="camera">
@@ -405,15 +409,17 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">ODF</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescOdf" id="txtDescOdf" required />
+                            <span class="pesan pesan-txtDescOdf">Silahkan Isi Kolom ODF</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiOdf">
+                            <select class="form-control" name="selectKondisiOdf" id="selectKondisiOdf">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiOdf">Silahkan Pilih Kondisi ODF</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Odf" capture="camera">
@@ -507,6 +513,28 @@
           $('#selectKondisiUps').change(function(){
               $(".pesan-selectKondisiUps").hide();
           });
+
+          // aksi untuk hide span di modal Alarm
+          $("#txtDescAc").keyup(function () {
+              $(".pesan-txtDescAc").hide();
+          });
+          $('#selectKondisiAc').change(function(){
+              $(".pesan-selectKondisiAc").hide();
+          });
+          $("#txtDescAlarm").keyup(function () {
+              $(".pesan-txtDescAlarm").hide();
+          });
+          $('#selectKondisiAlarm').change(function(){
+              $(".pesan-selectKondisiAlarm").hide();
+          });
+
+          // aksi untuk hide span di modal ODF
+          $("#txtDescOdf").keyup(function () {
+              $(".pesan-txtDescOdf").hide();
+          });
+          $('#selectKondisiOdf').change(function(){
+              $(".pesan-selectKondisiOdf").hide();
+          });
       });
       
       function Building() {
@@ -551,6 +579,24 @@
         $(".pesan-txtDescUps").hide();
         $(".pesan-selectKondisiUps").hide();
         $('#modal_power').modal('show');
+      }
+
+      function Alarm() {
+        $('#form6')[0].reset();
+        $(".pesan-txtDescAc").hide();
+        $(".pesan-selectKondisiAc").hide();
+        $(".pesan-txtDescAlarm").hide();
+        $(".pesan-selectKondisiAlarm").hide();
+
+        $('#modal_alarm').modal('show');
+      }
+
+      function Device() {
+        $('#form8')[0].reset();
+        $(".pesan-txtDescOdf").hide();
+        $(".pesan-selectKondisiOdf").hide();
+
+        $('#modal_device').modal('show');
       }
 
       function simpan_building_infa() {
@@ -762,6 +808,28 @@
 
       function simpan_alarm() {
           var url;
+
+          var txtDescAc = $('#txtDescAc').val().length;
+          var selectKondisiAc = $('#selectKondisiAc').val().length;                    
+          var txtDescAlarm = $('#txtDescAlarm').val().length;         
+          var selectKondisiAlarm = $('#selectKondisiAlarm').val().length;
+
+          if (txtDescAc == 0 || selectKondisiAc == "" || txtDescAlarm == 0 || selectKondisiAlarm == "") {              
+                    if (txtDescAc == 0) {              
+                        $(".pesan-txtDescAc").css('display','block');
+                    }
+                    if (selectKondisiAc == "") {                
+                        $(".pesan-selectKondisiAc").css('display','block');
+                    }
+                    if (txtDescAlarm == 0) {                
+                        $(".pesan-txtDescAlarm").css('display','block');
+                    }
+                    if (selectKondisiAlarm == "") {              
+                        $(".pesan-selectKondisiAlarm").css('display','block');
+                    }
+                    return false;
+          }
+
           url = '<?php echo site_url('Asset_group/tambah_alarm') ;?>';
 
           var formData = new FormData($('#form6')[0]);
@@ -785,6 +853,20 @@
 
       function simpan_odf() {
           var url;
+
+          var txtDescOdf = $('#txtDescOdf').val().length;
+          var selectKondisiOdf = $('#selectKondisiOdf').val().length;                    
+
+          if (txtDescOdf == 0 || selectKondisiOdf == "") {              
+                    if (txtDescOdf == 0) {              
+                        $(".pesan-txtDescOdf").css('display','block');
+                    }
+                    if (selectKondisiOdf == "") {                
+                        $(".pesan-selectKondisiOdf").css('display','block');
+                    }
+                    return false;
+          }
+
           url = '<?php echo site_url('Asset_group/tambah_odf') ;?>';
 
           var formData = new FormData($('#form8')[0]);
