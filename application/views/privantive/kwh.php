@@ -319,6 +319,18 @@
                           <div class="col-lg-12">
                             <input type="file" accept="image/*" name="foto_3" id="foto_3" capture="camera">
                           </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_4" id="foto_4" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 5</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_5" id="foto_5" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 6</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_6" id="foto_6" capture="camera">
+                          </div>
                         </div>
                       </form>
                     </div>

@@ -319,6 +319,81 @@ class Privantive extends CI_Controller {
 	        return $this->upload->data('file_name');
 	}
 
+	private function _do_upload_add_foto_4(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_4')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_5(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_5')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
+	private function _do_upload_add_foto_6(){
+	        $config['upload_path']          = 'assets/dokumen/';
+	        $config['allowed_types']        = 'jpg|png|jpeg';
+	        // $config['max_size']             = 10000; //set max size allowed in Kilobyte
+	        // $config['file_name']            = round(microtime(true) * 1000); //just milisecond timestamp fot unique name
+	        $config['file_name']            = date("dmY_His"); //just milisecond timestamp fot unique name
+	 
+	        $this->load->library('upload', $config);
+	 
+	        if(!$this->upload->do_upload('foto_6')) //upload and validate
+	        {
+	            $data['inputerror'][] = 'file';
+	            $data['error_string'][] = 'Upload error: '.$this->upload->display_errors('',''); //show ajax error
+	            $data['status'] = FALSE;
+	            echo json_encode($data);
+	            alert('error');
+	            exit();
+	        }
+	        else
+	        {
+	        	$data = array('upload_data' => $this->upload->data());
+	        }
+	        return $this->upload->data('file_name');
+	}
+
 	public function tambah_dokumentasi(){
 		$data = array(
 	    	'id_pop' => $this->input->post('txtIdPOP'),
@@ -337,6 +412,21 @@ class Privantive extends CI_Controller {
 	    if(!empty($_FILES['foto_3']['name'])){
 	    	$upload = $this->_do_upload_add_foto_3();
 	    	$data['foto_3'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_4']['name'])){
+	    	$upload = $this->_do_upload_add_foto_4();
+	    	$data['foto_4'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_5']['name'])){
+	    	$upload = $this->_do_upload_add_foto_5();
+	    	$data['foto_5'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_6']['name'])){
+	    	$upload = $this->_do_upload_add_foto_6();
+	    	$data['foto_6'] = $upload;
 	    }
 
 	    $this->privantive_m->tambah_dokumentasi($data);
@@ -433,6 +523,21 @@ class Privantive extends CI_Controller {
 	    if(!empty($_FILES['foto_3']['name'])){
 	    	$upload = $this->_do_upload_add_foto_3();
 	    	$data['foto_3'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_4']['name'])){
+	    	$upload = $this->_do_upload_add_foto_4();
+	    	$data['foto_4'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_5']['name'])){
+	    	$upload = $this->_do_upload_add_foto_5();
+	    	$data['foto_5'] = $upload;
+	    }
+
+	    if(!empty($_FILES['foto_6']['name'])){
+	    	$upload = $this->_do_upload_add_foto_6();
+	    	$data['foto_6'] = $upload;
 	    }
 
 	    $this->privantive_m->tambah_dokumentasi_acpdb($data);
