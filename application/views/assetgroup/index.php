@@ -1376,6 +1376,11 @@
     // Tampil Modal Edit data Building
     $('#show_data_building').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+      $(".pesan-desc_rack").hide();
+      $(".pesan-txtDescBuilding").hide();
+      $(".pesan-selectKondisiBuilding").hide();
+      $(".pesan-selectNoRack").hide();
+      $(".pesan-selectKondisiRack").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1401,6 +1406,10 @@
     // Tampil Modal Edit data AC
     $('#show_data_ac').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+      $(".pesan-txtDescKwh").hide();
+      $(".pesan-selectKondisiKwh").hide();
+      $(".pesan-txtDescAcpdb").hide();
+      $(".pesan-selectKondisiAcpdb").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1425,6 +1434,12 @@
     // Tampil Modal Edit data DC
     $('#show_data_dc').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+        $(".pesan-txtDescRectifier").hide();
+        $(".pesan-selectKondisiRectifier").hide();
+        $(".pesan-txtDescDcpdb").hide();
+        $(".pesan-selectKondisiDcpdb").hide();
+        $(".pesan-txtDescBaterai").hide();
+        $(".pesan-selectKondisiBaterai").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1451,6 +1466,14 @@
     // Tampil Modal Edit data Power
     $('#show_data_power').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+        $(".pesan-txtDescGenset").hide();
+        $(".pesan-selectKondisiGenset").hide();
+        $(".pesan-txtDescAts").hide();
+        $(".pesan-selectKondisiAts").hide();
+        $(".pesan-txtDescInverter").hide();
+        $(".pesan-selectKondisiInverter").hide();
+        $(".pesan-txtDescUps").hide();
+        $(".pesan-selectKondisiUps").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1479,6 +1502,10 @@
     // Tampil Modal Edit data Alarm
     $('#show_data_alarm').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+        $(".pesan-txtDescAc").hide();
+        $(".pesan-selectKondisiAc").hide();
+        $(".pesan-txtDescAlarm").hide();
+        $(".pesan-selectKondisiAlarm").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1503,6 +1530,8 @@
     // Tampil Modal Edit data ODF
     $('#show_data_odf').on('click','.item_edit',function(){
       var id=$(this).attr('data');
+      $(".pesan-txtDescOdf").hide();
+      $(".pesan-selectKondisiOdf").hide();
 
       //load data dari AJAX
         $.ajax({
@@ -1523,7 +1552,133 @@
     });
   });
 
+  $(document).ready(function(){
+          // aksi untuk hide span di modal Building
+          $("#txtDescRack").keyup(function () {
+              $(".pesan-desc_rack").hide();
+          });
+          $("#txtDescBuilding").keyup(function () {
+              $(".pesan-txtDescBuilding").hide();
+          });
+          $('#selectKondisiBuilding').change(function(){
+              $(".pesan-selectKondisiBuilding").hide();
+          });
+          $('#selectNoRack').change(function(){
+              $(".pesan-selectNoRack").hide();
+          });
+          $('#selectKondisiRack').change(function(){
+              $(".pesan-selectKondisiRack").hide();
+          });
+
+          // aksi untuk hide span di modal AC
+          $("#txtDescKwh").keyup(function () {
+              $(".pesan-txtDescKwh").hide();
+          });
+          $('#selectKondisiKwh').change(function(){
+              $(".pesan-selectKondisiKwh").hide();
+          });
+          $("#txtDescAcpdb").keyup(function () {
+              $(".pesan-txtDescAcpdb").hide();
+          });
+          $('#selectKondisiAcpdb').change(function(){
+              $(".pesan-selectKondisiAcpdb").hide();
+          });
+
+          // aksi untuk hide span di modal DC
+          $("#txtDescRectifier").keyup(function () {
+              $(".pesan-txtDescRectifier").hide();
+          });
+          $('#selectKondisiRectifier').change(function(){
+              $(".pesan-selectKondisiRectifier").hide();
+          });
+          $("#txtDescDcpdb").keyup(function () {
+              $(".pesan-txtDescDcpdb").hide();
+          });
+          $('#selectKondisiDcpdb').change(function(){
+              $(".pesan-selectKondisiDcpdb").hide();
+          });
+          $("#txtDescBaterai").keyup(function () {
+              $(".pesan-txtDescBaterai").hide();
+          });
+          $('#selectKondisiBaterai').change(function(){
+              $(".pesan-selectKondisiBaterai").hide();
+          });
+
+          // aksi untuk hide span di modal Power
+          $("#txtDescGenset").keyup(function () {
+              $(".pesan-txtDescGenset").hide();
+          });
+          $('#selectKondisiGenset').change(function(){
+              $(".pesan-selectKondisiGenset").hide();
+          });
+          $("#txtDescAts").keyup(function () {
+              $(".pesan-txtDescAts").hide();
+          });
+          $('#selectKondisiAts').change(function(){
+              $(".pesan-selectKondisiAts").hide();
+          });
+          $("#txtDescInverter").keyup(function () {
+              $(".pesan-txtDescInverter").hide();
+          });
+          $('#selectKondisiInverter').change(function(){
+              $(".pesan-selectKondisiInverter").hide();
+          });
+          $("#txtDescUps").keyup(function () {
+              $(".pesan-txtDescUps").hide();
+          });
+          $('#selectKondisiUps').change(function(){
+              $(".pesan-selectKondisiUps").hide();
+          });
+
+          // aksi untuk hide span di modal Alarm
+          $("#txtDescAc").keyup(function () {
+              $(".pesan-txtDescAc").hide();
+          });
+          $('#selectKondisiAc').change(function(){
+              $(".pesan-selectKondisiAc").hide();
+          });
+          $("#txtDescAlarm").keyup(function () {
+              $(".pesan-txtDescAlarm").hide();
+          });
+          $('#selectKondisiAlarm').change(function(){
+              $(".pesan-selectKondisiAlarm").hide();
+          });
+
+          // aksi untuk hide span di modal ODF
+          $("#txtDescOdf").keyup(function () {
+              $(".pesan-txtDescOdf").hide();
+          });
+          $('#selectKondisiOdf').change(function(){
+              $(".pesan-selectKondisiOdf").hide();
+          });
+      });
+
   function simpan_edit_building() {
+    var desc_rack = $('#txtDescRack').val().length;
+    var selectKondisiRack = $('#selectKondisiRack').val().length;                    
+    var selectNoRack = $('#selectNoRack').val().length;         
+    var txtDescBuilding = $('#txtDescBuilding').val().length;           
+    var selectKondisiBuilding = $('#selectKondisiBuilding').val().length;
+
+    if (desc_rack == 0 || selectKondisiRack == "" || selectNoRack == 0 || txtDescBuilding == 0 || selectKondisiBuilding == "") {              
+                    if (desc_rack == 0) {              
+                        $(".pesan-desc_rack").css('display','block');
+                    }
+                    if (selectKondisiRack == 0) {                
+                        $(".pesan-selectKondisiRack").css('display','block');
+                    }
+                    if (selectNoRack == 0) {                
+                        $(".pesan-selectNoRack").css('display','block');
+                    }
+                    if (txtDescBuilding == 0) {              
+                        $(".pesan-txtDescBuilding").css('display','block');
+                    }
+                    if (selectKondisiBuilding == 0) {             
+                        $(".pesan-selectKondisiBuilding").css('display','block');
+                    }
+                    return false;
+                }
+
     var formData = new FormData($('#form')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_building",
@@ -1544,6 +1699,26 @@
   }
 
   function simpan_edit_ac() {
+          var txtDescKwh = $('#txtDescKwh').val().length;
+          var selectKondisiKwh = $('#selectKondisiKwh').val().length;                    
+          var txtDescAcpdb = $('#txtDescAcpdb').val().length;         
+          var selectKondisiAcpdb = $('#selectKondisiAcpdb').val().length;
+
+          if (txtDescKwh == 0 || selectKondisiKwh == "" || txtDescAcpdb == 0 || selectKondisiAcpdb == "") {              
+                    if (txtDescKwh == 0) {              
+                        $(".pesan-txtDescKwh").css('display','block');
+                    }
+                    if (selectKondisiKwh == "") {                
+                        $(".pesan-selectKondisiKwh").css('display','block');
+                    }
+                    if (txtDescAcpdb == 0) {                
+                        $(".pesan-txtDescAcpdb").css('display','block');
+                    }
+                    if (selectKondisiAcpdb == "") {              
+                        $(".pesan-selectKondisiAcpdb").css('display','block');
+                    }
+                    return false;
+          }
     var formData = new FormData($('#form_ac')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_ac",
@@ -1565,6 +1740,35 @@
   }
 
   function simpan_edit_dc() {
+          var txtDescRectifier = $('#txtDescRectifier').val().length;
+          var selectKondisiRectifier = $('#selectKondisiRectifier').val().length;                    
+          var txtDescDcpdb = $('#txtDescDcpdb').val().length;         
+          var selectKondisiDcpdb = $('#selectKondisiDcpdb').val().length;
+          var txtDescBaterai = $('#txtDescBaterai').val().length;
+          var selectKondisiBaterai = $('#selectKondisiBaterai').val().length;
+
+          if (txtDescRectifier == 0 || selectKondisiRectifier == "" || txtDescDcpdb == 0 || selectKondisiDcpdb == "" || txtDescBaterai == 0 || selectKondisiBaterai == "") {              
+                    if (txtDescRectifier == 0) {              
+                        $(".pesan-txtDescRectifier").css('display','block');
+                    }
+                    if (selectKondisiRectifier == "") {                
+                        $(".pesan-selectKondisiRectifier").css('display','block');
+                    }
+                    if (txtDescDcpdb == 0) {                
+                        $(".pesan-txtDescDcpdb").css('display','block');
+                    }
+                    if (selectKondisiDcpdb == "") {              
+                        $(".pesan-selectKondisiDcpdb").css('display','block');
+                    }
+                    if (txtDescBaterai == "") {              
+                        $(".pesan-txtDescBaterai").css('display','block');
+                    }
+                    if (selectKondisiBaterai == "") {              
+                        $(".pesan-selectKondisiBaterai").css('display','block');
+                    }
+                    return false;
+          }
+
     var formData = new FormData($('#form_dc')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_dc",
@@ -1586,6 +1790,43 @@
   }
   
   function simpan_edit_power() {
+          var txtDescGenset = $('#txtDescGenset').val().length;
+          var selectKondisiGenset = $('#selectKondisiGenset').val().length;                    
+          var txtDescAts = $('#txtDescAts').val().length;         
+          var selectKondisiAts = $('#selectKondisiAts').val().length;
+          var txtDescInverter = $('#txtDescInverter').val().length;
+          var selectKondisiInverter = $('#selectKondisiInverter').val().length;
+          var txtDescUps = $('#txtDescUps').val().length;
+          var selectKondisiUps = $('#selectKondisiUps').val().length;
+
+          if (txtDescGenset == 0 || selectKondisiGenset == "" || txtDescAts == 0 || selectKondisiAts == "" || txtDescInverter == 0 || selectKondisiInverter == "" || txtDescUps == 0 || selectKondisiUps == "") {              
+                    if (txtDescGenset == 0) {              
+                        $(".pesan-txtDescGenset").css('display','block');
+                    }
+                    if (selectKondisiGenset == "") {                
+                        $(".pesan-selectKondisiGenset").css('display','block');
+                    }
+                    if (txtDescAts == 0) {                
+                        $(".pesan-txtDescAts").css('display','block');
+                    }
+                    if (selectKondisiAts == "") {              
+                        $(".pesan-selectKondisiAts").css('display','block');
+                    }
+                    if (txtDescInverter == "") {              
+                        $(".pesan-txtDescInverter").css('display','block');
+                    }
+                    if (selectKondisiInverter == "") {              
+                        $(".pesan-selectKondisiInverter").css('display','block');
+                    }
+                    if (txtDescUps == "") {              
+                        $(".pesan-txtDescUps").css('display','block');
+                    }
+                    if (selectKondisiUps == "") {              
+                        $(".pesan-selectKondisiUps").css('display','block');
+                    }
+                    return false;
+          }
+
     var formData = new FormData($('#form_power')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_power",
@@ -1607,6 +1848,27 @@
   }
 
   function simpan_edit_alarm() {
+          var txtDescAc = $('#txtDescAc').val().length;
+          var selectKondisiAc = $('#selectKondisiAc').val().length;                    
+          var txtDescAlarm = $('#txtDescAlarm').val().length;         
+          var selectKondisiAlarm = $('#selectKondisiAlarm').val().length;
+
+          if (txtDescAc == 0 || selectKondisiAc == "" || txtDescAlarm == 0 || selectKondisiAlarm == "") {              
+                    if (txtDescAc == 0) {              
+                        $(".pesan-txtDescAc").css('display','block');
+                    }
+                    if (selectKondisiAc == "") {                
+                        $(".pesan-selectKondisiAc").css('display','block');
+                    }
+                    if (txtDescAlarm == 0) {                
+                        $(".pesan-txtDescAlarm").css('display','block');
+                    }
+                    if (selectKondisiAlarm == "") {              
+                        $(".pesan-selectKondisiAlarm").css('display','block');
+                    }
+                    return false;
+          }
+
     var formData = new FormData($('#form_alarm')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_alarm",
@@ -1628,6 +1890,18 @@
   }
 
   function simpan_edit_odf() {
+          var txtDescOdf = $('#txtDescOdf').val().length;
+          var selectKondisiOdf = $('#selectKondisiOdf').val().length;                    
+
+          if (txtDescOdf == 0 || selectKondisiOdf == "") {              
+                    if (txtDescOdf == 0) {              
+                        $(".pesan-txtDescOdf").css('display','block');
+                    }
+                    if (selectKondisiOdf == "") {                
+                        $(".pesan-selectKondisiOdf").css('display','block');
+                    }
+                    return false;
+          }
     var formData = new FormData($('#form_odf')[0]);
         $.ajax({
             url : "<?php echo base_url() ?>asset_group/update_odf",
