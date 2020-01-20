@@ -18,7 +18,7 @@
                     <button type="button" class="btn btn-primary btn-sm" onclick="dc()">DC Electricity</button>
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_power" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_power">Power Supply Back Up System</a>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="power()">Power Supply Back Up System</button>
                   </h5>
                   <h5 class="gen-case">
                      <a data-target="#modal_alarm" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_alarm">External Alarm And Monitoring System</a>
@@ -253,15 +253,17 @@
                           <input type="hidden" name="txtIdFkRack" value="<?php echo $id; ?>" />
                           <label for="cname" class="control-label col-lg-3">GENSET</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescGenset" id="txtDescGenset" required />
+                            <span class="pesan pesan-txtDescGenset">Silahkan Isi Kolom GENSET</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiGenset">
+                            <select class="form-control" name="selectKondisiGenset" id="selectKondisiGenset">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiGenset">Silahkan Pilih Kondisi Genset</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_genset" capture="camera">
@@ -270,15 +272,17 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">ATS</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescAts" id="txtDescAts" required />
+                            <span class="pesan pesan-txtDescAts">Silahkan Isi Kolom ATS</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiAts">
+                            <select class="form-control" name="selectKondisiAts" id="selectKondisiAts">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiAts">Silahkan Pilih Kondisi ATS</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Ats" capture="camera">
@@ -287,15 +291,17 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">INVERTER</label>
                           <div class="col-lg-3">
-                            <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" required />
+                            <input class=" form-control" placeholder="Description" type="text" name="txtDescInverter" id="txtDescInverter" required />
+                            <span class="pesan pesan-txtDescInverter">Silahkan Isi Kolom INVERTER</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiInverter">
+                            <select class="form-control" name="selectKondisiInverter" id="selectKondisiInverter">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiInverter">Silahkan Pilih Kondisi INVERTER</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Inverter" capture="camera">
@@ -304,15 +310,17 @@
                         <div class="form-group">
                           <label for="cemail" class="control-label col-lg-3">UPS</label>
                           <div class="col-lg-3">
-                            <input class="form-control" placeholder="Description" type="text" name="txtDescUps" required />
+                            <input class="form-control" placeholder="Description" type="text" name="txtDescUps" id="txtDescUps" required />
+                            <span class="pesan pesan-txtDescUps">Silahkan Isi Kolom UPS</span>
                           </div>
                           <div class="col-lg-3">
-                            <select class="form-control" name="selectKondisiUps">
+                            <select class="form-control" name="selectKondisiUps" id="selectKondisiUps">
                               <option value="">Pilih Kondisi</option>
                               <option value="Baik">Baik</option>
                               <option value="Kurang">Kurang</option>
                               <option value="Rusak">Rusak</option>
                             </select>
+                            <span class="pesan pesan-selectKondisiUps">Silahkan Pilih Kondisi UPS</span>
                           </div>
                           <div class="col-lg-2">
                             <input type="file" accept="image/*" name="foto_Ups" capture="camera">
@@ -473,6 +481,32 @@
           $('#selectKondisiBaterai').change(function(){
               $(".pesan-selectKondisiBaterai").hide();
           });
+
+          // aksi untuk hide span di modal Power
+          $("#txtDescGenset").keyup(function () {
+              $(".pesan-txtDescGenset").hide();
+          });
+          $('#selectKondisiGenset').change(function(){
+              $(".pesan-selectKondisiGenset").hide();
+          });
+          $("#txtDescAts").keyup(function () {
+              $(".pesan-txtDescAts").hide();
+          });
+          $('#selectKondisiAts').change(function(){
+              $(".pesan-selectKondisiAts").hide();
+          });
+          $("#txtDescInverter").keyup(function () {
+              $(".pesan-txtDescInverter").hide();
+          });
+          $('#selectKondisiInverter').change(function(){
+              $(".pesan-selectKondisiInverter").hide();
+          });
+          $("#txtDescUps").keyup(function () {
+              $(".pesan-txtDescUps").hide();
+          });
+          $('#selectKondisiUps').change(function(){
+              $(".pesan-selectKondisiUps").hide();
+          });
       });
       
       function Building() {
@@ -504,6 +538,19 @@
         $(".pesan-selectKondisiBaterai").hide();
 
         $('#modal_dc').modal('show');
+      }
+
+      function power() {
+        $('#form4')[0].reset();
+        $(".pesan-txtDescGenset").hide();
+        $(".pesan-selectKondisiGenset").hide();
+        $(".pesan-txtDescAts").hide();
+        $(".pesan-selectKondisiAts").hide();
+        $(".pesan-txtDescInverter").hide();
+        $(".pesan-selectKondisiInverter").hide();
+        $(".pesan-txtDescUps").hide();
+        $(".pesan-selectKondisiUps").hide();
+        $('#modal_power').modal('show');
       }
 
       function simpan_building_infa() {
@@ -654,6 +701,44 @@
 
       function simpan_power() {
           var url;
+
+          var txtDescGenset = $('#txtDescGenset').val().length;
+          var selectKondisiGenset = $('#selectKondisiGenset').val().length;                    
+          var txtDescAts = $('#txtDescAts').val().length;         
+          var selectKondisiAts = $('#selectKondisiAts').val().length;
+          var txtDescInverter = $('#txtDescInverter').val().length;
+          var selectKondisiInverter = $('#selectKondisiInverter').val().length;
+          var txtDescUps = $('#txtDescUps').val().length;
+          var selectKondisiUps = $('#selectKondisiUps').val().length;
+
+          if (txtDescGenset == 0 || selectKondisiGenset == "" || txtDescAts == 0 || selectKondisiAts == "" || txtDescInverter == 0 || selectKondisiInverter == "" || txtDescUps == 0 || selectKondisiUps == "") {              
+                    if (txtDescGenset == 0) {              
+                        $(".pesan-txtDescGenset").css('display','block');
+                    }
+                    if (selectKondisiGenset == "") {                
+                        $(".pesan-selectKondisiGenset").css('display','block');
+                    }
+                    if (txtDescAts == 0) {                
+                        $(".pesan-txtDescAts").css('display','block');
+                    }
+                    if (selectKondisiAts == "") {              
+                        $(".pesan-selectKondisiAts").css('display','block');
+                    }
+                    if (txtDescInverter == "") {              
+                        $(".pesan-txtDescInverter").css('display','block');
+                    }
+                    if (selectKondisiInverter == "") {              
+                        $(".pesan-selectKondisiInverter").css('display','block');
+                    }
+                    if (txtDescUps == "") {              
+                        $(".pesan-txtDescUps").css('display','block');
+                    }
+                    if (selectKondisiUps == "") {              
+                        $(".pesan-selectKondisiUps").css('display','block');
+                    }
+                    return false;
+          }
+
           url = '<?php echo site_url('Asset_group/tambah_power') ;?>';
 
           var formData = new FormData($('#form4')[0]);
