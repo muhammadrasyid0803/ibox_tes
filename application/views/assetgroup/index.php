@@ -7,7 +7,7 @@
                 </h4>
               </header>
               <div class="panel-body minimal">
-                <form action="<?php echo base_url('asset_group/pop'); ?>" method="post" >
+                <form action="<?php echo base_url('Asset_group/pop'); ?>" method="post" >
                   <div class="mail-option">
                 </div>
                 <div class="col-md-2">

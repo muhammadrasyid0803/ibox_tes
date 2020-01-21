@@ -4,7 +4,10 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     <?php echo $name; ?>
-                  </h4>
+                </h4>
+                <div align="right">
+                  <button type="button" class="btn btn-success btn-sm" onclick="Kembali()">Kembali</button>
+                </div>
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
@@ -886,5 +889,9 @@
                   alert('Error adding / upader data');
               }
           });
+      }
+
+      function Kembali(){
+        window.location.href = "<?php echo base_url('Asset_group'); ?>";
       }
     </script>   
