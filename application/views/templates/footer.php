@@ -61,8 +61,9 @@
           "bSortable": false,
           "aTargets": [0]
         }],
+
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ],
 
         // "scrollY":        '300px',
@@ -88,7 +89,7 @@
           "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ]
       });
     });
@@ -103,7 +104,7 @@
           "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ]
       });
     });
@@ -118,7 +119,7 @@
           "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ]
       });
     });
@@ -133,7 +134,7 @@
           "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ]
       });
     });
@@ -148,7 +149,7 @@
           "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'asc']
+          [1, 'desc']
         ]
       });
     });
