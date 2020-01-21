@@ -5,7 +5,7 @@
                 <h4 class="gen-case">
                     <?php echo $name; ?>
                 </h4>
-                <div align="right">
+                <div align="left">
                   <button type="button" class="btn btn-success btn-sm" onclick="Kembali()">Kembali</button>
                 </div>
               </header>

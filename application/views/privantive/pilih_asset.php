@@ -6,49 +6,52 @@
                     Pilih Asset
                     <!-- <?php echo $id_pop; ?> -->
                   </h4>
+              <div align="left">
+                  <button type="button" class="btn btn-success btn-sm" onclick="Kembali()">Kembali</button>
+              </div>
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
                 <?php if($nomor == '1'){ ?>
                 <?php } elseif ($nomor == '2') { ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/kwh_meter/').$id_pop?>">KWH Meter</a>
+                     <a href="<?php echo base_url('Privantive/kwh_meter/2/').$id_pop?>">KWH Meter</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ACPDB/').$id_pop ?>">ACPDB</a>
+                     <a href="<?php echo base_url('Privantive/ACPDB/2/').$id_pop ?>">ACPDB</a>
                   </h5>
                 <?php } elseif($nomor == '3'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/DCPDB/').$id_pop ?>">DCPDB</a>
+                     <a href="<?php echo base_url('Privantive/DCPDB/3/').$id_pop ?>">DCPDB</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/RECTIFIER/').$id_pop ?>">RECTIFIER</a>
+                     <a href="<?php echo base_url('Privantive/RECTIFIER/3/').$id_pop ?>">RECTIFIER</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/Baterai/').$id_pop ?>">Baterai</a>
+                     <a href="<?php echo base_url('Privantive/Baterai/3/').$id_pop ?>">Baterai</a>
                   </h5>
                 <?php } elseif($nomor == '4'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/genset/').$id_pop ?>">Genset</a>
+                     <a href="<?php echo base_url('Privantive/genset/4/').$id_pop ?>">Genset</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ATS').$id_pop ?>">ATS</a>
+                     <a href="<?php echo base_url('Privantive/ATS/4/').$id_pop ?>">ATS</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/Inverter').$id_pop ?>">Inverter</a>
+                     <a href="<?php echo base_url('Privantive/Inverter/4/').$id_pop ?>">Inverter</a>
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/UPS').$id_pop ?>">UPS</a>
+                     <a href="<?php echo base_url('Privantive/UPS/4/').$id_pop ?>">UPS</a>
                   </h5>
                 <?php } elseif($nomor == '5'){ ?>
                 <?php } elseif($nomor == '6'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ENVIROMMENT').$id_pop ?>">ENVIROMMENT & AC & EKSTERNAL ALARM</a>
+                     <a href="<?php echo base_url('Privantive/ENVIROMMENT/6/').$id_pop ?>">ENVIROMMENT & AC & EKSTERNAL ALARM</a>
                   </h5>
                 <?php } elseif($nomor == '7'){ ?>
                 <?php } elseif($nomor == '8'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/ODF').$id_pop ?>">ODF</a>
+                     <a href="<?php echo base_url('Privantive/ODF/8/').$id_pop ?>">ODF</a>
                   </h5>
                 <?php } ?>
                 </div>
@@ -469,4 +472,10 @@
                   </div>
                 </div>
               </div>
-            </div>     
+            </div>
+
+  <script type="text/javascript">
+    function Kembali(){
+      window.location.href = "<?php echo base_url('Privantive/pop1/').$id_pop; ?>";
+    }
+  </script> 

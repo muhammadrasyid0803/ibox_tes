@@ -4,8 +4,11 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     KWH Meter
-                    <!-- <?php echo $id_pop; ?> -->
-                  </h4>
+                    <!-- <?php echo $sub_kategori; ?> -->
+                </h4>
+              <div align="left">
+                  <button type="button" class="btn btn-success btn-sm" onclick="Kembali()">Kembali</button>
+              </div>
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
@@ -480,5 +483,9 @@
                       alert('Error adding / upader data');
                   }
               });
+          }
+
+          function Kembali(){
+            window.location.href = "<?php echo base_url('Privantive/pilih_asset/').$sub_kategori.'/'.$id_pop; ?>";
           }
         </script>

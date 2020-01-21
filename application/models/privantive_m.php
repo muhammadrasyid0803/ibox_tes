@@ -78,4 +78,12 @@ class Privantive_m extends CI_Model{
     $this->db->insert('pm_ac_acpdb_foto_single', $data);   
     return $this->db->insert_id();
   }
+
+  public function get_name_pop_by_id1($id_pop){
+    $this->db->select('name');
+    $this->db->from('pops');
+    $this->db->where('id', $id_pop);
+    $query = $this->db->get();
+    return $query->row()->name;
+  }
 }

@@ -22,6 +22,7 @@ class Privantive extends CI_Controller {
 	public function pop()
 	{
 		$pop = $this->input->post('pilih_pop');
+		// $pop = $this->uri->segment('3');
 		$data['name'] = $this->privantive_m->get_name_pop_by_id($pop);
 		$data['id'] = $pop;
 		if ($pop == "pilih") {
@@ -29,7 +30,7 @@ class Privantive extends CI_Controller {
 		}
 		else{
 			$this->load->view('templates/header');
-			$this->load->view('privantive/pop', $data);
+			$this->load->view('Privantive/pop', $data);
 			$this->load->view('templates/footer');
 		}
 	}
@@ -41,7 +42,7 @@ class Privantive extends CI_Controller {
 			$data['id_pop'] = $this->uri->segment('4');
 			$data['nomor'] = $no;
       		$this->load->view('templates/header');
-			$this->load->view('privantive/pilih_asset', $data);
+			$this->load->view('Privantive/pilih_asset', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -51,7 +52,8 @@ class Privantive extends CI_Controller {
 	public function kwh_meter()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/kwh', $data);
 			$this->load->view('templates/footer');
@@ -63,7 +65,8 @@ class Privantive extends CI_Controller {
 	public function ACPDB()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/acpdb', $data);
 			$this->load->view('templates/footer');
@@ -557,4 +560,20 @@ class Privantive extends CI_Controller {
 	    $this->privantive_m->tambah_foto_single_acpdb($data);
 		echo json_encode(array("status" => true));
 	}
+
+	public function pop1($id_pop)
+	{
+		$data['name'] = $this->privantive_m->get_name_pop_by_id1($id_pop);
+		$data['id'] = $id_pop;
+		if ($id_pop == "pilih") {
+			redirect(base_url("Privantive"));
+		}
+		else{
+			$this->load->view('templates/header');
+			$this->load->view('Privantive/pop', $data);
+			$this->load->view('templates/footer');
+		}
+	}
+
+
 }
