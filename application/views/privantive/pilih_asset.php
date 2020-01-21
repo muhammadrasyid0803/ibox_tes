@@ -7,7 +7,7 @@
                     <!-- <?php echo $id_pop; ?> -->
                   </h4>
               <div align="left">
-                  <button type="button" class="btn btn-success btn-sm" onclick="Kembali()">Kembali</button>
+                  <button type="button" class="btn btn-info btn-sm" onclick="Kembali()">Kembali</button>
               </div>
               </header>
               <div class="panel-body minimal">
