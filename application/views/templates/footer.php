@@ -32,11 +32,6 @@
   <script class="include" type="text/javascript" src="<?php echo base_url();?>assets/dashio/lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery.scrollTo.min.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery.nicescroll.js" type="text/javascript"></script>
-
-  <!-- Moris JS -->
-  <script src="<?php echo base_url();?>assets/dashio/lib/raphael/raphael.min.js"></script>
-  <script src="<?php echo base_url();?>assets/dashio/lib/morris/morris.min.js"></script>
-  <script src="<?php echo base_url();?>assets/dashio/lib/morris-conf.js"></script>
   
   <!-- Datatable -->
   <script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/js/jquery.dataTables.js"></script>
@@ -54,9 +49,6 @@
   
   <!--script for this page-->
   <script src="<?php echo base_url();?>assets/dashio/lib/calendar-conf-events.js"></script>
-  <!--script for this page-->
-  <script src="<?php echo base_url();?>assets/dashio/lib/chart-master/Chart.js"></script>
-  <script src="<?php echo base_url();?>assets/dashio/lib/chartjs-conf.js"></script>
 
   <!-- Builidng -->
   <script type="text/javascript">

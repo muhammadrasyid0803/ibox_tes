@@ -31,9 +31,6 @@
   <!-- Toastr Css -->
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
-  <!-- morris -->
-  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
-
   <!-- Custom styles for this template -->
   <link href="<?php echo base_url();?>assets/dashio/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dashio/css/style-responsive.css" rel="stylesheet">
