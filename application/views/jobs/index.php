@@ -4,32 +4,21 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     List Joblist
-                    <form action="#" class="pull-right mail-src-position">
-                      <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
-                      </div>
-                    </form>
                   </h4>
               </header>
-              <div class="panel-body minimal">
-                <div class="mail-option">
-                  <ul class="unstyled inbox-pagination">
-                    <li><span>1-50 of 99</span></li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
-                    </li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="table-inbox-wrap ">
-                  <table class="table table-inbox table-hover">
+              <div class="panel-body minimal">                
+                  <table id="tabel_job" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                          <th>POP</th>
+                          <th>Tanggal di Buat</th>
+                          <th>Aksi</th>
+                        </tr>
+                    </thead>
                     <tbody id="showdata">
                      
                     </tbody>
                   </table>
-                </div>
               </div>
             </section>
           </div>
@@ -91,7 +80,7 @@
                       '<td>'+data[i].description+'</td>'+
                        '<td>'+'<span class="label label-danger">Belum Selesai</span>'+'</td>'+
                       '<td>'+
-                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button> '+
                         '<button class="btn btn-theme03 btn-xs item-ambil" data="'+data[i].id+'" style="background: #cc3300;">Ambil</button>'+
                       '</td>'+
                       '</tr>';
@@ -101,7 +90,7 @@
                       '<td>'+data[i].description+'</td>'+
                        '<td>'+'<span class="label label-success">Selesai</span>'+'</td>'+
                       '<td>'+
-                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button> '+
                         '<button class="btn btn-theme03 btn-xs item-cetak" data="'+data[i].id+'" style="background: #cc0099;">Cetak</button>'+
                       '</td>'+
                       '</tr>';  
@@ -111,7 +100,7 @@
                       '<td>'+data[i].description+'</td>'+
                        '<td>'+'<span class="label label-warning">On Progress</span>'+'</td>'+
                       '<td>'+
-                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button>'+
+                        '<button class="btn btn-theme03 btn-xs item-tampil" data="'+data[i].id+'" style="background: #3f60f3;">Detail</button> '+
                         '<button class="btn btn-theme03 btn-xs item-cetak" data="'+data[i].id+'" style="background: #cc0099;">Cetak</button>'+
                       '</td>'+
                       '</tr>';  
@@ -189,4 +178,28 @@
     })
 
   });
+
+$(document).ready(function() {
+      tabel = $('#tabel_job').dataTable({
+        // "autoWidth": true,
+        
+        // "aoColumnDefs": [{
+        //   "bSortable": false,
+        //   "aTargets": [0]
+        // }],
+
+        // "aaSorting": [
+        //   [1, 'desc']
+        // ],
+
+        // "scrollY":        '300px',
+        // "scrollX":        true,
+        // "scrollCollapse": true,
+        // "paging":         false,
+        // "columnDefs": [
+        //     { "width": '20%', "targets": 0 }
+        // ],
+        // "fixedColumns": true
+      });
+    });
 </script>

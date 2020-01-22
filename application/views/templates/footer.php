@@ -36,6 +36,7 @@
   <!-- Datatable -->
   <script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/js/jquery.dataTables.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/js/DT_bootstrap.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/dashio/DataTables/datatables.min.js"></script>
 
   <!--common script for all pages-->
   <script src="<?php echo base_url();?>assets/dashio/lib/common-scripts.js"></script>

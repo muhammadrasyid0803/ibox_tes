@@ -24,6 +24,7 @@
   <link href="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
   <link href="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/css/DT_bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/dashio/DataTables/datatables.min.css"/>
 
 
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery/jquery.min.js"></script>
