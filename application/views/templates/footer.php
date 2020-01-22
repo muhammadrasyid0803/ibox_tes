@@ -32,6 +32,12 @@
   <script class="include" type="text/javascript" src="<?php echo base_url();?>assets/dashio/lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery.scrollTo.min.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery.nicescroll.js" type="text/javascript"></script>
+
+  <!-- Moris JS -->
+  <script src="<?php echo base_url();?>assets/dashio/lib/raphael/raphael.min.js"></script>
+  <script src="<?php echo base_url();?>assets/dashio/lib/morris/morris.min.js"></script>
+  <script src="<?php echo base_url();?>assets/dashio/lib/morris-conf.js"></script>
+  
   <!-- Datatable -->
   <script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/js/jquery.dataTables.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>assets/dashio/lib/advanced-datatable/js/DT_bootstrap.js"></script>
@@ -40,6 +46,7 @@
   <script src="<?php echo base_url();?>assets/dashio/lib/common-scripts.js"></script>
   <!-- Toastr Js -->
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
    <!-- js placed at the end of the document so the pages load faster -->
   <script src="<?php echo base_url();?>assets/dashio/lib/jquery-ui-1.9.2.custom.min.js"></script>
   <script src="<?php echo base_url();?>assets/dashio/lib/fullcalendar/fullcalendar.min.js"></script>
