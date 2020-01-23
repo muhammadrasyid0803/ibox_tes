@@ -29,6 +29,7 @@ class Dashboard extends CI_Controller {
 			$data[] = array(
 				'id'	=>	$row['id'],
 				'title'	=>	$row['description'],
+				'status'	=>	$row['status'],
 				'start'	=>	$row['date'],
 				'end'	=>	$row['date'],
 			);

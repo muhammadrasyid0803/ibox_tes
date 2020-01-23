@@ -3,8 +3,7 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Pilih Asset
-                    <!-- <?php echo $id_pop; ?> -->
+                Building and Rack
                   </h4>
               <div align="left">
                   <button type="button" class="btn btn-info btn-sm" onclick="Kembali()">Kembali</button>
@@ -12,51 +11,14 @@
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
-                <?php if($nomor == '1'){ ?>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('privantive/building/1/').$id_pop?>">Building and Rack</a>
-                  </h5>
-                <?php } elseif ($nomor == '2') { ?>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/kwh_meter/2/').$id_pop?>">KWH Meter</a>
+                     <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Building</a> 
                   </h5>
                   <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/ACPDB/2/').$id_pop ?>">ACPDB</a>
+                     <a data-target="#modal_rack" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Rack</a> 
                   </h5>
-                <?php } elseif($nomor == '3'){ ?>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/DCPDB/3/').$id_pop ?>">DCPDB</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/RECTIFIER/3/').$id_pop ?>">RECTIFIER</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/Baterai/3/').$id_pop ?>">Baterai</a>
-                  </h5>
-                <?php } elseif($nomor == '4'){ ?>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/genset/4/').$id_pop ?>">Genset</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/ATS/4/').$id_pop ?>">ATS</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/Inverter/4/').$id_pop ?>">Inverter</a>
-                  </h5>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/UPS/4/').$id_pop ?>">UPS</a>
-                  </h5>
-                <?php } elseif($nomor == '5'){ ?>
-                <?php } elseif($nomor == '6'){ ?>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/ENVIROMMENT/6/').$id_pop ?>">ENVIROMMENT & AC & EKSTERNAL ALARM</a>
-                  </h5>
-                <?php } elseif($nomor == '7'){ ?>
-                <?php } elseif($nomor == '8'){ ?>
-                  <h5 class="gen-case">
-                     <a href="<?php echo base_url('Privantive/ODF/8/').$id_pop ?>">ODF</a>
-                  </h5>
-                <?php } ?>
+               
+                
                 </div>
               </div>
           </div>
@@ -65,58 +27,184 @@
         </div>
 
         <!-- Modal modal_building -->
-              <div class="modal fade" id="modal_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel">Building and Infrastructure</h4>
+                      <h4 class="modal-title" id="myModalLabel">Building</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="cmxform form-horizontal style-form" method="get" action="">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-3">Input Rack</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-3">Input Building</label>
-                    <div class="col-lg-3">
-                      <input class=" form-control" placeholder="Description" minlength="2" type="text" required />
-                    </div>
-                    <div class="col-lg-3">
-                      <select class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Kurang">Kurang</option>
-                        <option value="Rusak">Rusak</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2">
-                      <input type="file" accept="image/*" capture="camera">
-                    </div>
-                  </div>
-                </form>
+                      <form id="form_building" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                        <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-3">Foto Outdor Sisi 1</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_o_sisi_1" id="f_o_sisi_1" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Outdor Sisi 2</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_o_sisi_2" id="f_o_sisi_2" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Outdor Sisi 3</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_o_sisi_3" id="f_o_sisi_3" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Outdor Sisi 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_o_sisi_4" id="f_o_sisi_4" capture="camera">
+                          </div>
+
+                          <label for="cemail" class="control-label col-lg-3">Foto Indor Sisi 1</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_i_sisi_1" id="f_i_sisi_1" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Indor Sisi 2</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_i_sisi_2" id="f_i_sisi_2" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Indor Sisi 3</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_i_sisi_3" id="f_i_sisi_3" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Indor Sisi 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_i_sisi_4" id="f_i_sisi_4" capture="camera">
+                          </div>
+                            <label for="cemail" class="control-label col-lg-3">Foto Atap</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_atap" id="foto_atap" capture="camera">
+                          </div>
+                            <label for="cemail" class="control-label col-lg-3">Foto Lantai</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_lantai" id="foto_lantai" capture="camera">
+                          </div>
+                          </div>
+                           <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-3">Catatan Lain-lain</label>
+                          <div class="col-lg-8">
+                             <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtLainlain" required/></textarea>
+                          </div>
+
+                        </div>
+                      </form>
+
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_building()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+            
+
+                <!-- Modalrack -->
+                <div class="modal fade" id="modal_rack" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Rack</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form id="form_rack" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                        <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-3">Foto Rack 1</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_rack_1" id="f_rack_1" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Rack 2</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_rack_2" id="f_rack_2" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Rack 3</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_rack_3" id="f_rack_3" capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-3">Foto Rack 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_rack_4" id="f_rack_4" capture="camera">
+                          </div>
+
+                          <label for="cemail" class="control-label col-lg-3">Foto Rack 5</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="f_rack_5" id="f_rack_5" capture="camera">
+                          </div>
+                        
+                        </div>
+                          <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-3">Catatan Lain-lain</label>
+                          <div class="col-lg-8">
+                             <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtLainlain" required/></textarea>
+                          </div>
+
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_rack()">Save changes</button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+
+
+              <script type="text/javascript">
+              function simpan_building() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_building') ;?>';
+
+              var formData = new FormData($('#form_building')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_building')[0].reset();
+                      $('#modal_building').modal('hide');                
+                      toastr.success('Tambah Dokumentasi Sukses!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+              function simpan_rack() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_rack') ;?>';
+
+              var formData = new FormData($('#form_rack')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_rack')[0].reset();
+                      $('#modal_rack').modal('hide');                
+                      toastr.success('Tambah Dokumentasi Sukses!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+          function Kembali(){
+            window.location.href = "<?php echo base_url('Privantive/pilih_asset/').$sub_kategori.'/'.$id_pop; ?>";
+          }
+
+              </script>
+
 
         <!-- Modal modal_ac -->
         <div class="modal fade" id="modal_ac" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -475,10 +563,5 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  
 
-  <script type="text/javascript">
-    function Kembali(){
-      window.location.href = "<?php echo base_url('Privantive/pop1/').$id_pop; ?>";
-    }
-  </script> 
