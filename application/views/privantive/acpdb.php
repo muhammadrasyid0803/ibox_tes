@@ -338,15 +338,27 @@
                         <div class="form-group">
                           <label for="cemail" class="control-label col-lg-2">Foto 1</label>
                           <div class="col-lg-12">
-                            <input type="file" accept="image/*" name="foto_1" id="foto_1" capture="camera">
+                            <input type="file" accept="image/*" name="foto_1"  capture="camera">
                           </div>
                           <label for="cemail" class="control-label col-lg-2">Foto 2</label>
                           <div class="col-lg-12">
-                            <input type="file" accept="image/*" name="foto_2" id="foto_2" capture="camera">
+                            <input type="file" accept="image/*" name="foto_2"  capture="camera">
                           </div>
                           <label for="cemail" class="control-label col-lg-2">Foto 3</label>
                           <div class="col-lg-12">
-                            <input type="file" accept="image/*" name="foto_3" id="foto_3" capture="camera">
+                            <input type="file" accept="image/*" name="foto_3"  capture="camera">
+                          </div>
+                             <label for="cemail" class="control-label col-lg-2">Foto 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_4"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 5</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_5"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 6</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_6" capture="camera">
                           </div>
                         </div>
                       </form>
