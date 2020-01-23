@@ -155,6 +155,14 @@
               <script type="text/javascript">
               function simpan_building() {
               var url;
+
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+                  if (txtLainlain == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_building') ;?>';
 
               var formData = new FormData($('#form_building')[0]);
@@ -178,6 +186,14 @@
 
               function simpan_rack() {
               var url;
+
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+                  if (txtLainlain == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_rack') ;?>';
 
               var formData = new FormData($('#form_rack')[0]);

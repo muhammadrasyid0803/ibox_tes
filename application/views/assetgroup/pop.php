@@ -605,11 +605,11 @@
       function simpan_building_infa() {
           var url;
 
-            var desc_rack = $('#txtDescRack').val().length;
-            var selectKondisiRack = $('#selectKondisiRack').val().length;                    
-            var selectNoRack = $('#selectNoRack').val().length;         
-            var txtDescBuilding = $('#txtDescBuilding').val().length;           
-            var selectKondisiBuilding = $('#selectKondisiBuilding').val().length; 
+            var desc_rack = $("input[name=txtDescRack]").val().length;
+            var selectKondisiRack = $("select[name=selectKondisiRack]").val();
+            var selectNoRack = $("select[name=selectNoRack]").val();         
+            var txtDescBuilding = $("input[name=txtDescBuilding]").val().length;           
+            var selectKondisiBuilding = $("select[name=selectKondisiBuilding]").val(); 
 
                 if (desc_rack == 0 || selectKondisiRack == "" || selectNoRack == 0 || txtDescBuilding == 0 || selectKondisiBuilding == "") {              
                     if (desc_rack == 0) {              
