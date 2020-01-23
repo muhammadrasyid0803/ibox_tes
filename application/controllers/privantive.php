@@ -91,7 +91,8 @@ class Privantive extends CI_Controller {
 	public function DCPDB()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/dcpdb', $data);
 			$this->load->view('templates/footer');
@@ -103,7 +104,8 @@ class Privantive extends CI_Controller {
 	public function RECTIFIER()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/rectifier', $data);
 			$this->load->view('templates/footer');
@@ -115,7 +117,8 @@ class Privantive extends CI_Controller {
 	public function Baterai()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/baterai', $data);
 			$this->load->view('templates/footer');
@@ -127,7 +130,8 @@ class Privantive extends CI_Controller {
 	public function genset()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/genset', $data);
 			$this->load->view('templates/footer');
@@ -139,7 +143,8 @@ class Privantive extends CI_Controller {
 	public function ATS()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/ats',$data);
 			$this->load->view('templates/footer');
@@ -151,7 +156,8 @@ class Privantive extends CI_Controller {
 	public function Inverter()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/inverter', $data);
 			$this->load->view('templates/footer');
@@ -163,7 +169,8 @@ class Privantive extends CI_Controller {
 	public function UPS()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/ups', $data);
 			$this->load->view('templates/footer');
@@ -175,7 +182,8 @@ class Privantive extends CI_Controller {
 	public function ENVIROMMENT()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/enviromment',$data);
 			$this->load->view('templates/footer');
@@ -187,7 +195,8 @@ class Privantive extends CI_Controller {
 	public function ODF()
 	{
 		if($this->session->userdata('username')!=""){
-			$data['id_pop'] = $this->uri->segment('3');
+			$data['id_pop'] = $this->uri->segment('4');
+			$data['sub_kategori'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
 			$this->load->view('privantive/odf',$data);
 			$this->load->view('templates/footer');
