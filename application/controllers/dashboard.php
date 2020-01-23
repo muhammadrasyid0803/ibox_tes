@@ -19,4 +19,21 @@ class Dashboard extends CI_Controller {
       		$this->load->view('pesan_error');
     	}
 	}
+
+	public function tampil_job(){
+	    $users_id = $this->session->userdata('id');
+	    $event_data = $this->dashboard_m->list_job($users_id);
+	    
+		foreach($event_data->result_array() as $row)
+		{
+			$data[] = array(
+				'id'	=>	$row['id'],
+				'title'	=>	$row['description'],
+				'start'	=>	$row['date'],
+				'end'	=>	$row['date'],
+			);
+		}
+		
+		echo json_encode($data);
+	}
 }

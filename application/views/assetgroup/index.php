@@ -47,7 +47,7 @@
                 <section class="panel">
                   <div class="panel-body minimal">
                     <div class="adv-table">
-                    <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-responsive" id="table_id_building">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display" style="width:100%" id="table_id_building">
                       <thead>
                         <tr>
                           <th>POP</th>

@@ -1,26 +1,20 @@
-
-        <!-- <h3><i class="fa fa-angle-right"></i></h3> -->
         <!-- page start-->
         <div class="row mt">
           <aside class="col-lg-6 mt">
             <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i>Diagram Pie Job</h4>
-                <!-- <div class="panel-body text-center">
-                </div> -->
+                <h4><i class="fa fa-angle-right"></i> Diagram Pie Job</h4>
                 <div id="piechart" width="1000" height="280"></div>
-                <!-- <canvas id="canvas" width="1000" height="280"></canvas> -->
             </div>
           </aside>
           <aside class="col-lg-6 mt">
             <section class="panel">
               <div class="panel-body">
-                <div id="calendar" class="has-toolbar"></div>
+                <div id="kalender_job" class="has-toolbar"></div>
               </div>
             </section>
           </aside>
         </div>
-        <!-- <canvas id="canvas" width="1000" height="280"></canvas> -->
-       <!--Load chart js-->
+        
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -44,5 +38,20 @@
 
         chart.draw(data);
       }
+    </script>
+    <script>
+    $(document).ready(function(){
+        var calendar = $('#kalender_job').fullCalendar({
+            header:{
+                left:'prev,next today',
+                center:'title',
+                right:'month,agendaWeek,agendaDay'
+            },
+            events:"<?php echo base_url(); ?>Dashboard/tampil_job",
+            selectable:true,
+            selectHelper:true,
+        });
+    });
+             
     </script>
    

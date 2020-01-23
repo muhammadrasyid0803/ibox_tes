@@ -14,4 +14,10 @@ class Dashboard_m extends CI_Model{
         $query = $this->db->query("SELECT COUNT(status) as on_progress FROM jobs WHERE status = 'on progress'");
         return $query->row()->on_progress;
   }
+
+   public function list_job($users_id){
+        $this->db->from('jobs');
+        $this->db->where('users_id', $users_id);
+        return $this->db->get();
+    }
 }
