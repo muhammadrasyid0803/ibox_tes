@@ -91,8 +91,9 @@ class Privantive extends CI_Controller {
 	public function DCPDB()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/dcpdb');
+			$this->load->view('privantive/dcpdb', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -102,8 +103,9 @@ class Privantive extends CI_Controller {
 	public function RECTIFIER()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/rectifier');
+			$this->load->view('privantive/rectifier', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -113,8 +115,9 @@ class Privantive extends CI_Controller {
 	public function Baterai()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/baterai');
+			$this->load->view('privantive/baterai', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -124,8 +127,9 @@ class Privantive extends CI_Controller {
 	public function genset()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/genset');
+			$this->load->view('privantive/genset', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -135,8 +139,9 @@ class Privantive extends CI_Controller {
 	public function ATS()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/ats');
+			$this->load->view('privantive/ats',$data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -146,8 +151,9 @@ class Privantive extends CI_Controller {
 	public function Inverter()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/inverter');
+			$this->load->view('privantive/inverter', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -157,8 +163,9 @@ class Privantive extends CI_Controller {
 	public function UPS()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/ups');
+			$this->load->view('privantive/ups', $data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -168,8 +175,9 @@ class Privantive extends CI_Controller {
 	public function ENVIROMMENT()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/enviromment');
+			$this->load->view('privantive/enviromment',$data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
@@ -179,13 +187,15 @@ class Privantive extends CI_Controller {
 	public function ODF()
 	{
 		if($this->session->userdata('username')!=""){
+			$data['id_pop'] = $this->uri->segment('3');
       		$this->load->view('templates/header');
-			$this->load->view('privantive/odf');
+			$this->load->view('privantive/odf',$data);
 			$this->load->view('templates/footer');
     	} else {
       		$this->load->view('pesan_error');
     	}
 	}
+
 
 	private function _do_upload_add_foto_o_1(){
 	        $config['upload_path']          = 'assets/dokumen/';

@@ -9,16 +9,16 @@
               <div class="panel-body minimal">
                 <div class="col-md-4">
                   <h5 class="gen-case">
-                     <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Data INVERTER</a> 
+                     <a data-target="#modal_inverter" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Data INVERTER</a> 
                   </h5>
                   <h5 class="gen-case">
-                    <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Lain - Lain</a> 
+                    <a data-target="#modal_lain_lain" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Lain - Lain</a> 
                   </h5>
                   <h5 class="gen-case">
-                     <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Temuan Untuk Ditindaklanjuti</a> 
+                     <a data-target="#modal_temuan" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Temuan Untuk Ditindaklanjuti</a> 
                   </h5>
                   <h5 class="gen-case">
-                    <a data-target="#modal_building" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Dokumentasi</a> 
+                    <a data-target="#modal_dokumentasi" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#modal_building">Dokumentasi</a> 
                   </h5>
                 </div>
               </div>
@@ -26,6 +26,275 @@
             </section>
           </div>
         </div>
+
+          <!-- Modal Inverter -->
+           <div class="modal fade" id="modal_inverter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Data Inverter</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form id="form_inverter" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                      
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Merk dan Tipe</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtMerknTipe" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Serial Number (S/N)</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtSN" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Nomor/Label Aset Amarta</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtAmarta" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                        <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Tegangan Output (VAC)</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtTeganganOutput" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                          <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Kapasitas (KVA)</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                         <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Beban (A)</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div> <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Utilisasi (%)</label>
+                          <div class="col-lg-8">
+                            <input class=" form-control" name="txtUtilisasi" placeholder="Description" minlength="2" type="text" required />
+                          </div>
+                        </div>
+                       
+                         <div class="form-group ">
+                          <label for="cemail" class="control-label col-lg-3">Indikasi Alarm</label>
+                          <div class="col-lg-8">
+                             <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtIndikasiAlarm" required/></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_inverter()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          <!-- Modal modal_lain_lain -->
+              <div class="modal fade" id="modal_lain_lain" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Lain-lain</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form id="form_lain_lain" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                        <div class="form-group">
+                          <div class="col-lg-12">
+                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtLainlain" required/></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_lain_lain()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <!-- Modal modal_temuan -->
+              <div class="modal fade" id="modal_temuan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Temuan Untuk Ditindaklanjuti</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form id="form_temuan" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                        <div class="form-group">
+                          <div class="col-lg-12">
+                            <textarea class="form-control" placeholder="Description" minlength="2" type="text" name="txtTemuan" required/></textarea>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_temuan()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+     
+        <!-- Modal modal_dokumentasi -->
+              <div class="modal fade" id="modal_dokumentasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Dokumentasi</h4>
+                    </div>
+                    <div class="modal-body">
+                     <form id="form_dokumentasi" action="#" class="cmxform form-horizontal style-form">
+                        <input type="hidden" name="txtIdPOP" value="<?php echo $id_pop; ?>">
+                        <div class="form-group">
+                          <label for="cemail" class="control-label col-lg-2">Foto 1</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_1"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 2</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_2"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 3</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_3"  capture="camera">
+                          </div>
+                             <label for="cemail" class="control-label col-lg-2">Foto 4</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_4"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 5</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_5"  capture="camera">
+                          </div>
+                          <label for="cemail" class="control-label col-lg-2">Foto 6</label>
+                          <div class="col-lg-12">
+                            <input type="file" accept="image/*" name="foto_6" capture="camera">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="simpan_dokumentasi()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+              function simpan_inverter() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_data_inverter') ;?>';
+
+              var formData = new FormData($('#form_inverter')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_inverter')[0].reset();
+                      $('#modal_inverter').modal('hide');                
+                      toastr.success('Tambah Data Inverter Berhasil!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+
+            function simpan_lain_lain() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_inverter_lain_lain') ;?>';
+
+              var formData = new FormData($('#form_lain_lain')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_lain_lain')[0].reset();
+                      $('#modal_lain_lain').modal('hide');                
+                      toastr.success('Tambah Data Berhasil!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+          function simpan_temuan() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_inverter_temuan') ;?>';
+
+              var formData = new FormData($('#form_temuan')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_temuan')[0].reset();
+                      $('#modal_temuan').modal('hide');                
+                      toastr.success('Tambah Data Berhasil!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+          function simpan_dokumentasi() {
+              var url;
+              url = '<?php echo site_url('Privantive/tambah_inverter_dokumentasi') ;?>';
+
+              var formData = new FormData($('#form_dokumentasi')[0]);
+              $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: formData,
+                  contentType: false,
+                  processData: false,
+                  dataType: "JSON",
+                  success: function(data) {
+                      $('#form_dokumentasi')[0].reset();
+                      $('#modal_dokumentasi').modal('hide');                
+                      toastr.success('Tambah Data Berhasil!', 'Success', {timeOut: 5000})
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      alert('Error adding / upader data');
+                  }
+              });
+          }
+
+
+
+
+              </script>
 
         <!-- Modal modal_building -->
               <div class="modal fade" id="modal_building" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

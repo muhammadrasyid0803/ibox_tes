@@ -90,7 +90,7 @@ class Privantive_m extends CI_Model{
 
   public function tambah_data_dcpbd($data){
     $this->db->insert('pm_dc_data_dcpdb',$data);
-    return $this->insert_id();
+    return $this->db->insert_id();
   }
 
 
