@@ -15,9 +15,8 @@ class Dashboard_m extends CI_Model{
         return $query->row()->on_progress;
   }
 
-   public function list_job($users_id){
-        $this->db->from('jobs');
-        $this->db->where('users_id', $users_id);
+   public function list_schedule(){
+        $this->db->from('schedule');
         return $this->db->get();
     }
 }

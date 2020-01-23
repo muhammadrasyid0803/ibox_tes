@@ -49,12 +49,7 @@
                 right:'month,agendaWeek,agendaDay'
             },
             events:"<?php echo base_url(); ?>Dashboard/tampil_job",
-            // if(status == "selesai"){
-              eventColor: '#ff0000',
-            // }
-            // esleif (status == "belum"){
-              // eventColor: '#000000',
-            // }
+            eventColor: '#4ECDC4',
             selectable:true,
             selectHelper:true,
         });
