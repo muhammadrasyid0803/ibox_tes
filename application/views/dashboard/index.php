@@ -6,6 +6,7 @@
                 <div id="piechart" width="1000" height="280"></div>
             </div>
           </aside>
+          <br>
           <aside class="col-lg-6 mt">
             <section class="panel">
               <div class="panel-body">
