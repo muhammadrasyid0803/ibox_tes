@@ -5,6 +5,9 @@
                 <h4 class="gen-case">
                     ENVIRONMENT & AC & EKSTERNAL ALARM
                   </h4>
+              <div align="left">
+                  <button type="button" class="btn btn-info btn-sm" onclick="Kembali()">Kembali</button>
+              </div>
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
@@ -423,6 +426,10 @@
                       alert('Error adding / upader data');
                   }
               });
+          }
+
+              function Kembali(){
+            window.location.href = "<?php echo base_url('Privantive/pilih_asset/').$sub_kategori.'/'.$id_pop; ?>";
           }
                 </script>
 

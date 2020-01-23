@@ -4,8 +4,10 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     ODF
-
                   </h4>
+              <div align="left">
+                  <button type="button" class="btn btn-info btn-sm" onclick="Kembali()">Kembali</button>
+              </div>
               </header>
               <div class="panel-body minimal">
                 <div class="col-md-4">
@@ -169,7 +171,9 @@
               });
           }
 
-
+            function Kembali(){
+            window.location.href = "<?php echo base_url('Privantive/pilih_asset/').$sub_kategori.'/'.$id_pop; ?>";
+          }
 
               </script>
 
