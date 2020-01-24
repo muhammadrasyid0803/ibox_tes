@@ -65,7 +65,7 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Jumlah Slot Modul</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtJumlahSlot" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtJumlahSlot" required />
                           </div>
                         </div>
                         <div class="form-group ">
@@ -77,13 +77,13 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tegangan (VDC)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTegangan" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTegangan" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Beban (A)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
@@ -111,11 +111,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 1 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM1" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM1" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM1" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM1" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -126,11 +126,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 2</label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM2" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM2" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -141,11 +141,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 3 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM3" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM3" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM3" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM3" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -156,11 +156,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 4 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM4" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM4" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM4" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM4" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -171,11 +171,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 5 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM5" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM5" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM5" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM5" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -186,11 +186,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 6</label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM6" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM6" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM6" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM6" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -201,11 +201,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 7 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM7" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM7" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM7" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM7" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -216,11 +216,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 8 </label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM8" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM8" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM8" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM8" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -231,11 +231,11 @@
                           <label for="cname" class="control-label col-lg-3">Modul 9</label>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasM9" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasM9" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtAmpereM9" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtAmpereM9" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S/N </label>
@@ -247,33 +247,33 @@
                           <label for="cname" class="control-label col-lg-3">Kapasitas Total (A)</label>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasKap" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasKap" required />
                           </div>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtKapasitasAmpere" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtKapasitasAmpere" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">Beban Terpakai (B)</label>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtBebanKapasitas" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtBebanKapasitas" required />
                           </div>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtBebanAmpere" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtBebanAmpere" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">Selisih (C)</label>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Kapasitas </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtSelisihKapasitas" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtSelisihKapasitas" required />
                           </div>
                           <div class="col-lg-4">
                             <label for="cname" class="control-label">Ampere (A)</label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtSelisihAmpere" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtSelisihAmpere" required />
                           </div>
                         </div>
 
