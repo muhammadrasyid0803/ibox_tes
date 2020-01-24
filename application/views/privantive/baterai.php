@@ -305,6 +305,19 @@
 
           function simpan_dokumentasi() {
               var url;
+
+              var foto_1 = $('input[name=foto_1]').val().length;
+              var foto_2 = $('input[name=foto_2]').val().length;
+              var foto_3 = $('input[name=foto_3]').val().length;
+              var foto_4 = $('input[name=foto_4]').val().length;
+              var foto_5 = $('input[name=foto_5]').val().length;
+              var foto_6 = $('input[name=foto_6]').val().length;
+              
+              if (foto_1 == 0 || foto_2 == 0 || foto_3 == 0 || foto_4 == 0 || foto_5 == 0 || foto_6 == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_battery_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);
