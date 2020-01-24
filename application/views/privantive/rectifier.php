@@ -357,7 +357,7 @@
                         <div class="form-group">
                           <label for="cemail" class="control-label col-lg-2">Foto 1</label>
                           <div class="col-lg-12">
-                            <input type="file" accept="image/*" name="foto_1" id="foto_1" capture="camera">
+                            <input type="file" accept="image/*" name="foto_single" id="foto_single" capture="camera">
                           </div>
                         </div>
                       </form>
@@ -529,6 +529,12 @@
 
           function simpan_foto_single() {
               var url;
+              var foto_single = $('input[name=foto_single]').val().length;
+              
+              if (foto_single == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
               url = '<?php echo site_url('Privantive/tambah_rectifier_foto_single') ;?>';
 
               var formData = new FormData($('#form_foto_single')[0]);
@@ -552,6 +558,22 @@
 
           function simpan_dokumentasi() {
               var url;
+
+              var foto_1 = $('input[name=foto_1]').val().length;
+              var foto_2 = $('input[name=foto_2]').val().length;
+              var foto_3 = $('input[name=foto_3]').val().length;
+              var foto_4 = $('input[name=foto_4]').val().length;
+              var foto_5 = $('input[name=foto_5]').val().length;
+              var foto_6 = $('input[name=foto_6]').val().length;
+
+              // alert(foto_satu+','+foto_2+','+foto_3+','+foto_4+','+foto_5+','+foto_6);
+              // return false;
+              
+              if (foto_1 == 0 || foto_2 == 0 || foto_3 == 0 || foto_4 == 0 || foto_5 == 0 || foto_6 == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_rectifier_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);
