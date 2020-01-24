@@ -39,7 +39,7 @@
         <h2 class="form-login-heading">Selamat Datang di Aplikasi IBOX</h2>
         <div align="center">
         <a href="">
-          <span> <img src="<?php echo base_url();?>assets/dokumen/logo.jpg" width="50%"  height="100%" style="margin-top: 5%"></span>
+          <span> <img src="<?php echo base_url();?>assets/dashio/img/logo.jpg" width="50%"  height="100%" style="margin-top: 5%"></span>
         </a>
         </div>
         <div class="login-wrap">
@@ -59,7 +59,7 @@
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
   <script type="text/javascript" src="<?php echo base_url();?>assets/dashio/lib/jquery.backstretch.min.js"></script>
   <script>
-    $.backstretch("<?php echo base_url();?>assets/dokumen/tes.png", {
+    $.backstretch("<?php echo base_url();?>assets/dashio/img/tes.png", {
       speed: 500
     });
   </script>
