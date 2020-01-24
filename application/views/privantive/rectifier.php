@@ -418,8 +418,35 @@
               </div>
 
               <script type="text/javascript">
-               function simpan_rectifier(){
+            function simpan_rectifier(){
               var url;
+
+              var txtMerk = $('input[name=txtMerk]').val().length;
+              var txtSN = $('input[name=txtSN]').val().length;
+              var txtAmarta = $('input[name=txtAmarta]').val().length;
+              var txtJumlahSlot = $('input[name=txtJumlahSlot]').val().length;
+              var txtKondisiFuse = $('input[name=txtKondisiFuse]').val().length;
+              var txtTegangan = $('input[name=txtTegangan]').val().length;
+              var txtBeban = $('input[name=txtBeban]').val().length;
+              var txtAlarm = $('textarea[name=txtAlarm]').val().length;
+              var selectMCB1 = $(':radio[name=selectMCB1]:checked').length;
+              var selectMCB2 = $(':radio[name=selectMCB2]:checked').length;
+              var txtKapasitasKap = $('input[name=txtKapasitasKap]').val().length;
+              var txtKapasitasAmpere = $('input[name=txtKapasitasAmpere]').val().length;
+              var txtBebanKapasitas = $('input[name=txtBebanKapasitas]').val().length;
+              var txtBebanAmpere = $('input[name=txtBebanAmpere]').val().length;
+              var txtSelisihKapasitas = $('input[name=txtSelisihKapasitas]').val().length;
+              var txtSelisihAmpere = $('input[name=txtSelisihAmpere]').val().length;
+
+              // alert(txtAlarm);
+              // alert(txtMerk+','+txtSN+','+txtAmarta+','+txtJumlahSlot+','+txtKondisiFuse+','+txtTegangan+','+txtBeban+','+txtAlarm+','+selectMCB1+','+selectMCB2+','+txtKapasitasKap+','+txtKapasitasAmpere+','+txtBebanKapasitas+','+txtBebanAmpere+','+txtSelisihKapasitas+','+txtSelisihAmpere);
+              // return false;
+              
+              if (txtMerk == 0 || txtSN == 0 || txtAmarta == 0 || txtJumlahSlot == 0 || txtKondisiFuse == 0 || txtTegangan == 0 || txtBeban == 0 || txtAlarm == 0 || selectMCB1 == 0 || selectMCB2 == 0 || txtKapasitasKap == 0 || txtKapasitasAmpere == 0 || txtBebanKapasitas == 0 || txtBebanAmpere == 0 || txtSelisihKapasitas == 0 || txtSelisihAmpere == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_data_rectifier') ;?>';
 
               var formData = new FormData($('#form_rectifier')[0]);
