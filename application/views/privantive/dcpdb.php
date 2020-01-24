@@ -218,6 +218,15 @@
 
               function simpan_dcpdb(){
                  var url;
+
+                var selectKondisiBox = $('select[name=selectKondisiBox]').val().length;
+                var koneksi_terminal_mcb = $(':radio[name=koneksi_terminal_mcb]:checked').length;
+                var txtAmarta = $('input[name=txtAmarta]').val().length;
+                
+                if (selectKondisiBox == 0 || koneksi_terminal_mcb == 0 || txtAmarta == 0) {
+                    alert('Silahkan Isi Data Dengan Benar');
+                        return false;
+                }
               url = '<?php echo site_url('Privantive/tambah_data_dcpbd') ;?>';
 
               var formData = new FormData($('#form_dcpdb')[0]);
