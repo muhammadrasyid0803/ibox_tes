@@ -207,6 +207,22 @@
               <script type="text/javascript">
                  function simpan_baterai() {
               var url;
+
+              var selectDiameterKabel = $(':radio[name=selectDiameterKabel]:checked').length;
+              var selectKoneksiTerminal = $(':radio[name=selectKoneksiTerminal]:checked').length;
+              var selectKondisiFisik = $(':radio[name=selectKondisiFisik]:checked').length;
+              var txtAmarta = $('input[name=txtAmarta]').val().length;
+              var txtMerk = $('input[name=txtMerk]').val().length;
+              var txtTipe = $('input[name=txtTipe]').val().length;
+              var txtKapasitas = $('input[name=txtKapasitas]').val().length;
+              var txtUnit = $('input[name=txtUnit]').val().length;
+              var txtSN = $('input[name=txtSN]').val().length;
+              
+              if (selectDiameterKabel == 0 || selectKoneksiTerminal == 0 || selectKondisiFisik == 0 || txtAmarta == 0 || txtMerk == 0 || txtTipe == 0 || txtKapasitas == 0 || txtUnit == 0 || txtSN == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_data_battery') ;?>';
 
               var formData = new FormData($('#form_baterai')[0]);
