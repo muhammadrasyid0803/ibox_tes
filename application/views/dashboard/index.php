@@ -1,18 +1,27 @@
         <!-- page start-->
+       
+          
+      
         <div class="row mt">
           <aside class="col-lg-6 mt">
             <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Diagram Pie Job</h4>
+                <h4><i class="fa fa-angle-right"></i> Data Job</h4>
                 <div id="piechart" width="1000" height="280"></div>
             </div>
           </aside>
           <br>
-          <aside class="col-lg-6 mt">
-            <section class="panel">
-              <div class="panel-body">
+
+          
+          <aside class="col-lg-6 mt ">       
+            <section class="panel"> 
+                    
+            <div class="panel-body">
+
                 <div id="kalender_job" class="has-toolbar"></div>
+                <h4 align="center"> <strong>Jadwal PM</strong> </h4>  
               </div>
             </section>
+       
           </aside>
         </div>
         

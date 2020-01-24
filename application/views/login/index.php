@@ -36,7 +36,7 @@
   <div id="login-page">
     <div class="container">
       <form class="form-login" action="<?php echo base_url('login/masuk'); ?>" method="post">
-        <h2 class="form-login-heading">Selamat Datang di Aplikasi IBOX</h2>
+        <h2 class="form-login-heading"> <strong> Selamat Datang di Aplikasi <b>IBOX</b>  </strong> </h2>
         <div align="center">
         <a href="">
           <span> <img src="<?php echo base_url();?>assets/dashio/img/logo.jpg" width="50%"  height="100%" style="margin-top: 5%"></span>
