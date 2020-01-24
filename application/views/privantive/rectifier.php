@@ -471,6 +471,12 @@
 
               function simpan_lain_lain() {
               var url;
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+                  if (txtLainlain == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_rectifier_lain_lain') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);
@@ -494,6 +500,12 @@
 
           function simpan_temuan() {
               var url;
+              var txtTemuan = $("textarea[name=txtTemuan]").val().length;
+
+                  if (txtTemuan == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_rectifier_temuan') ;?>';
 
               var formData = new FormData($('#form_temuan')[0]);
