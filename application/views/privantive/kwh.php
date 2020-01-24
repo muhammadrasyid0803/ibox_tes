@@ -51,25 +51,25 @@
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">ID Pelanggan</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtIdPelanggan" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtIdPelanggan" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">ID KWH Meter</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtIdKwh" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtIdKwh" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Daya Terpasang (VA)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtDaya" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtDaya" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">MCB Terpasang (A)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtMcb" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtMcb" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
@@ -182,58 +182,58 @@
                           <label for="cname" class="control-label col-lg-3">Tegangan</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-S (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_S_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_S_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_T_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_T_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">N-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtN_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtN_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_G_tegangan" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">Beban</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa R (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_r_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_r_beban" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa S (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_s_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_s_beban" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa T (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_t_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_t_beban" required />
                           </div>
                         </div>
                       </form>
