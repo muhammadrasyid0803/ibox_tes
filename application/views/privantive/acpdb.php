@@ -445,6 +445,26 @@
 
           function simpan_pengukuran_tegangan() {
               var url;
+
+              var txtR_S_tegangan = $("input[name=txtR_S_tegangan]").val().length;
+              var txtR_T_tegangan = $("input[name=txtR_T_tegangan]").val().length;
+              var txtS_T_tegangan = $("input[name=txtS_T_tegangan]").val().length;
+              var txtN_G_tegangan = $("input[name=txtN_G_tegangan]").val().length;
+              var txtR_N_tegangan = $("input[name=txtR_N_tegangan]").val().length;
+              var txtS_N_tegangan = $("input[name=txtS_N_tegangan]").val().length;
+              var txtT_N_tegangan = $("input[name=txtT_N_tegangan]").val().length;
+              var txtR_G_tegangan = $("input[name=txtR_G_tegangan]").val().length;
+              var txtS_G_tegangan = $("input[name=txtS_G_tegangan]").val().length;
+              var txtT_G_tegangan = $("input[name=txtT_G_tegangan]").val().length;
+              var txt_fasa_r_beban = $("input[name=txt_fasa_r_beban]").val().length;
+              var txt_fasa_s_beban = $("input[name=txt_fasa_s_beban]").val().length;
+              var txt_fasa_t_beban = $("input[name=txt_fasa_t_beban]").val().length;
+
+                  if (txtR_S_tegangan == 0 || txtR_T_tegangan == 0 || txtS_T_tegangan == 0 || txtN_G_tegangan == 0 || txtR_N_tegangan == 0 || txtS_N_tegangan == 0 || txtT_N_tegangan == 0 || txtR_G_tegangan == 0 || txtS_G_tegangan == 0 || txtT_G_tegangan == 0 || txt_fasa_r_beban == 0 || txt_fasa_s_beban == 0 || txt_fasa_t_beban == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_pengukuran_tegangan_acpdb') ;?>';
 
               var formData = new FormData($('#form_pengukur_tegangan')[0]);
