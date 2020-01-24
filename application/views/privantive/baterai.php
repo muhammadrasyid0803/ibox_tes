@@ -83,11 +83,11 @@
                           </div>
                           <label for="cemail" class="control-label col-lg-3">Kapasitas (Ah)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="number" required />
                           </div>
                           <label for="cemail" class="control-label col-lg-3">Unit #1 (Volt)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtUnit" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtUnit" placeholder="Description" minlength="2" type="number" required />
                           </div>
                           <label for="cemail" class="control-label col-lg-3">S/N</label>
                           <div class="col-lg-8">
