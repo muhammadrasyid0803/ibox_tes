@@ -349,6 +349,20 @@
         <script type="text/javascript">
           function simpan_data_kwh() {
               var url;
+              
+              var txtIdPelanggan = $("input[name=txtIdPelanggan]").val().length;
+              var txtIdKwh = $("input[name=txtIdKwh]").val().length;
+              var txtDaya = $("input[name=txtDaya]").val().length;
+              var txtMcb = $("input[name=txtMcb]").val().length;
+              var txtFasa = $("input[name=txtFasa]").val().length;
+              var txtAmarta = $("input[name=txtAmarta]").val().length;
+              var rd_gembok = $(':radio[name=rd_gembok]:checked').length;
+
+                  if (txtIdPelanggan == 0 || txtIdKwh == 0 || txtDaya == 0 || txtMcb == 0 || txtFasa == 0 || txtAmarta == 0 || rd_gembok == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_data_kwh') ;?>';
 
               var formData = new FormData($('#form_data_kwh')[0]);

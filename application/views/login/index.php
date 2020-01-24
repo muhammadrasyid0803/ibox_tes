@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Selamat Datang di Aplikasi IBOX</title>
 
   <!-- Favicons -->
   <link href="<?php echo base_url();?>assets/dashio/img/favicon.png" rel="icon">
@@ -36,7 +36,7 @@
   <div id="login-page">
     <div class="container">
       <form class="form-login" action="<?php echo base_url('login/masuk'); ?>" method="post">
-        <h2 class="form-login-heading">sign in now</h2>
+        <h2 class="form-login-heading">Selamat Datang di Aplikasi IBOX</h2>
         <div class="login-wrap">
           <input type="text" name="txtUsername" class="form-control" placeholder="User ID" autofocus>
           <br>
