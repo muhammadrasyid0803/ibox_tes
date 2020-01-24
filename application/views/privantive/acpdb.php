@@ -445,7 +445,6 @@
 
           function simpan_pengukuran_tegangan() {
               var url;
-
               var txtR_S_tegangan = $("input[name=txtR_S_tegangan]").val().length;
               var txtR_T_tegangan = $("input[name=txtR_T_tegangan]").val().length;
               var txtS_T_tegangan = $("input[name=txtS_T_tegangan]").val().length;
