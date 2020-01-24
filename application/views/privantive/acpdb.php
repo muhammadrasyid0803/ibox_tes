@@ -374,6 +374,14 @@
         <script type="text/javascript">
           function simpan_data_acpdb() {
               var url;
+
+              var selectKondisiAcpdb = $('select[name=selectKondisiAcpdb]').val().length;
+              var txtAmarta = $('input[name=txtAmarta]').val().length;
+              
+              if (selectKondisiAcpdb == 0 || txtAmarta == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
               url = '<?php echo site_url('Privantive/tambah_data_acpdb') ;?>';
 
               var formData = new FormData($('#form_data_acpdb')[0]);
