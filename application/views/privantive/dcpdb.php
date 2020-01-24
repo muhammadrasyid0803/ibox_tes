@@ -250,6 +250,14 @@
 
             function simpan_lain_lain() {
               var url;
+              
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+                  if (txtLainlain == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_lain_lain_dc') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);

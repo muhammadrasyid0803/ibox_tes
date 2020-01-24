@@ -1142,7 +1142,7 @@ class Privantive extends CI_Controller {
 
 	public function tambah_lain_lain_dc(){
 			$data = array(
-	    	'keterangan' => $this->input->post('txtAmarta'),
+	    	'keterangan' => $this->input->post('txtLainlain'),
 	    	'id_pop' => $this->input->post('txtIdPOP'),
 	    );
 
