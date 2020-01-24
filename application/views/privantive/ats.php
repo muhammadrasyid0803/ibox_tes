@@ -62,7 +62,7 @@
                         <div class="form-group">
                           <label for="cemail" class="control-label col-lg-2">Foto Single</label>
                           <div class="col-lg-12">
-                            <input type="file" accept="image/*" name="foto_1" id="foto_1" capture="camera">
+                            <input type="file" accept="image/*" name="foto_single" id="foto_single" capture="camera">
                           </div>
                         </div>
                       </form>
@@ -109,7 +109,7 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tahun Aset</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTahunAset" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTahunAset" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
@@ -276,61 +276,61 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">PLN</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtPLN" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtPLN2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Input PLN</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtInputPLN" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtInputPLN2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Input Genset</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtInputGenset" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtInputGenset2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Genset</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtGenset" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtGenset2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                           <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Genset OFF</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtGensetOFF" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtGensetOFF2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Manual</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtManual" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtManual2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div> <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tanpa PLN</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTanpaPLN" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTanpaPLN2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                        
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Otomatis</label>
                           <div class="col-lg-8">
-                             <input class=" form-control" name="txtOtomatis" placeholder="Description" minlength="2" type="text" required />
+                             <input class=" form-control" name="txtOtomatis2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Alarm OFF</label>
                           <div class="col-lg-8">
-                             <input class=" form-control" name="txtAlarmOFF" placeholder="Description" minlength="2" type="text" required />
+                             <input class=" form-control" name="txtAlarmOFF2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Genset ON</label>
                           <div class="col-lg-8">
-                             <input class=" form-control" name="txtGensetON" placeholder="Description" minlength="2" type="text" required />
+                             <input class=" form-control" name="txtGensetON2" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                       </form>
@@ -402,19 +402,19 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Swict Controller 1</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtSwict1" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtSwict12" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Swict Controller 2</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtSwict2" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtSwict22" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Swict Controller 3</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtSwict3" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtSwict32" placeholder="Description" minlength="2" type="text" required />
                           </div>
                         </div>
                       </form>
@@ -531,6 +531,13 @@
               <script type="text/javascript">
                 function simpan_foto_single() {
               var url;
+                var foto_single = $("input[name=foto_single]").val().length;
+              
+                    if (foto_single == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_foto_single_ats') ;?>';
 
               var formData = new FormData($('#form_foto_single')[0]);
@@ -556,6 +563,18 @@
 
                function simpan_ats() {
               var url;
+              var txtMerkATS = $("input[name=txtMerkATS]").val().length;
+              var txtSeri = $("input[name=txtSeri]").val().length;
+              var txtSN = $("input[name=txtSN]").val().length;
+              var txtTahunAset = $("input[name=txtTahunAset]").val().length;
+              var txtAmarta = $("input[name=txtAmarta]").val().length;
+              
+             
+
+                  if (txtMerkATS == 0 || txtSeri==0 || txtSN==0 || txtTahunAset==0 || txtAmarta==0  ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_ats_ats') ;?>';
 
               var formData = new FormData($('#form_ats')[0]);
@@ -579,6 +598,15 @@
 
             function simpan_inspeksi() {
               var url;
+              var selectFailOver = $(':radio[name=selectFailOver]:checked').length;
+              var txtModeATS = $("input[name=txtModeATS]").val().length;
+              var txtAlarm = $("input[name=txtAlarm]").val().length;
+              var txtCatatanFail = $("textarea[name=txtCatatanFail]").val().length;
+    
+              if (selectFailOver == 0 || txtModeATS==0 || txtAlarm==0 || txtCatatanFail==0  ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_ats_inspeksi') ;?>';
 
               var formData = new FormData($('#form_inspeksi')[0]);
@@ -602,6 +630,21 @@
 
            function simpan_panel_sebelum_pm() {
               var url;
+              var txtPLN = $("input[name=txtPLN]").val().length;
+              var txtInputPLN = $("input[name=txtInputPLN]").val().length;
+              var txtInputGenset = $("input[name=txtInputGenset]").val().length;
+              var txtGenset = $("input[name=txtGenset]").val().length;
+              var txtGensetOFF = $("input[name=txtGensetOFF]").val().length;
+              var txtManual = $("input[name=txtManual]").val().length;
+              var txtTanpaPLN = $("input[name=txtTanpaPLN]").val().length;
+              var txtOtomatis = $("input[name=txtOtomatis]").val().length;
+              var txtAlarmOFF = $("input[name=txtAlarmOFF]").val().length;
+              var txtGensetON = $("input[name=txtGensetON]").val().length;
+
+                  if (txtPLN == 0 || txtInputPLN==0 || txtGenset==0 || txtGensetOFF==0 || txtManual==0 || txtTanpaPLN==0 || txtOtomatis==0 || txtAlarmOFF==0 || txtGensetON==0   ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_ats_panel_sebelum_pm') ;?>';
 
               var formData = new FormData($('#form_panel_sebelum_pm')[0]);
@@ -625,6 +668,21 @@
 
            function simpan_panel_sesudah_pm() {
               var url;
+              var txtPLN2 = $("input[name=txtPLN2]").val().length;
+              var txtInputPLN2 = $("input[name=txtInputPLN2]").val().length;
+              var txtInputGenset2 = $("input[name=txtInputGenset2]").val().length;
+              var txtGenset2 = $("input[name=txtGenset2]").val().length;
+              var txtGensetOFF2 = $("input[name=txtGensetOFF2]").val().length;
+              var txtManual2 = $("input[name=txtManual2]").val().length;
+              var txtTanpaPLN2 = $("input[name=txtTanpaPLN2]").val().length;
+              var txtOtomatis2 = $("input[name=txtOtomatis2]").val().length;
+              var txtAlarmOFF2 = $("input[name=txtAlarmOFF2]").val().length;
+              var txtGensetON2 = $("input[name=txtGensetON2]").val().length;
+
+                  if (txtPLN2 == 0 || txtInputPLN2==0 || txtGenset2==0 || txtGensetOFF2==0 || txtManual2==0 || txtTanpaPLN2==0 || txtOtomatis2==0 || txtAlarmOFF2==0 || txtGensetON2==0   ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_ats_panel_sesudah_pm') ;?>';
 
               var formData = new FormData($('#form_panel_sesudah_pm')[0]);
@@ -648,6 +706,16 @@
 
            function simpan_kontrol_before() {
               var url;
+              var txtSwict1 = $("input[name=txtSwict1]").val().length;
+              var txtSwict2 = $("input[name=txtSwict2]").val().length;
+              var txtSwict3 = $("input[name=txtSwict3]").val().length;
+              
+
+                  if ( txtSwict1==0 || txtSwict2==0 || txtSwict3==0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_ats_kontrol_before') ;?>';
 
               var formData = new FormData($('#form_kontrol_before')[0]);
@@ -672,6 +740,15 @@
 
           function simpan_kontrol_after() {
               var url;
+              var txtSwict12 = $("input[name=txtSwict12]").val().length;
+              var txtSwict22 = $("input[name=txtSwict22]").val().length;
+              var txtSwict32 = $("input[name=txtSwict32]").val().length;
+              
+
+                  if (txtSwict12==0 ||  txtSwict22==0 || txtSwict32==0   ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_ats_kontrol_after') ;?>';
 
               var formData = new FormData($('#form_kontrol_after')[0]);
@@ -696,6 +773,13 @@
 
            function simpan_lain_lain() {
               var url;
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+              if (txtLainlain == 0) {              
+                  alert('Silahkan Isi Data Dengan Benar');
+                  return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_ats_lain_lain') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);
@@ -719,6 +803,12 @@
 
           function simpan_temuan() {
               var url;
+              var txtTemuan = $("textarea[name=txtTemuan]").val().length;
+
+              if (txtTemuan == 0) {              
+                  alert('Silahkan Isi Data Dengan Benar');
+                  return false;
+              }
               url = '<?php echo site_url('Privantive/tambah_ats_temuan') ;?>';
 
               var formData = new FormData($('#form_temuan')[0]);
@@ -742,6 +832,19 @@
 
           function simpan_dokumentasi() {
               var url;
+              
+              var foto_1 = $("input[name=foto_1]").val().length;
+               var foto_2 = $("input[name=foto_2]").val().length;
+               var foto_3 = $("input[name=foto_3]").val().length;
+               var foto_4 = $("input[name=foto_4]").val().length;
+               var foto_5 = $("input[name=foto_5]").val().length;
+               var foto_6 = $("input[name=foto_6]").val().length;
+                     
+                  if (foto_1 == 0 || foto_2 == 0 || foto_3== 0 || foto_4 ==0 || foto_5==0 || foto_6 ==0 ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_ats_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);

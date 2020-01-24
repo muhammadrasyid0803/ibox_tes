@@ -59,7 +59,7 @@
                      
                           <label for="cemail" class="control-label col-lg-3">Kapasitas (KVA)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="number" required />
                           </div>
                        
                           <label for="cemail" class="control-label col-lg-3">Tipe</label>
@@ -79,7 +79,7 @@
                      
                           <label for="cemail" class="control-label col-lg-3">Tahun Aset</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTahunAset" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTahunAset" placeholder="Description" minlength="2" type="number" required />
                           </div>
                       
                           <label for="cemail" class="control-label col-lg-3">Kebersihan Genset</label>
@@ -95,7 +95,7 @@
                       
                           <label for="cemail" class="control-label col-lg-3">Tipe</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txTipeEngine" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTipeEngine" placeholder="Description" minlength="2" type="text" required />
                           </div>
                        
                           <label for="cemail" class="control-label col-lg-3">Serial Number</label>
@@ -139,19 +139,19 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Fuel Level (liter)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtFlevel" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtFlevel" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Hour Meter (hour jam)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtHourMeter" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtHourMeter" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tegangan Aki (Volt)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTeganganAki" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTeganganAki" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                        
@@ -166,7 +166,7 @@
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Kapasitas Tangki Bahan Bakar (liter)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtKapTangki" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtKapTangki" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                       </form>
@@ -194,58 +194,58 @@
                           <label for="cname" class="control-label col-lg-3">Tegangan</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-S (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_S_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_S_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_T_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_T_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">N-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtN_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtN_G_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_N_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_N_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_N_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_G_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_G_tegangan2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_G_tegangan2" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">Beban</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa R (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_r_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_r_beban2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa S (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_s_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_s_beban2" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa T (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_t_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_t_beban2" required />
                           </div>
                         </div>
                       </form>
@@ -273,58 +273,58 @@
                           <label for="cname" class="control-label col-lg-3">Tegangan</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-S (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_S_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_S_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_T_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-T (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_T_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_T_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">N-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtN_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtN_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-N (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_N_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_N_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">R-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtR_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtR_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">S-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtS_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtS_G_tegangan" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">T-G (Volt): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txtT_G_tegangan" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txtT_G_tegangan" required />
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="cname" class="control-label col-lg-3">Beban</label><br>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa R (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_r_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_r_beban" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa S (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_s_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_s_beban" required />
                           </div>
                           <div class="col-lg-3">
                             <label for="cname" class="control-label">fasa T (Ampere): </label>
-                            <input class=" form-control" placeholder="Description" minlength="2" type="text" name="txt_fasa_t_beban" required />
+                            <input class=" form-control" placeholder="Description" minlength="2" type="number" name="txt_fasa_t_beban" required />
                           </div>
                         </div>
                       </form>
@@ -439,10 +439,32 @@
 
 
 
-              <script type="text/javascript">
-                
+              <script type="text/javascript">  
               function simpan_genset() {
               var url;
+
+        
+              var txtGen = $("input[name=txtGen]").val().length;
+              var txtKapasitas = $("input[name=txtKapasitas]").val().length;
+              var txtTipe= $("input[name=txtTipe]").val().length;
+              var txtFasa= $("input[name=txtFasa]").val().length;
+              var txtSN= $("input[name=txtSN]").val().length;
+              var txtTahunAset= $("input[name=txtTahunAset]").val().length;
+              var txtKebgenset= $("input[name=txtKebgenset]").val().length;
+              var txtMerkengine= $("input[name=txtMerkengine]").val().length;
+              var txtTipeEngine= $("input[name=txtTipeEngine]").val().length;
+              var txtSNengine= $("input[name=txtSNengine]").val().length;
+              var txtRPM= $("input[name=txtRPM]").val().length;
+              var txtAmarta= $("input[name=txtAmarta]").val().length;
+
+
+                  if (txtGen == 0 || txtKapasitas == 0 || txtTipe == 0 || txtFasa==0 || txtSN ==0 || txtTahunAset == 0 || txtKebgenset == 0 || txtMerkengine==0 || txtTipeEngine==0 || txtSNengine==0 || txtRPM==0 || txtAmarta==0  ) {  
+
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
+
               url = '<?php echo site_url('Privantive/tambah_data_fisik_genset') ;?>';
 
               var formData = new FormData($('#form_genset')[0]);
@@ -467,6 +489,20 @@
 
            function simpan_inspeksi() {
               var url;
+
+                var txtFlevel = $("input[name=txtFlevel]").val().length;
+                var  txtHourMeter= $("input[name=txtHourMeter]").val().length;
+                var  txtTeganganAki= $("input[name=txtTeganganAki]").val().length;
+                var  selectAirRadiator = $(':radio[name=selectAirRadiator]:checked').length;
+               
+                var  txtKapTangki= $("input[name=txtKapTangki]").val().length;
+
+                if (txtFlevel ==0 || txtHourMeter==0 ||txtTeganganAki==0 || selectAirRadiator==0 || txtKapTangki==0) {
+                   alert('Silahkan Isi Data Dengan Benar');
+                    return false;
+                }
+
+
               url = '<?php echo site_url('Privantive/tambah_data_genset_inspeksi') ;?>';
 
               var formData = new FormData($('#form_inspeksi')[0]);
@@ -490,6 +526,30 @@
 
            function simpan_kondisi_nol() {
               var url;
+              var  txtR_S_tegangan= $("input[name=txtR_S_tegangan]").val().length;
+              var  txtR_T_tegangan= $("input[name=txtR_T_tegangan]").val().length;
+              var  txtS_T_tegangan= $("input[name=txtS_T_tegangan]").val().length;
+              var  txtN_G_tegangan= $("input[name=txtN_G_tegangan]").val().length;
+              var txtR_N_tegangan = $("input[name=txtR_N_tegangan]").val().length;
+              var  txtS_N_tegangan= $("input[name=txtS_N_tegangan]").val().length;
+              var  txtT_N_tegangan= $("input[name=txtT_N_tegangan]").val().length;
+              var txtR_G_tegangan = $("input[name=txtR_G_tegangan]").val().length;
+              var  txtS_G_tegangan= $("input[name=txtS_G_tegangan]").val().length;
+              var  txtT_G_tegangan= $("input[name=txtT_G_tegangan]").val().length;
+              var  txt_fasa_r_beban= $("input[name=txt_fasa_r_beban]").val().length;
+              var  txt_fasa_s_beban= $("input[name=txt_fasa_s_beban]").val().length;
+              var  txt_fasa_t_beban= $("input[name=txt_fasa_t_beban]").val().length;
+           
+
+
+              if (txtR_S_tegangan ==0 ||  txtR_T_tegangan==0 || txtS_T_tegangan==0||txtN_G_tegangan==0||txtR_N_tegangan==0||txtS_N_tegangan==0||txtT_N_tegangan==0||txtR_G_tegangan==0||txtS_G_tegangan==0||txtT_G_tegangan==0||txt_fasa_r_beban==0||txt_fasa_s_beban==0||txt_fasa_t_beban==0  ) {
+                alert('Silahkan Isi Data Dengan Benar');
+                return false;
+              }
+
+
+
+
               url = '<?php echo site_url('Privantive/tambah_data_beban_nol') ;?>';
 
               var formData = new FormData($('#form_beban_nol')[0]);
@@ -513,6 +573,26 @@
 
           function simpan_kondisi_penuh() {
               var url;
+               var  txtR_S_tegangan2= $("input[name=txtR_S_tegangan2]").val().length;
+              var  txtR_T_tegangan2= $("input[name=txtR_T_tegangan2]").val().length;
+              var  txtS_T_tegangan2= $("input[name=txtS_T_tegangan2]").val().length;
+              var  txtN_G_tegangan2= $("input[name=txtN_G_tegangan2]").val().length;
+              var txtR_N_tegangan2 = $("input[name=txtR_N_tegangan2]").val().length;
+              var  txtS_N_tegangan2= $("input[name=txtS_N_tegangan2]").val().length;
+              var  txtT_N_tegangan2= $("input[name=txtT_N_tegangan2]").val().length;
+              var txtR_G_tegangan2 = $("input[name=txtR_G_tegangan2]").val().length;
+              var  txtS_G_tegangan2= $("input[name=txtS_G_tegangan2]").val().length;
+              var  txtT_G_tegangan2= $("input[name=txtT_G_tegangan2]").val().length;
+              var  txt_fasa_r_beban2= $("input[name=txt_fasa_r_beban2]").val().length;
+              var  txt_fasa_s_beban2= $("input[name=txt_fasa_s_beban2]").val().length;
+              var  txt_fasa_t_beban2= $("input[name=txt_fasa_t_beban2]").val().length;
+           
+
+              if (txtR_S_tegangan2 ==0 ||  txtR_T_tegangan2==0 || txtS_T_tegangan2==0||txtN_G_tegangan2==0||txtR_N_tegangan2==0||txtS_N_tegangan2==0||txtT_N_tegangan2==0||txtR_G_tegangan2==0||txtS_G_tegangan2==0||txtT_G_tegangan2==0||txt_fasa_r_beban2==0||txt_fasa_s_beban2==0||txt_fasa_t_beban2==0  ) {
+                alert('Silahkan Isi Data Dengan Benar');
+                return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_data_beban_penuh') ;?>';
 
               var formData = new FormData($('#form_kondisi_penuh')[0]);
@@ -536,6 +616,15 @@
 
            function simpan_lain_lain() {
               var url;
+               var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+                  if (txtLainlain == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
+
+
               url = '<?php echo site_url('Privantive/tambah_genset_lain_lain') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);
@@ -559,6 +648,13 @@
 
           function simpan_temuan() {
               var url;
+
+               var txtTemuan = $("textarea[name=txtTemuan]").val().length;
+
+                  if (txtTemuan == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_genset_temuan') ;?>';
 
               var formData = new FormData($('#form_temuan')[0]);
@@ -582,6 +678,20 @@
 
           function simpan_dokumentasi() {
               var url;
+
+               
+              var foto_1 = $("input[name=foto_1]").val().length;
+               var foto_2 = $("input[name=foto_2]").val().length;
+               var foto_3 = $("input[name=foto_3]").val().length;
+               var foto_4 = $("input[name=foto_4]").val().length;
+               var foto_5 = $("input[name=foto_5]").val().length;
+               var foto_6 = $("input[name=foto_6]").val().length;
+                     
+                  if (foto_1 == 0 || foto_2 == 0 || foto_3== 0 || foto_4 ==0 || foto_5==0 || foto_6 ==0 ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_genset_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);

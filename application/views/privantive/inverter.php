@@ -63,24 +63,24 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tegangan Output (VAC)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTeganganOutput" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTeganganOutput" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                           <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Kapasitas (KVA)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Beban (A)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div> <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Utilisasi (%)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtUtilisasi" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtUtilisasi" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                        
@@ -203,6 +203,20 @@
               <script type="text/javascript">
               function simpan_inverter() {
               var url;
+              var txtMerknTipe = $("input[name=txtMerknTipe]").val().length;
+              var txtSN = $("input[name=txtSN]").val().length;
+              var txtAmarta = $("input[name=txtAmarta]").val().length;
+              var txtTeganganOutput = $("input[name=txtTeganganOutput]").val().length;
+              var txtKapasitas= $("input[name=txtKapasitas]").val().length;
+              var txtBeban= $("input[name=txtBeban]").val().length;
+              var txtUtilisasi = $("input[name=txtUtilisasi]").val().length;
+              var txtIndikasiAlarm = $("textarea[name=txtIndikasiAlarm]").val().length;
+              
+
+                  if (txtMerknTipe == 0 || txtSN == 0 || txtAmarta==0 || txtTeganganOutput==0 ||txtKapasitas == 0 || txtBeban == 0 ||txtUtilisasi==0 || txtIndikasiAlarm==0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_inverter') ;?>';
 
               var formData = new FormData($('#form_inverter')[0]);
@@ -227,6 +241,12 @@
 
             function simpan_lain_lain() {
               var url;
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+              if (txtLainlain == 0) {              
+              alert('Silahkan Isi Data Dengan Benar');
+             return false;
+              }
               url = '<?php echo site_url('Privantive/tambah_inverter_lain_lain') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);
@@ -250,6 +270,12 @@
 
           function simpan_temuan() {
               var url;
+              var txtTemuan = $("textarea[name=txtTemuan]").val().length;
+
+              if (txtTemuan == 0) {              
+                  alert('Silahkan Isi Data Dengan Benar');
+                  return false;
+              }
               url = '<?php echo site_url('Privantive/tambah_inverter_temuan') ;?>';
 
               var formData = new FormData($('#form_temuan')[0]);
@@ -273,6 +299,19 @@
 
           function simpan_dokumentasi() {
               var url;
+             
+              var foto_1 = $("input[name=foto_1]").val().length;
+               var foto_2 = $("input[name=foto_2]").val().length;
+               var foto_3 = $("input[name=foto_3]").val().length;
+               var foto_4 = $("input[name=foto_4]").val().length;
+               var foto_5 = $("input[name=foto_5]").val().length;
+               var foto_6 = $("input[name=foto_6]").val().length;
+                     
+                  if (foto_1 == 0 || foto_2 == 0 || foto_3== 0 || foto_4 ==0 || foto_5==0 || foto_6 ==0 ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_inverter_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);

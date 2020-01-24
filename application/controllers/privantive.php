@@ -1480,19 +1480,19 @@ class Privantive extends CI_Controller {
 	
 	public function tambah_data_beban_penuh(){
 			$data = array(
-	    	'r_s_tegangan' => $this->input->post('txtR_S_tegangan'),
-	    	'r_t_tegangan' => $this->input->post('txtR_T_tegangan'),
-	    	's_t_tegangan' => $this->input->post('txtS_T_tegangan'),
-	    	'n_g_tegangan' => $this->input->post('txtN_G_tegangan'),
-	    	'r_n_tegangan' => $this->input->post('txtR_N_tegangan'),
-	    	's_n_tegangan' => $this->input->post('txtS_N_tegangan'),
-	    	't_n_tegangan' => $this->input->post('txtT_N_tegangan'),
-	    	'r_g_tegangan' => $this->input->post('txtR_G_tegangan'),
-	    	's_g_tegangan' => $this->input->post('txtS_G_tegangan'),
-	    	't_g_tegangan' => $this->input->post('txtT_G_tegangan'),
-	    	'fasa_r_beban' => $this->input->post('txt_fasa_r_beban'),
-	    	'fasa_s_beban' => $this->input->post('txt_fasa_s_beban'),
-	    	'fasa_t_beban' => $this->input->post('txt_fasa_t_beban'),
+	    	'r_s_tegangan' => $this->input->post('txtR_S_tegangan2'),
+	    	'r_t_tegangan' => $this->input->post('txtR_T_tegangan2'),
+	    	's_t_tegangan' => $this->input->post('txtS_T_tegangan2'),
+	    	'n_g_tegangan' => $this->input->post('txtN_G_tegangan2'),
+	    	'r_n_tegangan' => $this->input->post('txtR_N_tegangan2'),
+	    	's_n_tegangan' => $this->input->post('txtS_N_tegangan2'),
+	    	't_n_tegangan' => $this->input->post('txtT_N_tegangan2'),
+	    	'r_g_tegangan' => $this->input->post('txtR_G_tegangan2'),
+	    	's_g_tegangan' => $this->input->post('txtS_G_tegangan2'),
+	    	't_g_tegangan' => $this->input->post('txtT_G_tegangan2'),
+	    	'fasa_r_beban' => $this->input->post('txt_fasa_r_beban2'),
+	    	'fasa_s_beban' => $this->input->post('txt_fasa_s_beban2'),
+	    	'fasa_t_beban' => $this->input->post('txt_fasa_t_beban2'),
 	    	'id_pop' => $this->input->post('txtIdPOP'),
 	    );
 
@@ -1622,16 +1622,16 @@ class Privantive extends CI_Controller {
 
 	public function tambah_ats_panel_sesudah_pm(){
 		$data = array(
-			'pln' => $this->input->post('txtPLN'),
-			'input_pln' => $this->input->post('txtInputPLN'),
-			'input_genset' => $this->input->post('txtInputGenset'),
-			'genset' => $this->input->post('txtGenset'),
-			'genset_off' => $this->input->post('txtGensetOFF'),
-			'manual' => $this->input->post('txtManual'),
-			'tanpa_pln' => $this->input->post('txtTanpaPLN'),
-			'otomatis' => $this->input->post('txtOtomatis'),
-			'alarm_off' => $this->input->post('txtAlarmOFF'),
-			'genset_on' => $this->input->post('txtGensetON'),
+			'pln' => $this->input->post('txtPLN2'),
+			'input_pln' => $this->input->post('txtInputPLN2'),
+			'input_genset' => $this->input->post('txtInputGenset2'),
+			'genset' => $this->input->post('txtGenset2'),
+			'genset_off' => $this->input->post('txtGensetOFF2'),
+			'manual' => $this->input->post('txtManual2'),
+			'tanpa_pln' => $this->input->post('txtTanpaPLN2'),
+			'otomatis' => $this->input->post('txtOtomatis2'),
+			'alarm_off' => $this->input->post('txtAlarmOFF2'),
+			'genset_on' => $this->input->post('txtGensetON2'),
 	    	'id_pop' => $this->input->post('txtIdPOP'),
 	    );
 

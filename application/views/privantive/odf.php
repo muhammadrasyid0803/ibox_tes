@@ -127,6 +127,16 @@
               <script type="text/javascript">
               function simpan_odf() {
               var url;
+              var txtAmarta = $("input[name=txtAmarta]").val().length;
+               var txtLabelKabel = $("input[name=txtLabelKabel]").val().length;
+                var selectKapasitasCore = $(':radio[name=selectKapasitasCore]:checked').length;
+                 var selectTipeKonektor = $(':radio[name=selectTipeKonektor]:checked').length;
+             
+                  if (txtAmarta == 0 || txtLabelKabel==0 || selectKapasitasCore==0 || selectTipeKonektor==0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_data_odf') ;?>';
 
               var formData = new FormData($('#form_odf')[0]);
@@ -150,6 +160,18 @@
 
           function simpan_inputan_lain() {
               var url;
+              var txtCore = $("input[name=txtCore]").val().length;
+               var txtOTDR = $("input[name=txtOTDR]").val().length;
+               var txtLPelanggan = $("input[name=txtLPelanggan]").val().length;
+               var txtKoneksi = $("input[name=txtKoneksi]").val().length;
+              
+             
+
+                  if (txtCore == 0 || txtOTDR==0 || txtKoneksi==0 || txtLPelanggan==0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_inputan_lain') ;?>';
 
               var formData = new FormData($('#form_inputan_lain')[0]);

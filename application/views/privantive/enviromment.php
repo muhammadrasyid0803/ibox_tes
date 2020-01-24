@@ -362,6 +362,13 @@
               <script type="text/javascript">
               function simpan_env() {
               var url;
+              
+              
+               var txtSuhuRuangan = $("input[name=txtSuhuRuangan]").val().length;
+               if (txtSuhuRuangan == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_environment') ;?>';
 
               var formData = new FormData($('#form_environment')[0]);
@@ -385,6 +392,29 @@
 
               function simpan_eksternal_alarm() {
               var url;
+              var foto_1 = $("input[name=txtMerk]").val().length;
+              var foto_1 = $("input[name=txtTipe]").val().length;
+              var foto_1 = $("input[name=txtSN]").val().length;
+              var foto_1 = $("input[name=txtAmarta]").val().length;
+              var foto_1 = $("input[name=selectDoorSensor]").val().length;
+              var foto_1 = $("input[name=txtCatatan_door]").val().length;
+              var foto_1 = $("input[name=selectFail]").val().length;
+              var foto_1 = $("input[name=txtCatatan_fail]").val().length;
+              var foto_1 = $("input[name=selectTemp]").val().length;
+              var foto_1 = $("input[name=txtCatatan_temp]").val().length;
+              var foto_1 = $("input[name=selectSmoke]").val().length;
+              var foto_1 = $("input[name=txtCatatan_smoke]").val().length;
+              var foto_1 = $("input[name=selectRectifier]").val().length;
+              var foto_1 = $("input[name=txtCatatan_rectifier]").val().length;
+              var foto_1 = $("input[name=selectGenset]").val().length;
+              var foto_1 = $("input[name=txtCatatan_genset]").val().length;
+              var foto_1 = $("input[name=selectFuel]").val().length;
+              var foto_1 = $("input[name=txtCatatan_fuel]").val().length;
+
+               if (foto_1 == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_eksternal_alarm') ;?>';
 
               var formData = new FormData($('#form_eksternal_alarm')[0]);
@@ -406,7 +436,20 @@
                     });
               }
                function simpan_dokumentasi() {
-              var url;tambah_env_dokumentasi
+              var url;
+
+              var foto_1 = $("input[name=foto_1]").val().length;
+               var foto_2 = $("input[name=foto_2]").val().length;
+               var foto_3 = $("input[name=foto_3]").val().length;
+               var foto_4 = $("input[name=foto_4]").val().length;
+               var foto_5 = $("input[name=foto_5]").val().length;
+               var foto_6 = $("input[name=foto_6]").val().length;
+                     
+                  if (foto_1 == 0 || foto_2 == 0 || foto_3== 0 || foto_4 ==0 || foto_5==0 || foto_6 ==0 ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);

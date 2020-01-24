@@ -179,6 +179,11 @@
 
   });
 
+$('#showdata').on('click', '.item-cetak', function(){ 
+  var id = $(this).attr('data');
+     window.location = "<?php echo site_url('Jobs/cetak_pdf/') ;?>/"+id;  
+    })
+
 $(document).ready(function() {
       tabel = $('#tabel_job').dataTable({
         // "autoWidth": true,

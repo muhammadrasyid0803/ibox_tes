@@ -5,6 +5,8 @@ class Jobs extends CI_Controller{
     parent::__construct();
     $this->load->model('jobs_m');
     $this->load->helper('menu');
+    $this->load->model('cetak_m');
+    $this->load->library('pdf');
   }
 
   public function index(){
@@ -36,5 +38,16 @@ class Jobs extends CI_Controller{
   public function cetak_status($id){
     $this->jobs_m->update_status_on_progress($id);
     echo json_encode(array("status" => true));
+  }
+
+  public function cetak_pdf($id)
+  {
+
+    $html_content = '<h3 align="center">List Joblist</h3>';
+    $html_content .= $this->cetak_m->cetak($id);
+    $this->pdf->setPaper('A4', 'potrait');
+    $this->pdf->loadHtml($html_content);
+    $this->pdf->render();
+    $this->pdf->stream("JobList".$id.".pdf", array("Attachment"=>FALSE));
   }
 }

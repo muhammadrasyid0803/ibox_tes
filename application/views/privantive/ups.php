@@ -63,25 +63,25 @@
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Tegangan Output (VAC)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtTeganganOutput" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtTeganganOutput" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                           <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Kapasitas (KVA)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtKapasitas" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                          <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Beban (A)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtBeban" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div> 
                         <div class="form-group ">
                           <label for="cemail" class="control-label col-lg-3">Utilisasi (%)</label>
                           <div class="col-lg-8">
-                            <input class=" form-control" name="txtUtilisasi" placeholder="Description" minlength="2" type="text" required />
+                            <input class=" form-control" name="txtUtilisasi" placeholder="Description" minlength="2" type="number" required />
                           </div>
                         </div>
                        
@@ -213,6 +213,20 @@
               <script type="text/javascript">
               function simpan_ups() {
               var url;
+              var foto_1 = $("input[name=txtMerknTipe]").val().length;
+              var foto_2 = $("input[name=txtSN]").val().length;
+              var foto_3 = $("input[name=txtAmarta]").val().length;
+              var foto_4 = $("input[name=txtTeganganOutput]").val().length;
+              var foto_5 = $("input[name=txtKapasitas]").val().length;
+              var foto_6 = $("input[name=txtBeban]").val().length;
+              var foto_7 = $("input[name=txtUtilisasi]").val().length;
+              var foto_8 = $("textarea[name=txtLainlain]").val().length;
+              var foto_9 = $("textarea[name=txtTemuan]").val().length;
+
+                  if (foto_1 == 0 || foto_2==0 || foto_3==0 || foto_4==0 || foto_5==0 || foto_6==0 ||foto_7==0 || foto_8==0 || foto_9==0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
               url = '<?php echo site_url('Privantive/tambah_data_ups') ;?>';
 
               var formData = new FormData($('#form_ups')[0]);
@@ -237,7 +251,13 @@
 
             function simpan_lain_lain() {
               var url;
-              url = '<?php echo site_url('Privantive/tambah_ups_lain_lain') ;?>';
+              var txtLainlain = $("textarea[name=txtLainlain]").val().length;
+
+            if (txtLainlain == 0) {              
+            alert('Silahkan Isi Data Dengan Benar');
+            return false;
+            }
+                url = '<?php echo site_url('Privantive/tambah_ups_lain_lain') ;?>';
 
               var formData = new FormData($('#form_lain_lain')[0]);
               $.ajax({
@@ -260,6 +280,12 @@
 
           function simpan_temuan() {
               var url;
+              var txtTemuan = $("textarea[name=txtTemuan]").val().length;
+
+if (txtTemuan == 0) {              
+    alert('Silahkan Isi Data Dengan Benar');
+    return false;
+}
               url = '<?php echo site_url('Privantive/tambah_ups_temuan') ;?>';
 
               var formData = new FormData($('#form_temuan')[0]);
@@ -283,6 +309,19 @@
 
           function simpan_dokumentasi() {
               var url;
+             
+              var foto_1 = $("input[name=foto_1]").val().length;
+               var foto_2 = $("input[name=foto_2]").val().length;
+               var foto_3 = $("input[name=foto_3]").val().length;
+               var foto_4 = $("input[name=foto_4]").val().length;
+               var foto_5 = $("input[name=foto_5]").val().length;
+               var foto_6 = $("input[name=foto_6]").val().length;
+                     
+                  if (foto_1 == 0 || foto_2 == 0 || foto_3== 0 || foto_4 ==0 || foto_5==0 || foto_6 ==0 ) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_ups_dokumentasi') ;?>';
 
               var formData = new FormData($('#form_dokumentasi')[0]);
