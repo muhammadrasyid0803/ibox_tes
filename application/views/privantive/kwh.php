@@ -386,6 +386,19 @@
 
           function simpan_inspeksi() {
               var url;
+
+              var selectKondisiKwh = $("input[name=selectKondisiKwh]").val();
+              var rd_frasa_r = $(':radio[name=rd_frasa_r]:checked').length;
+              var rd_frasa_s = $(':radio[name=rd_frasa_s]:checked').length;
+              var rd_frasa_t = $(':radio[name=rd_frasa_t]:checked').length;
+              var txtMerekNTipe = $("input[name=txtMerekNTipe]").val().length;
+              var rd_terminal_mcb = $(':radio[name=rd_terminal_mcb]:checked').length;
+
+                  if (selectKondisiKwh == 0 || rd_frasa_r == 0 || rd_frasa_s == 0 || rd_frasa_t == 0 || txtMerekNTipe == 0 || rd_terminal_mcb == 0) {              
+                      alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+                  }
+
               url = '<?php echo site_url('Privantive/tambah_inspeksi') ;?>';
 
               var formData = new FormData($('#form_inspeksi')[0]);
