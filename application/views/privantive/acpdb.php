@@ -405,6 +405,23 @@
 
           function simpan_inspeksi() {
               var url;
+
+              var selectKondisiTerminalMCB = $(':radio[name=selectKondisiTerminalMCB]:checked').length;
+              var rd_frasa_r = $(':radio[name=rd_frasa_r]:checked').length;
+              var rd_frasa_s = $(':radio[name=rd_frasa_s]:checked').length;
+              var rd_frasa_t = $(':radio[name=rd_frasa_t]:checked').length;
+              var selectUjiTimerAC = $(':radio[name=selectUjiTimerAC]:checked').length;
+              var selectUjiThermostatKontraktor = $(':radio[name=selectUjiThermostatKontraktor]:checked').length;
+              var selectUjiThermostatDcFan = $(':radio[name=selectUjiThermostatDcFan]:checked').length;
+              var selectFailMcbAcpdb = $(':radio[name=selectFailMcbAcpdb]:checked').length;
+              var txtMerekNTipe = $('input[name=txtMerekNTipe]').val().length
+              var txtPerangkatOFF = $('input[name=txtPerangkatOFF]').val().length
+              
+              if (selectKondisiTerminalMCB == 0 || rd_frasa_r == 0 || rd_frasa_s == 0 || rd_frasa_t == 0 || selectUjiTimerAC == 0 || selectUjiThermostatKontraktor == 0 || selectUjiThermostatDcFan == 0 || selectFailMcbAcpdb == 0 || txtMerekNTipe == 0 || txtPerangkatOFF == 0) {
+                  alert('Silahkan Isi Data Dengan Benar');
+                      return false;
+              }
+
               url = '<?php echo site_url('Privantive/tambah_inspeksi_acpdb') ;?>';
 
               var formData = new FormData($('#form_inspeksi')[0]);
