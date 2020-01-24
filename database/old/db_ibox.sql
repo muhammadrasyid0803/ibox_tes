@@ -591,18 +591,16 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_dataacpdb` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_dataacpdb_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_dataacpdb_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_dataacpdb: ~6 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_dataacpdb: ~4 rows (approximately)
 DELETE FROM `pm_ac_acpdb_dataacpdb`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_dataacpdb` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_dataacpdb` (`id`, `kondisi_box`, `aset_amarta`, `id_pop`) VALUES
 	(2, 'Instalasi Rapi', 'yesdfsf', 1),
 	(3, 'Kering', 'cid', 1),
 	(4, 'Bersih', 'tt', 1),
-	(5, 'Bersih', 'tes acpdb', 4),
-	(6, 'Bersih', 'df', 2),
-	(7, 'Bersih', 'f', 2);
+	(5, 'Bersih', 'tes acpdb', 4);
 /*!40000 ALTER TABLE `pm_ac_acpdb_dataacpdb` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_dokumentasi
@@ -618,19 +616,15 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_dokumentasi` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_dokumentasi_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_dokumentasi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_dokumentasi: ~7 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_dokumentasi: ~3 rows (approximately)
 DELETE FROM `pm_ac_acpdb_dokumentasi`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_dokumentasi` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto_4`, `foto_5`, `foto_6`, `id_pop`) VALUES
 	(2, '21012020_021914.jpg', '21012020_0219141.jpg', '21012020_0219142.jpg', '21012020_0219143.jpg', '21012020_0219144.jpg', '21012020_0219145.jpg', 1),
 	(3, '', '', '', '', '', '', 2),
-	(4, '23012020_152815.jpg', '23012020_1528151.jpg', '23012020_1528152.jpg', '23012020_1528153.jpg', '23012020_1528154.jpg', '23012020_1528155.jpg', 4),
-	(5, '', '', '', '', '', '', 2),
-	(6, '', '24012020_052217.jpg', '24012020_0522171.jpg', '24012020_0522172.jpg', '24012020_0522173.jpg', '24012020_0522174.jpg', 2),
-	(7, '24012020_052329.jpg', '24012020_052329.png', '24012020_0523291.jpg', '24012020_0523292.jpg', '24012020_0523293.jpg', '24012020_0523294.jpg', 2),
-	(8, '24012020_052941.jpg', '24012020_0529411.jpg', '24012020_0529412.jpg', '24012020_0529413.jpg', '24012020_0529414.jpg', '24012020_0529415.jpg', 2);
+	(4, '23012020_152815.jpg', '23012020_1528151.jpg', '23012020_1528152.jpg', '23012020_1528153.jpg', '23012020_1528154.jpg', '23012020_1528155.jpg', 4);
 /*!40000 ALTER TABLE `pm_ac_acpdb_dokumentasi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_foto_single
@@ -641,18 +635,15 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_foto_single` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_foto_single_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_foto_single_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_foto_single: ~6 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_foto_single: ~3 rows (approximately)
 DELETE FROM `pm_ac_acpdb_foto_single`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_foto_single` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_foto_single` (`id`, `foto`, `id_pop`) VALUES
 	(1, '16012020_114620.jpg', 4),
 	(2, '16012020_114740.jpg', 4),
-	(3, '16012020_115854.jpg', 4),
-	(4, '24012020_050152.jpg', 2),
-	(5, '24012020_052807.jpg', 2),
-	(6, '24012020_052816.jpg', 2);
+	(3, '16012020_115854.jpg', 4);
 /*!40000 ALTER TABLE `pm_ac_acpdb_foto_single` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_inspeksi
@@ -672,14 +663,13 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_inspeksi` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_inspeksi_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_inspeksi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_inspeksi: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_inspeksi: ~0 rows (approximately)
 DELETE FROM `pm_ac_acpdb_inspeksi`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_inspeksi` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_inspeksi` (`id`, `k_terminal_mcb`, `indikator_r`, `indikator_s`, `indikator_t`, `timer_theben_ac`, `thermostat_honeywell_k`, `thermostat_dc_fan`, `fail_over`, `merek_tipe`, `perangkat_off`, `id_pop`) VALUES
-	(1, 'Kencang', 'Hijau', 'Hijau', 'Hijau', 'Berfungsi', 'Berfungsi', 'Berfungsi', 'Berhasil', 'tes', 'tes', 1),
-	(2, 'Kendor', 'Merah', 'Merah', 'Hijau', 'Tidak Berfungsi', 'Tidak Berfungsi', 'Berfungsi', 'Tidak Berhasil', 'f', 'd', 2);
+	(1, 'Kencang', 'Hijau', 'Hijau', 'Hijau', 'Berfungsi', 'Berfungsi', 'Berfungsi', 'Berhasil', 'tes', 'tes', 1);
 /*!40000 ALTER TABLE `pm_ac_acpdb_inspeksi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_lain_lain
@@ -690,14 +680,13 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_lain_lain` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_lain_lain_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_lain_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_lain_lain: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_lain_lain: ~0 rows (approximately)
 DELETE FROM `pm_ac_acpdb_lain_lain`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_lain_lain` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_lain_lain` (`id`, `keterangan`, `id_pop`) VALUES
-	(1, 'heiiiiii', 3),
-	(2, 'ff', 2);
+	(1, 'heiiiiii', 3);
 /*!40000 ALTER TABLE `pm_ac_acpdb_lain_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_pengukuran_tegangan
@@ -720,15 +709,13 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_pengukuran_tegangan` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_pengukuran_tegangan_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_pengukuran_tegangan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_pengukuran_tegangan: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_pengukuran_tegangan: ~0 rows (approximately)
 DELETE FROM `pm_ac_acpdb_pengukuran_tegangan`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_pengukuran_tegangan` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_pengukuran_tegangan` (`id`, `r_s_tegangan`, `r_t_tegangan`, `s_t_tegangan`, `n_g_tegangan`, `r_n_tegangan`, `s_n_tegangan`, `t_n_tegangan`, `r_g_tegangan`, `s_g_tegangan`, `t_g_tegangan`, `fasa_r_beban`, `fasa_s_beban`, `fasa_t_beban`, `id_pop`) VALUES
-	(1, 4545, 454, 53423, 34, 656, 324, 5656, 234, 56, 34, 1000, 1000, 1000, 3),
-	(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2),
-	(3, 3, 4, 4, 4, 4, 5, 5, 15, 5, 54, 5, 5, 5, 1);
+	(1, 4545, 454, 53423, 34, 656, 324, 5656, 234, 56, 34, 1000, 1000, 1000, 3);
 /*!40000 ALTER TABLE `pm_ac_acpdb_pengukuran_tegangan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_acpdb_temuan
@@ -739,54 +726,42 @@ CREATE TABLE IF NOT EXISTS `pm_ac_acpdb_temuan` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_acpdb_temuan_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_acpdb_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_acpdb_temuan: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_acpdb_temuan: ~0 rows (approximately)
 DELETE FROM `pm_ac_acpdb_temuan`;
 /*!40000 ALTER TABLE `pm_ac_acpdb_temuan` DISABLE KEYS */;
 INSERT INTO `pm_ac_acpdb_temuan` (`id`, `keterangan`, `id_pop`) VALUES
-	(1, 'uuu', 3),
-	(2, 'ff', 2);
+	(1, 'uuu', 3);
 /*!40000 ALTER TABLE `pm_ac_acpdb_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_datakwhmeter
 CREATE TABLE IF NOT EXISTS `pm_ac_kwh_datakwhmeter` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `id_pop` bigint(20) unsigned NOT NULL,
-  `id_pelanggan` varchar(255) NOT NULL,
-  `id_kwh_meter` varchar(255) DEFAULT NULL,
-  `no_label_amarta` varchar(255) NOT NULL,
-  `daya_pasang` varchar(255) DEFAULT NULL,
-  `mcb_pasang` varchar(255) DEFAULT NULL,
+  `id_pelanggan` bigint(20) NOT NULL,
+  `id_kwh_meter` bigint(20) DEFAULT NULL,
+  `no_label_amarta` bigint(20) NOT NULL,
+  `daya_pasang` bigint(20) DEFAULT NULL,
+  `mcb_pasang` bigint(20) DEFAULT NULL,
   `fasa` varchar(255) DEFAULT NULL,
   `gembok` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ac_datakwhmeter_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_kwh_datakwhmeter: ~18 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_kwh_datakwhmeter: ~7 rows (approximately)
 DELETE FROM `pm_ac_kwh_datakwhmeter`;
 /*!40000 ALTER TABLE `pm_ac_kwh_datakwhmeter` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_datakwhmeter` (`id`, `id_pop`, `id_pelanggan`, `id_kwh_meter`, `no_label_amarta`, `daya_pasang`, `mcb_pasang`, `fasa`, `gembok`) VALUES
-	(1, 4, '0', '0', '0', '0', '0', 'tes', 'Ada'),
-	(2, 3, '3', '55565', '0', '500', '5', 'tes', 'Ada'),
-	(3, 3, '5656', '56', '656', '656', '656', 'tes', 'Tidak Ada'),
-	(4, 4, '0', '0', '0', '0', '0', 'halo', 'Tidak Ada'),
-	(5, 4, '1111', '1111', '1111', '1111', '1111', 'hei', 'Tidak Ada'),
-	(6, 4, '5', '5', '5', '5', '5', '5', 'Ada'),
-	(7, 4, '5', '0', '0', '0', '0', '', 'Ada'),
-	(9, 1, '0', '0', '0', '0', '0', 'f', NULL),
-	(10, 1, '0', '0', '0', '0', '0', 'f', NULL),
-	(11, 1, '0', '0', '0', '0', '0', 'f', NULL),
-	(12, 1, '0', '0', '0', '0', '0', 'f', 'Tidak Ada'),
-	(13, 2, '0', '0', '0', '0', '0', 'fd', 'Tidak Ada'),
-	(14, 1, '344', '3434', '5445', '64', '656', 'fdf', 'Tidak Ada'),
-	(15, 1, '343', '34324', '34324', '23434', '2343', 'lagi dong', 'Ada'),
-	(16, 1, '10', '10', '500', '500', '500', 'tes angka', 'Ada'),
-	(17, 1, '50', '50', 'ini nomor', '50', '50', 'tes dong lagi', 'Ada'),
-	(18, 1, '100', '100', 'fgfdgdfg', '100', '100', 'seratus satu', 'Ada'),
-	(19, 1, '100.1', '100.1', 'tesss number', '100.1', '100.1', 'tesss number', 'Ada');
+	(1, 4, 0, 0, 0, 0, 0, 'tes', 'Ada'),
+	(2, 3, 3, 55565, 0, 500, 5, 'tes', 'Ada'),
+	(3, 3, 5656, 56, 656, 656, 656, 'tes', 'Tidak Ada'),
+	(4, 4, 0, 0, 0, 0, 0, 'halo', 'Tidak Ada'),
+	(5, 4, 1111, 1111, 1111, 1111, 1111, 'hei', 'Tidak Ada'),
+	(6, 4, 5, 5, 5, 5, 5, '5', 'Ada'),
+	(7, 4, 5, 0, 0, 0, 0, '', 'Ada');
 /*!40000 ALTER TABLE `pm_ac_kwh_datakwhmeter` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_dokumentasi
@@ -802,9 +777,9 @@ CREATE TABLE IF NOT EXISTS `pm_ac_kwh_dokumentasi` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_dokumentasi_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_dokumentasi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_kwh_dokumentasi: ~12 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_kwh_dokumentasi: ~5 rows (approximately)
 DELETE FROM `pm_ac_kwh_dokumentasi`;
 /*!40000 ALTER TABLE `pm_ac_kwh_dokumentasi` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto_4`, `foto_5`, `foto_6`, `id_pop`) VALUES
@@ -812,14 +787,7 @@ INSERT INTO `pm_ac_kwh_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto_4
 	(4, '', '', '', '', '', '', 1),
 	(5, '', '', '', '', '', '', 1),
 	(6, '21012020_070405.jpg', '21012020_0704051.jpg', '21012020_0704052.jpg', '21012020_0704053.jpg', '21012020_0704054.jpg', '21012020_0704055.jpg', 1),
-	(7, '', '', '', '', '', '', 2),
-	(8, '', '', '', '', '', '', 2),
-	(9, '', '', '', '', '', '', 1),
-	(10, '', '', '', '', '', '24012020_042610.jpg', 2),
-	(11, '', '', '', '', '', '24012020_042625.jpg', 2),
-	(12, '', '', '', '', '', '24012020_042651.jpg', 2),
-	(13, '24012020_050519.jpg', '24012020_0505191.jpg', '24012020_0505192.jpg', '24012020_0505193.jpg', '24012020_0505194.jpg', '24012020_050519.png', 2),
-	(14, '24012020_052437.jpg', '24012020_0524371.jpg', '24012020_0524372.jpg', '24012020_0524373.jpg', '24012020_0524374.jpg', '24012020_0524375.jpg', 2);
+	(7, '', '', '', '', '', '', 2);
 /*!40000 ALTER TABLE `pm_ac_kwh_dokumentasi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_inspeksi
@@ -835,15 +803,14 @@ CREATE TABLE IF NOT EXISTS `pm_ac_kwh_inspeksi` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_inspeksi_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_inspeksi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ac_kwh_inspeksi: ~2 rows (approximately)
 DELETE FROM `pm_ac_kwh_inspeksi`;
 /*!40000 ALTER TABLE `pm_ac_kwh_inspeksi` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_inspeksi` (`id`, `kondisi_box`, `k_terminal_mcb`, `indikator_r`, `indikator_s`, `indikator_t`, `merek_tipe`, `id_pop`) VALUES
 	(1, 'Bersih', 'Kencang', 'Hijau', 'Hijau', 'Hijau', 'samsung', 3),
-	(2, 'Kotor', 'Kendor', 'Merah', 'Merah', 'Merah', 'rigat', 4),
-	(3, 'Bersih', 'Kendor', 'Hijau', 'Hijau', 'Hijau', 'df', 2);
+	(2, 'Kotor', 'Kendor', 'Merah', 'Merah', 'Merah', 'rigat', 4);
 /*!40000 ALTER TABLE `pm_ac_kwh_inspeksi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_lain_lain
@@ -854,47 +821,44 @@ CREATE TABLE IF NOT EXISTS `pm_ac_kwh_lain_lain` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_lain_lain_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_lain_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_kwh_lain_lain: ~4 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_kwh_lain_lain: ~2 rows (approximately)
 DELETE FROM `pm_ac_kwh_lain_lain`;
 /*!40000 ALTER TABLE `pm_ac_kwh_lain_lain` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_lain_lain` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, 'ini percobaan', 1),
-	(2, 'heyy', 4),
-	(3, '', 2),
-	(4, 'tes validasi', 2);
+	(2, 'heyy', 4);
 /*!40000 ALTER TABLE `pm_ac_kwh_lain_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_pengukuran_tegangan
 CREATE TABLE IF NOT EXISTS `pm_ac_kwh_pengukuran_tegangan` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `r_s_tegangan` varchar(255) NOT NULL,
-  `r_t_tegangan` varchar(255) NOT NULL,
-  `s_t_tegangan` varchar(255) NOT NULL,
-  `n_g_tegangan` varchar(255) NOT NULL,
-  `r_n_tegangan` varchar(255) NOT NULL,
-  `s_n_tegangan` varchar(255) NOT NULL,
-  `t_n_tegangan` varchar(255) NOT NULL,
-  `r_g_tegangan` varchar(255) NOT NULL,
-  `s_g_tegangan` varchar(255) NOT NULL,
-  `t_g_tegangan` varchar(255) NOT NULL,
-  `fasa_r_beban` varchar(255) NOT NULL,
-  `fasa_s_beban` varchar(255) NOT NULL,
-  `fasa_t_beban` varchar(255) NOT NULL,
+  `r_s_tegangan` bigint(20) NOT NULL,
+  `r_t_tegangan` bigint(20) NOT NULL,
+  `s_t_tegangan` bigint(20) NOT NULL,
+  `n_g_tegangan` bigint(20) NOT NULL,
+  `r_n_tegangan` bigint(20) NOT NULL,
+  `s_n_tegangan` bigint(20) NOT NULL,
+  `t_n_tegangan` bigint(20) NOT NULL,
+  `r_g_tegangan` bigint(20) NOT NULL,
+  `s_g_tegangan` bigint(20) NOT NULL,
+  `t_g_tegangan` bigint(20) NOT NULL,
+  `fasa_r_beban` bigint(20) NOT NULL,
+  `fasa_s_beban` bigint(20) NOT NULL,
+  `fasa_t_beban` bigint(20) NOT NULL,
   `id_pop` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_pengukuran_tegangan_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_pengukuran_tegangan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ac_kwh_pengukuran_tegangan: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_ac_kwh_pengukuran_tegangan: ~2 rows (approximately)
 DELETE FROM `pm_ac_kwh_pengukuran_tegangan`;
 /*!40000 ALTER TABLE `pm_ac_kwh_pengukuran_tegangan` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_pengukuran_tegangan` (`id`, `r_s_tegangan`, `r_t_tegangan`, `s_t_tegangan`, `n_g_tegangan`, `r_n_tegangan`, `s_n_tegangan`, `t_n_tegangan`, `r_g_tegangan`, `s_g_tegangan`, `t_g_tegangan`, `fasa_r_beban`, `fasa_s_beban`, `fasa_t_beban`, `id_pop`) VALUES
-	(1, '34', '34', '34', '34', '34', '34', '34', '34', '34', '34', '50', '50', '50', 3),
-	(2, '400', '400', '400', '400', '400', '400', '400', '400', '400', '400', '500', '500', '500', 4),
-	(3, '5', '4', '5', '5', '5', '5', '5', '5', '5', '45', '5', '5', '9', 2);
+	(1, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 50, 50, 50, 3),
+	(2, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 500, 500, 500, 4);
 /*!40000 ALTER TABLE `pm_ac_kwh_pengukuran_tegangan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ac_kwh_temuan
@@ -905,15 +869,14 @@ CREATE TABLE IF NOT EXISTS `pm_ac_kwh_temuan` (
   PRIMARY KEY (`id`),
   KEY `FK_pm_ac_temuan_pops` (`id_pop`),
   CONSTRAINT `FK_pm_ac_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ac_kwh_temuan: ~2 rows (approximately)
 DELETE FROM `pm_ac_kwh_temuan`;
 /*!40000 ALTER TABLE `pm_ac_kwh_temuan` DISABLE KEYS */;
 INSERT INTO `pm_ac_kwh_temuan` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, 'ini temuan untuk ditindak lanjuti', 1),
-	(2, 'yeyyy', 4),
-	(3, 'f', 2);
+	(2, 'yeyyy', 4);
 /*!40000 ALTER TABLE `pm_ac_kwh_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_build_building
@@ -934,17 +897,14 @@ CREATE TABLE IF NOT EXISTS `pm_build_building` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_build_building_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_build_building: ~4 rows (approximately)
+-- Dumping data for table db_ibox.pm_build_building: ~0 rows (approximately)
 DELETE FROM `pm_build_building`;
 /*!40000 ALTER TABLE `pm_build_building` DISABLE KEYS */;
 INSERT INTO `pm_build_building` (`id`, `f_o_sisi_1`, `f_o_sisi_2`, `f_o_sisi_3`, `f_o_sisi_4`, `f_i_sisi_1`, `f_i_sisi_2`, `f_i_sisi_3`, `f_i_sisi_4`, `foto_atap`, `foto_lantai`, `lain_lain`, `id_pop`) VALUES
 	(3, '21012020_014118.jpg', '21012020_0141181.jpg', '21012020_0141182.jpg', '21012020_0141183.jpg', '21012020_0141184.jpg', '21012020_0141185.jpg', '21012020_0141186.jpg', '21012020_0141187.jpg', '21012020_0141188.jpg', '21012020_0141189.jpg', 'lagi', 4),
-	(4, '23012020_141854.jpg', '23012020_1418541.jpg', '23012020_1418542.jpg', '23012020_1418543.jpg', '23012020_1418544.jpg', '23012020_1418545.jpg', '23012020_1418546.jpg', '23012020_1418547.jpg', '23012020_1418548.jpg', '23012020_1418549.jpg', 'tes isi building', 4),
-	(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'dfd', 1),
-	(6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23012020_161708.jpg', '', 1),
-	(7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1);
+	(4, '23012020_141854.jpg', '23012020_1418541.jpg', '23012020_1418542.jpg', '23012020_1418543.jpg', '23012020_1418544.jpg', '23012020_1418545.jpg', '23012020_1418546.jpg', '23012020_1418547.jpg', '23012020_1418548.jpg', '23012020_1418549.jpg', 'tes isi building', 4);
 /*!40000 ALTER TABLE `pm_build_building` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_build_rack
@@ -960,9 +920,9 @@ CREATE TABLE IF NOT EXISTS `pm_build_rack` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_build_rack_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_build_rack: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_build_rack: ~2 rows (approximately)
 DELETE FROM `pm_build_rack`;
 /*!40000 ALTER TABLE `pm_build_rack` DISABLE KEYS */;
 INSERT INTO `pm_build_rack` (`id`, `f_rack_1`, `f_rack_2`, `f_rack_3`, `f_rack_4`, `f_rack_5`, `lain_lain`, `id_pop`) VALUES
@@ -1020,7 +980,7 @@ CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_data` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpbd_rectifier_data_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_dcpbd_rectifier_data: ~4 rows (approximately)
 DELETE FROM `pm_dcpbd_rectifier_data`;
@@ -1029,13 +989,12 @@ INSERT INTO `pm_dcpbd_rectifier_data` (`id`, `merk_tipe`, `sn`, `no_amarta`, `ju
 	(1, '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3),
 	(2, 't', 'tyy', 'y', 'y', 'y', 'y', 'y', 'yuy', 'Berfungsi', 'Berfungsi', 'yg', 'y', 'y', 'y', 'y', 'y', 'y', 'yy', 'dc', 'j', 'hk', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 3),
 	(3, '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2),
-	(4, 'tes Rectifier', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3),
-	(5, 'kadafon', '344545445', '467', '3', 'good', '34', '34', 'tes alarm', 'Berfungsi', 'Berfungsi', 'dfdf', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '34', '23', '34', '4', '43', '4', 3);
+	(4, 'tes Rectifier', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3);
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpbd_rectifier_dokumentasi
 CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_dokumentasi` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL,
   `foto_1` varchar(255) DEFAULT NULL,
   `foto_2` varchar(255) DEFAULT NULL,
   `foto_3` varchar(255) DEFAULT NULL,
@@ -1046,14 +1005,13 @@ CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_dokumentasi` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpbd_rectifier_dokumentasi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpbd_rectifier_dokumentasi: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpbd_rectifier_dokumentasi: ~0 rows (approximately)
 DELETE FROM `pm_dcpbd_rectifier_dokumentasi`;
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_dokumentasi` DISABLE KEYS */;
 INSERT INTO `pm_dcpbd_rectifier_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto_4`, `foto_5`, `foto_6`, `id_pop`) VALUES
-	(1, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-	(2, '24012020_084625.jpg', '24012020_0846251.jpg', '24012020_0846252.jpg', '24012020_0846253.jpg', '24012020_0846254.jpg', '24012020_0846255.jpg', 3);
+	(0, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_dokumentasi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpbd_rectifier_foto_single
@@ -1064,7 +1022,7 @@ CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_foto_single` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpbd_rectifier_foto_single_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_dcpbd_rectifier_foto_single: ~3 rows (approximately)
 DELETE FROM `pm_dcpbd_rectifier_foto_single`;
@@ -1072,8 +1030,7 @@ DELETE FROM `pm_dcpbd_rectifier_foto_single`;
 INSERT INTO `pm_dcpbd_rectifier_foto_single` (`id`, `foto`, `id_pop`) VALUES
 	(1, '21012020_091456.jpg', 1),
 	(3, '21012020_164845.jpg', 3),
-	(4, NULL, 3),
-	(5, '24012020_084320.jpeg', 3);
+	(4, NULL, 3);
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_foto_single` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpbd_rectifier_lain
@@ -1084,15 +1041,14 @@ CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_lain` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpbd_rectifier_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpbd_rectifier_lain: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpbd_rectifier_lain: ~2 rows (approximately)
 DELETE FROM `pm_dcpbd_rectifier_lain`;
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_lain` DISABLE KEYS */;
 INSERT INTO `pm_dcpbd_rectifier_lain` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, 'wd', 1),
-	(2, 'vbn', 3),
-	(3, 'tesss', 3);
+	(2, 'vbn', 3);
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpbd_rectifier_temuan
@@ -1103,14 +1059,13 @@ CREATE TABLE IF NOT EXISTS `pm_dcpbd_rectifier_temuan` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpbd_rectifier_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpbd_rectifier_temuan: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpbd_rectifier_temuan: ~0 rows (approximately)
 DELETE FROM `pm_dcpbd_rectifier_temuan`;
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_temuan` DISABLE KEYS */;
 INSERT INTO `pm_dcpbd_rectifier_temuan` (`id`, `keterangan`, `id_pop`) VALUES
-	(1, 'de', 1),
-	(2, 'dfffdfdffd', 3);
+	(1, 'de', 1);
 /*!40000 ALTER TABLE `pm_dcpbd_rectifier_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpdb_baterai_data
@@ -1129,7 +1084,7 @@ CREATE TABLE IF NOT EXISTS `pm_dcpdb_baterai_data` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpdb_baterai_data_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_dcpdb_baterai_data: ~3 rows (approximately)
 DELETE FROM `pm_dcpdb_baterai_data`;
@@ -1137,8 +1092,7 @@ DELETE FROM `pm_dcpdb_baterai_data`;
 INSERT INTO `pm_dcpdb_baterai_data` (`id`, `diameter_kabel`, `kondisi_terminal`, `kondisi_fisik`, `no_amarta`, `merk`, `tipe`, `kapasitas`, `unit`, `sn`, `id_pop`) VALUES
 	(2, '10mm', 'Kencang', 'Normal', '12', 'sony', 'S12', '90', '55', '123456', 2),
 	(3, NULL, NULL, NULL, '', '', '', '', '', '', 1),
-	(4, NULL, NULL, NULL, 'tes baterai', '', '', '', '', '', 3),
-	(5, '25mm', 'Kendor', 'Normal', '576565', 'sung', 'yuuu', '545', '34', '34343', 3);
+	(4, NULL, NULL, NULL, 'tes baterai', '', '', '', '', '', 3);
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpdb_baterai_dokumentasi
@@ -1154,14 +1108,13 @@ CREATE TABLE IF NOT EXISTS `pm_dcpdb_baterai_dokumentasi` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpdb_baterai_dokumentasi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpdb_baterai_dokumentasi: ~1 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpdb_baterai_dokumentasi: ~0 rows (approximately)
 DELETE FROM `pm_dcpdb_baterai_dokumentasi`;
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_dokumentasi` DISABLE KEYS */;
 INSERT INTO `pm_dcpdb_baterai_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto_4`, `foto_5`, `foto_6`, `id_pop`) VALUES
-	(2, '21012020_174452.jpg', '21012020_1744521.jpg', '21012020_1744522.jpg', '21012020_1744523.jpg', '21012020_1744524.jpg', '21012020_1744525.jpg', 2),
-	(3, '24012020_090258.png', '24012020_090258.jpg', '24012020_0902581.jpg', '24012020_0902582.jpg', '24012020_0902583.jpg', '24012020_0902584.jpg', 3);
+	(2, '21012020_174452.jpg', '21012020_1744521.jpg', '21012020_1744522.jpg', '21012020_1744523.jpg', '21012020_1744524.jpg', '21012020_1744525.jpg', 2);
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_dokumentasi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpdb_baterai_lain_lain
@@ -1172,15 +1125,14 @@ CREATE TABLE IF NOT EXISTS `pm_dcpdb_baterai_lain_lain` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpdb_baterai_lain_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpdb_baterai_lain_lain: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpdb_baterai_lain_lain: ~2 rows (approximately)
 DELETE FROM `pm_dcpdb_baterai_lain_lain`;
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_lain_lain` DISABLE KEYS */;
 INSERT INTO `pm_dcpdb_baterai_lain_lain` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, '', 2),
-	(2, 'dsd', 2),
-	(3, 'tesssss', 3);
+	(2, 'dsd', 2);
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_lain_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dcpdb_baterai_temuan
@@ -1191,15 +1143,14 @@ CREATE TABLE IF NOT EXISTS `pm_dcpdb_baterai_temuan` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dcpdb_baterai_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dcpdb_baterai_temuan: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_dcpdb_baterai_temuan: ~2 rows (approximately)
 DELETE FROM `pm_dcpdb_baterai_temuan`;
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_temuan` DISABLE KEYS */;
 INSERT INTO `pm_dcpdb_baterai_temuan` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, '', 2),
-	(2, 'ddds', 2),
-	(3, 'tsssss', 3);
+	(2, 'ddds', 2);
 /*!40000 ALTER TABLE `pm_dcpdb_baterai_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dc_data_dcpdb
@@ -1212,7 +1163,7 @@ CREATE TABLE IF NOT EXISTS `pm_dc_data_dcpdb` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dc_data_dcpdb_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_dc_data_dcpdb: ~6 rows (approximately)
 DELETE FROM `pm_dc_data_dcpdb`;
@@ -1223,8 +1174,7 @@ INSERT INTO `pm_dc_data_dcpdb` (`id`, `kondisi_box`, `kondsisi_terminal`, `no_am
 	(26, 'Kurang Rapi', 'Kendor', 'qerty', 3),
 	(27, 'Kurang Rapi', 'Kencang', 'tes dcpdb', 3),
 	(28, 'Kurang Rapi', 'Kencang', 'tes dcpdb', 3),
-	(29, 'Kotor', 'Kencang', 'sudah tambah db', 3),
-	(30, 'Kotor', 'Kendor', 'f', 2);
+	(29, 'Kotor', 'Kencang', 'sudah tambah db', 3);
 /*!40000 ALTER TABLE `pm_dc_data_dcpdb` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dc_dcpdb_dokumentasi
@@ -1240,7 +1190,7 @@ CREATE TABLE IF NOT EXISTS `pm_dc_dcpdb_dokumentasi` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dc_dcpdb_dokumentasi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_dc_dcpdb_dokumentasi: ~4 rows (approximately)
 DELETE FROM `pm_dc_dcpdb_dokumentasi`;
@@ -1249,8 +1199,7 @@ INSERT INTO `pm_dc_dcpdb_dokumentasi` (`id`, `foto_1`, `foto_2`, `foto_3`, `foto
 	(11, '21012020_040429.jpg', '21012020_0404291.jpg', '21012020_0404292.jpg', '21012020_0404293.jpg', '21012020_0404294.jpg', '21012020_0404295.jpg', 1),
 	(16, NULL, NULL, NULL, NULL, NULL, NULL, 2),
 	(17, NULL, NULL, NULL, NULL, NULL, NULL, 2),
-	(18, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-	(19, '24012020_054635.png', '24012020_054635.jpg', '24012020_0546351.jpg', '24012020_0546352.jpg', '24012020_0546353.jpg', '24012020_0546354.jpg', 2);
+	(18, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 /*!40000 ALTER TABLE `pm_dc_dcpdb_dokumentasi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dc_dcpdb_foto_single
@@ -1261,15 +1210,14 @@ CREATE TABLE IF NOT EXISTS `pm_dc_dcpdb_foto_single` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dc_dcpdb_foto_single_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dc_dcpdb_foto_single: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_dc_dcpdb_foto_single: ~2 rows (approximately)
 DELETE FROM `pm_dc_dcpdb_foto_single`;
 /*!40000 ALTER TABLE `pm_dc_dcpdb_foto_single` DISABLE KEYS */;
 INSERT INTO `pm_dc_dcpdb_foto_single` (`id`, `foto`, `id_pop`) VALUES
 	(2, '21012020_031843.jpg', 1),
-	(3, NULL, 1),
-	(4, '24012020_054441.jpg', 2);
+	(3, NULL, 1);
 /*!40000 ALTER TABLE `pm_dc_dcpdb_foto_single` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dc_dcpdb_lain
@@ -1280,9 +1228,9 @@ CREATE TABLE IF NOT EXISTS `pm_dc_dcpdb_lain` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dc_dcpdb_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dc_dcpdb_lain: ~9 rows (approximately)
+-- Dumping data for table db_ibox.pm_dc_dcpdb_lain: ~7 rows (approximately)
 DELETE FROM `pm_dc_dcpdb_lain`;
 /*!40000 ALTER TABLE `pm_dc_dcpdb_lain` DISABLE KEYS */;
 INSERT INTO `pm_dc_dcpdb_lain` (`id`, `keterangan`, `id_pop`) VALUES
@@ -1292,9 +1240,7 @@ INSERT INTO `pm_dc_dcpdb_lain` (`id`, `keterangan`, `id_pop`) VALUES
 	(8, '', 3),
 	(9, NULL, 1),
 	(10, NULL, 1),
-	(11, NULL, 4),
-	(12, NULL, 2),
-	(13, 'tesssss', 2);
+	(11, NULL, 4);
 /*!40000 ALTER TABLE `pm_dc_dcpdb_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_dc_dcpdb_temuan
@@ -1305,15 +1251,14 @@ CREATE TABLE IF NOT EXISTS `pm_dc_dcpdb_temuan` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_dc_dcpdb_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_dc_dcpdb_temuan: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_dc_dcpdb_temuan: ~2 rows (approximately)
 DELETE FROM `pm_dc_dcpdb_temuan`;
 /*!40000 ALTER TABLE `pm_dc_dcpdb_temuan` DISABLE KEYS */;
 INSERT INTO `pm_dc_dcpdb_temuan` (`id`, `keterangan`, `id_pop`) VALUES
 	(1, 'sdsd', 1),
-	(2, '', 1),
-	(3, 'tesssssss', 2);
+	(2, '', 1);
 /*!40000 ALTER TABLE `pm_dc_dcpdb_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_eksternal_env_data
@@ -1353,7 +1298,7 @@ CREATE TABLE IF NOT EXISTS `pm_eksternal_env_data` (
   CONSTRAINT `FK_pm_eksternal_env_data_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_eksternal_env_data: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_eksternal_env_data: ~1 rows (approximately)
 DELETE FROM `pm_eksternal_env_data`;
 /*!40000 ALTER TABLE `pm_eksternal_env_data` DISABLE KEYS */;
 INSERT INTO `pm_eksternal_env_data` (`id`, `merk_ac1`, `merk_ac2`, `merk_ac3`, `tipe_ac1`, `tipe_ac2`, `tipe_ac3`, `kap_ac1`, `kap_ac2`, `kap_ac3`, `sn_o_ac1`, `sn_o_ac2`, `sn_o_ac3`, `no_amarta_ac1`, `no_amarta_ac2`, `no_amarta_ac3`, `sn_i_ac1`, `sn_i_ac2`, `sn_i_ac3`, `no_amarta2_ac1`, `no_amarta2_ac2`, `no_amarta2_ac3`, `suhu_ac_ac1`, `suhu_ac_ac2`, `suhu_ac_ac3`, `fungsi_ac1`, `fungsi_ac2`, `fungsi_ac3`, `suhu_ruang`, `id_pop`) VALUES
@@ -1410,7 +1355,7 @@ CREATE TABLE IF NOT EXISTS `pm_eksternal_env_eksternal_alarm` (
   CONSTRAINT `FK_pm_eksternal_env_eksternal_alarm_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_eksternal_env_eksternal_alarm: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_eksternal_env_eksternal_alarm: ~1 rows (approximately)
 DELETE FROM `pm_eksternal_env_eksternal_alarm`;
 /*!40000 ALTER TABLE `pm_eksternal_env_eksternal_alarm` DISABLE KEYS */;
 INSERT INTO `pm_eksternal_env_eksternal_alarm` (`id`, `merk`, `tipe`, `sn`, `no_amarta`, `door_fungsi`, `door_catatan`, `main_fungsi`, `main_catatan`, `temp_fungsi`, `temp_catatan`, `smoke_fungsi`, `smoke_catatan`, `rectifier_fungsi`, `rectifier_catatan`, `genset_fungsi`, `genset_catatan`, `fuel_fungsi`, `fuel_catatan`, `id_pop`) VALUES
@@ -1429,18 +1374,16 @@ CREATE TABLE IF NOT EXISTS `pm_odf_data_odf` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_odf_data_odf_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_odf_data_odf: ~3 rows (approximately)
+-- Dumping data for table db_ibox.pm_odf_data_odf: ~4 rows (approximately)
 DELETE FROM `pm_odf_data_odf`;
 /*!40000 ALTER TABLE `pm_odf_data_odf` DISABLE KEYS */;
 INSERT INTO `pm_odf_data_odf` (`id`, `no_amarta`, `label_kabel`, `kap_core`, `tipe_konektor`, `id_pop`) VALUES
 	(1, '', '', NULL, NULL, 4),
 	(2, '1212', 'A12', '144', 'SC', 4),
 	(3, '123', '', '12', 'FC', 3),
-	(4, 'tes odf', '', '6', 'FC', 4),
-	(5, '', '', NULL, NULL, 3),
-	(6, 'dfd', 'dfssd', '24', 'FC', 3);
+	(4, 'tes odf', '', '6', 'FC', 4);
 /*!40000 ALTER TABLE `pm_odf_data_odf` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_odf_inputan_lain
@@ -1454,7 +1397,7 @@ CREATE TABLE IF NOT EXISTS `pm_odf_inputan_lain` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_odf_inputan_lain_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_odf_inputan_lain: ~3 rows (approximately)
 DELETE FROM `pm_odf_inputan_lain`;
@@ -1462,8 +1405,7 @@ DELETE FROM `pm_odf_inputan_lain`;
 INSERT INTO `pm_odf_inputan_lain` (`id`, `core`, `jarak_otdr`, `label_pelanggan`, `koneksi`, `id_pop`) VALUES
 	(1, '', '', '', '', 4),
 	(2, 'C11', '12', 'P123', 'BAGUS', 4),
-	(3, 'yiuy', 'uu', 'uhu', 'u', 3),
-	(4, 'rfr', 'fr', 'rr', 'rr', 3);
+	(3, 'yiuy', 'uu', 'uhu', 'u', 3);
 /*!40000 ALTER TABLE `pm_odf_inputan_lain` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_ats_ats
@@ -1480,7 +1422,7 @@ CREATE TABLE IF NOT EXISTS `pm_ps_ats_ats` (
   CONSTRAINT `FK_pm_ps_ats_ats_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ps_ats_ats: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_ps_ats_ats: ~1 rows (approximately)
 DELETE FROM `pm_ps_ats_ats`;
 /*!40000 ALTER TABLE `pm_ps_ats_ats` DISABLE KEYS */;
 INSERT INTO `pm_ps_ats_ats` (`id`, `merk`, `seri`, `sn`, `tahun_aset`, `no_amarta`, `id_pop`) VALUES
@@ -1645,31 +1587,30 @@ CREATE TABLE IF NOT EXISTS `pm_ps_ats_status_sesudah_pm` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ps_ats_status_sesudah_pm_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ps_ats_status_sesudah_pm: ~0 rows (approximately)
 DELETE FROM `pm_ps_ats_status_sesudah_pm`;
 /*!40000 ALTER TABLE `pm_ps_ats_status_sesudah_pm` DISABLE KEYS */;
 INSERT INTO `pm_ps_ats_status_sesudah_pm` (`id`, `pln`, `input_pln`, `input_genset`, `genset`, `genset_off`, `manual`, `tanpa_pln`, `otomatis`, `alarm_off`, `genset_on`, `id_pop`) VALUES
-	(1, 'jk', 'khk', 'dd', 'hh', 'h', 'h', '', 'h', 'h', 'd', 2),
-	(2, 'ty', 'yt', 't', 't', 't', 't', 't', 't', 'tt', 't', 3);
+	(1, 'jk', 'khk', 'dd', 'hh', 'h', 'h', '', 'h', 'h', 'd', 2);
 /*!40000 ALTER TABLE `pm_ps_ats_status_sesudah_pm` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_ats_temuan
 CREATE TABLE IF NOT EXISTS `pm_ps_ats_temuan` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `id_pop` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ps_ats_temuan_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ps_ats_temuan: ~0 rows (approximately)
 DELETE FROM `pm_ps_ats_temuan`;
 /*!40000 ALTER TABLE `pm_ps_ats_temuan` DISABLE KEYS */;
 INSERT INTO `pm_ps_ats_temuan` (`id`, `keterangan`, `id_pop`) VALUES
-	(1, 'fsfv', 1);
+	(0, 'fsfv', 1);
 /*!40000 ALTER TABLE `pm_ps_ats_temuan` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_genset_data_fisik
@@ -1693,7 +1634,7 @@ CREATE TABLE IF NOT EXISTS `pm_ps_genset_data_fisik` (
   CONSTRAINT `FK_pm_ps_genset_data_fisik_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ps_genset_data_fisik: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_ps_genset_data_fisik: ~1 rows (approximately)
 DELETE FROM `pm_ps_genset_data_fisik`;
 /*!40000 ALTER TABLE `pm_ps_genset_data_fisik` DISABLE KEYS */;
 INSERT INTO `pm_ps_genset_data_fisik` (`id`, `merk_generator`, `kapasitas`, `tipe`, `fasa`, `s_n`, `tahun_aset`, `kebersihan`, `merk_engine`, `tipe_engine`, `s_n_engine`, `rpm`, `no_amarta`, `id_pop`) VALUES
@@ -1735,15 +1676,14 @@ CREATE TABLE IF NOT EXISTS `pm_ps_genset_inspeksi` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ps_genset_inspeksi_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ps_genset_inspeksi: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_ps_genset_inspeksi: ~1 rows (approximately)
 DELETE FROM `pm_ps_genset_inspeksi`;
 /*!40000 ALTER TABLE `pm_ps_genset_inspeksi` DISABLE KEYS */;
 INSERT INTO `pm_ps_genset_inspeksi` (`id`, `fuel_level`, `h_meter`, `t_aki`, `air_radiator`, `kapasitas_tangki`, `id_pop`) VALUES
 	(2, '20', '24', '55', 'Setengah', '12', 3),
-	(3, '', '', '', NULL, 'fd', 1),
-	(4, '43', '34', '34', 'Kosong', '43', 3);
+	(3, '', '', '', NULL, 'fd', 1);
 /*!40000 ALTER TABLE `pm_ps_genset_inspeksi` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_genset_kondisi_nol
@@ -1766,15 +1706,14 @@ CREATE TABLE IF NOT EXISTS `pm_ps_genset_kondisi_nol` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ps_genset_kondisi_nol_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ps_genset_kondisi_nol: ~2 rows (approximately)
 DELETE FROM `pm_ps_genset_kondisi_nol`;
 /*!40000 ALTER TABLE `pm_ps_genset_kondisi_nol` DISABLE KEYS */;
 INSERT INTO `pm_ps_genset_kondisi_nol` (`id`, `r_s_tegangan`, `r_t_tegangan`, `s_t_tegangan`, `n_g_tegangan`, `r_n_tegangan`, `s_n_tegangan`, `t_n_tegangan`, `r_g_tegangan`, `s_g_tegangan`, `t_g_tegangan`, `fasa_r_beban`, `fasa_s_beban`, `fasa_t_beban`, `id_pop`) VALUES
 	(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3),
-	(2, 45, 34, 44, 46, 46, 44, 64, 65, 35, 65, 65, 65, 65, 3),
-	(3, 4, 4, 44, 4, 4, 44, 4, 4, 4, 4, 4, 4, 34, 3);
+	(2, 45, 34, 44, 46, 46, 44, 64, 65, 35, 65, 65, 65, 65, 3);
 /*!40000 ALTER TABLE `pm_ps_genset_kondisi_nol` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_genset_kondisi_penuh
@@ -1797,14 +1736,13 @@ CREATE TABLE IF NOT EXISTS `pm_ps_genset_kondisi_penuh` (
   PRIMARY KEY (`id`),
   KEY `Index 2` (`id_pop`),
   CONSTRAINT `FK_pm_ps_genset_kondisi_penuh_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ibox.pm_ps_genset_kondisi_penuh: ~0 rows (approximately)
 DELETE FROM `pm_ps_genset_kondisi_penuh`;
 /*!40000 ALTER TABLE `pm_ps_genset_kondisi_penuh` DISABLE KEYS */;
 INSERT INTO `pm_ps_genset_kondisi_penuh` (`id`, `r_s_tegangan`, `r_t_tegangan`, `s_t_tegangan`, `n_g_tegangan`, `r_n_tegangan`, `s_n_tegangan`, `t_n_tegangan`, `r_g_tegangan`, `s_g_tegangan`, `t_g_tegangan`, `fasa_r_beban`, `fasa_s_beban`, `fasa_t_beban`, `id_pop`) VALUES
-	(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3),
-	(2, 4, 54, 4, 44, 4, 4, 4, 4, 44, 4, 4, 4, 3, 3);
+	(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3);
 /*!40000 ALTER TABLE `pm_ps_genset_kondisi_penuh` ENABLE KEYS */;
 
 -- Dumping structure for table db_ibox.pm_ps_genset_lain_lain
@@ -1858,7 +1796,7 @@ CREATE TABLE IF NOT EXISTS `pm_ps_inverter_data` (
   CONSTRAINT `FK_pm_ps_inverter_data_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ps_inverter_data: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_ps_inverter_data: ~1 rows (approximately)
 DELETE FROM `pm_ps_inverter_data`;
 /*!40000 ALTER TABLE `pm_ps_inverter_data` DISABLE KEYS */;
 INSERT INTO `pm_ps_inverter_data` (`id`, `merk_tipe`, `s_n`, `no_amarta`, `t_output`, `kapasitas`, `beban`, `utilisasi`, `indikasi_alarm`, `id_pop`) VALUES
@@ -1940,7 +1878,7 @@ CREATE TABLE IF NOT EXISTS `pm_ps_ups_data` (
   CONSTRAINT `FK_pm_ps_ups_data_pops` FOREIGN KEY (`id_pop`) REFERENCES `pops` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ibox.pm_ps_ups_data: ~0 rows (approximately)
+-- Dumping data for table db_ibox.pm_ps_ups_data: ~1 rows (approximately)
 DELETE FROM `pm_ps_ups_data`;
 /*!40000 ALTER TABLE `pm_ps_ups_data` DISABLE KEYS */;
 INSERT INTO `pm_ps_ups_data` (`id`, `merk_tipe`, `s_n`, `no_amarta`, `t_output`, `kapasitas`, `beban`, `utilisasi`, `lain_lain`, `temuan`, `id_pop`) VALUES

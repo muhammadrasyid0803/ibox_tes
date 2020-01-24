@@ -7,7 +7,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-         2020 &copy; Copyrights <strong>Mahasiswa POLITALA</strong>. All Rights Reserved
+         2020 &copy; Copyrights <strong>Mahasiswa POLITALA</strong>.
         </p>
         <div class="credits">
           <!--

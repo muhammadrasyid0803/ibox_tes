@@ -43,7 +43,7 @@
         </a>
         </div>
         <div class="login-wrap">
-          <input type="text" name="txtUsername" class="form-control" placeholder="User ID" autofocus>
+          <input type="text" name="txtUsername" class="form-control" placeholder="Username" autofocus>
           <br>
           <input type="password" name="txtPassword" class="form-control" placeholder="Password">
           <br>

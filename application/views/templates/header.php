@@ -65,7 +65,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IB<span>OX</span></b></a>
+      <a href="<?php echo base_url('Dashboard/'); ?>" class="logo"><b>IB<span>OX</span></b></a>
       <!--logo end-->
       
       <div class="top-menu">
