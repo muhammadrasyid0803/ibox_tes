@@ -533,6 +533,9 @@
               var foto_4 = $('input[name=foto_4]').val().length;
               var foto_5 = $('input[name=foto_5]').val().length;
               var foto_6 = $('input[name=foto_6]').val().length;
+
+              // alert(foto_1+','+foto_2+','+foto_3+','+foto_4+','+foto_5+','+foto_6);
+              // return false;
               
               if (foto_1 == 0 || foto_2 == 0 || foto_3 == 0 || foto_4 == 0 || foto_5 == 0 || foto_6 == 0) {
                   alert('Silahkan Isi Data Dengan Benar');
