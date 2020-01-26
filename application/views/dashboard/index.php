@@ -14,9 +14,7 @@
           
           <aside class="col-lg-6 mt ">       
             <section class="panel"> 
-                    
             <div class="panel-body">
-
                 <div id="kalender_job" class="has-toolbar"></div>
                 <h4 align="center"> <strong>Jadwal PM</strong> </h4>  
               </div>

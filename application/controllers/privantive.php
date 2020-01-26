@@ -1561,8 +1561,8 @@ class Privantive extends CI_Controller {
 	    	'id_pop' => $this->input->post('txtIdPOP'),
 	    );
 
-	    if(!empty($_FILES['foto_1']['name'])){
-	    	$upload = $this->_do_upload_add_foto_1();
+	    if(!empty($_FILES['foto_single']['name'])){
+	    	$upload = $this->_do_upload_add_foto_single();
 	    	$data['foto'] = $upload;
 	    }
 
